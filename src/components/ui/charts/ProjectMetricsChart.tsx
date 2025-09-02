@@ -60,12 +60,53 @@ export function ProjectMetricsChart({
       mode: 'index' as const,
       intersect: false,
     },
+    plugins: {
+      legend: {
+        position: 'top' as const,
+        labels: {
+          font: {
+            family: 'Inter, sans-serif',
+            size: 12,
+          },
+          color: '#374151',
+        },
+      },
+      title: {
+        display: true,
+        text: 'Project Performance Metrics',
+        font: {
+          family: 'Inter, sans-serif',
+          size: 14,
+          weight: 'bold' as const,
+        },
+        color: '#111827',
+      },
+      tooltip: {
+        backgroundColor: 'rgba(17, 24, 39, 0.95)',
+        titleColor: '#F9FAFB',
+        bodyColor: '#F9FAFB',
+        borderColor: '#374151',
+        borderWidth: 1,
+        cornerRadius: 8,
+        displayColors: true,
+        callbacks: {
+          afterLabel: function (context: any) {
+            const project = projectsWithMetrics[context.dataIndex];
+            return [
+              `Team Size: ${project.teamSize}`,
+              `Category: ${project.category}`,
+              `Completion: ${new Date(project.completionDate).getFullYear()}`,
+            ];
+          },
+        },
+      },
+    },
     layout: {
       padding: {
         top: 20,
-        right: 20,
-        bottom: 20,
-        left: 20,
+        right: 15,
+        bottom: 40,
+        left: 15,
       },
     },
     plugins: {
@@ -136,12 +177,26 @@ export function ProjectMetricsChart({
               ticks: {
                 font: {
                   family: 'Inter, sans-serif',
-                  size: 11,
+                  size: 10,
                 },
                 color: '#6B7280',
-                maxRotation: 45,
+                maxRotation: 90,
+                minRotation: 90,
                 autoSkip: true,
-                maxTicksLimit: 5,
+                maxTicksLimit: 3,
+                padding: 10,
+                callback: function (value: any, index: any) {
+                  const project = projectsWithMetrics[index];
+                  if (project) {
+                    // Shorten long project names for mobile
+                    const title = project.title;
+                    if (title.length > 25) {
+                      return title.substring(0, 22) + '...';
+                    }
+                    return title;
+                  }
+                  return value;
+                },
               },
             },
           }
@@ -194,7 +249,7 @@ export function ProjectMetricsChart({
       transition={{ duration: 0.6 }}
       className={`bg-white rounded-lg shadow-lg p-4 md:p-6 ${className}`}
     >
-      <div className="h-64 md:h-80 lg:h-96 relative">
+      <div className="h-72 md:h-80 lg:h-96 relative px-2 md:px-0">
         <div className="absolute inset-0 flex items-center justify-center">
           {type === 'bar' ? (
             <Bar ref={chartRef} data={chartData} options={options} />
