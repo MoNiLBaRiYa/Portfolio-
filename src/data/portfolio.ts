@@ -6,7 +6,6 @@ export const portfolioData: PortfolioData = {
     title: 'Computer Science Engineering Student',
     location: 'India',
     email: 'monil.bariya@example.com',
-    phone: '+91-8980243770',
     linkedin: 'https://www.linkedin.com/in/monilbariya28',
     github: 'https://github.com/MoNiLBaRiYa',
     summary:

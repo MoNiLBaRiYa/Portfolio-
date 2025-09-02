@@ -97,7 +97,8 @@ export const AboutSection: React.FC = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const controls = useAnimation();
   const { isMobile, isTablet } = useResponsive();
-  const { accessibility } = useAccessibility();
+  const { reducedMotion, highContrast, focusVisible, announceMessage } =
+    useAccessibility();
 
   useEffect(() => {
     if (isInView) {
