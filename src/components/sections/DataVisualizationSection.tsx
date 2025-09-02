@@ -12,6 +12,8 @@ import {
 interface DataVisualizationSectionProps {
   data: {
     projects: any[];
+    skills: any[];
+    certifications: any[];
   };
 }
 
@@ -53,11 +55,11 @@ export function DataVisualizationSection({
     totalProjects: data.projects?.length || 0,
     featuredProjects: data.projects?.filter(p => p.featured)?.length || 0,
     totalSkills:
-      data.projects?.reduce(
-        (sum, project) => sum + (project.skills?.length || 0),
+      data.skills?.reduce(
+        (sum, category) => sum + (category.skills?.length || 0),
         0
       ) || 0,
-    certifications: data.projects?.filter(p => p.certifications)?.length || 0,
+    certifications: data.certifications?.length || 0,
     avgPerformance: Math.round(
       (data.projects?.filter(p => p.metrics?.performanceScore)?.length || 0) > 0
         ? (data.projects
@@ -207,10 +209,9 @@ export function DataVisualizationSection({
               <div className="space-y-6">
                 <div className="w-full max-w-md mx-auto">
                   <SkillProficiencyChart
-                    skills={data.projects.reduce(
-                      (acc, project) => acc.concat(project.skills),
-                      []
-                    )}
+                    skills={
+                      data.skills?.flatMap(category => category.skills) || []
+                    }
                     type="doughnut"
                     className="w-full"
                   />
@@ -243,17 +244,15 @@ export function DataVisualizationSection({
               {/* Top row - Category overview */}
               <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
                 <SkillProficiencyChart
-                  skills={data.projects.reduce(
-                    (acc, project) => acc.concat(project.skills),
-                    []
-                  )}
+                  skills={
+                    data.skills?.flatMap(category => category.skills) || []
+                  }
                   type="doughnut"
                 />
                 <SkillProficiencyChart
-                  skills={data.projects.reduce(
-                    (acc, project) => acc.concat(project.skills),
-                    []
-                  )}
+                  skills={
+                    data.skills?.flatMap(category => category.skills) || []
+                  }
                   type="radar"
                 />
               </div>
@@ -261,10 +260,9 @@ export function DataVisualizationSection({
               {/* Bottom row - Individual skills */}
               <div className="w-full">
                 <SkillProficiencyChart
-                  skills={data.projects.reduce(
-                    (acc, project) => acc.concat(project.skills),
-                    []
-                  )}
+                  skills={
+                    data.skills?.flatMap(category => category.skills) || []
+                  }
                   type="bar"
                   className="w-full"
                 />

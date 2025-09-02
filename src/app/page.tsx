@@ -54,7 +54,11 @@ export default function Home() {
 
             <Suspense fallback={<SkeletonLoader />}>
               <DataVisualizationSection
-                data={{ projects: portfolioData.projects }}
+                data={{
+                  projects: portfolioData.projects,
+                  skills: portfolioData.skills,
+                  certifications: portfolioData.certifications,
+                }}
               />
             </Suspense>
 
