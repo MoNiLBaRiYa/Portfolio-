@@ -67,7 +67,7 @@ export default function ProjectModal({
         </div>
 
         {/* Content - Scrollable */}
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
           <div className="p-4 sm:p-6">
             <div className="space-y-4 sm:space-y-6">
               <div>

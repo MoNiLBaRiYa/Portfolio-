@@ -6,7 +6,6 @@ export const portfolioData: PortfolioData = {
     title: 'Computer Science Engineering Student',
     location: 'India',
     email: 'monil.bariya@example.com',
-    phone: '+91 [phone_number]',
     linkedin: 'https://www.linkedin.com/in/monilbariya28',
     github: 'https://github.com/MoNiLBaRiYa',
     summary:
@@ -171,7 +170,7 @@ export const portfolioData: PortfolioData = {
         },
       ],
       metrics: {
-        performanceScore: 78,
+        performanceScore: 65,
         userEngagement: 'Good user interaction with demo interface',
         codeQuality: 'AI-generated code with basic testing',
         impact: 'Successfully demonstrates ML concepts with AI help',
@@ -379,7 +378,7 @@ if __name__ == '__main__':
         },
       ],
       metrics: {
-        performanceScore: 82,
+        performanceScore: 70,
         userEngagement: 'Good user engagement and interaction',
         codeQuality: 'AI-assisted development with modern tools',
         impact: 'Showcases ability to build with AI assistance',
@@ -701,7 +700,7 @@ export function SkillTree({ data, onNodeClick }: SkillTreeProps) {
         },
       ],
       metrics: {
-        performanceScore: 75,
+        performanceScore: 68,
         userEngagement:
           'In Progress - Platform in active development with beta testing planned for Q2 2025',
         codeQuality: 'AI-assisted development with modern tools and frameworks',

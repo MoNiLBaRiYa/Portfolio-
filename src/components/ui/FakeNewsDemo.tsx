@@ -443,7 +443,7 @@ export function FakeNewsDemo() {
                   news detection system. The actual implementation uses advanced
                   NLP techniques including BERT embeddings, ensemble learning
                   methods, and a comprehensive training dataset of verified news
-                  articles. Real-world accuracy exceeds 92% on benchmark
+                  articles. Real-world accuracy exceeds 78% on benchmark
                   datasets.
                 </p>
               </div>
