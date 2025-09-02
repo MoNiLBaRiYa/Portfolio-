@@ -159,6 +159,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                 >
                   <ProjectCard
                     project={project}
+                    index={index}
                     onClick={() => handleProjectClick(project)}
                   />
                 </motion.div>
