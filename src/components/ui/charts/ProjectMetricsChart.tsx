@@ -56,6 +56,18 @@ export function ProjectMetricsChart({
   const options = {
     responsive: true,
     maintainAspectRatio: false,
+    interaction: {
+      mode: 'index' as const,
+      intersect: false,
+    },
+    layout: {
+      padding: {
+        top: 20,
+        right: 20,
+        bottom: 20,
+        left: 20,
+      },
+    },
     plugins: {
       legend: {
         position: 'top' as const,
@@ -72,7 +84,7 @@ export function ProjectMetricsChart({
         text: 'Project Performance Metrics',
         font: {
           family: 'Inter, sans-serif',
-          size: 16,
+          size: 14,
           weight: 'bold' as const,
         },
         color: '#111827',
@@ -128,6 +140,8 @@ export function ProjectMetricsChart({
                 },
                 color: '#6B7280',
                 maxRotation: 45,
+                autoSkip: true,
+                maxTicksLimit: 5,
               },
             },
           }
@@ -178,27 +192,29 @@ export function ProjectMetricsChart({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`bg-white rounded-lg shadow-lg p-6 ${className}`}
+      className={`bg-white rounded-lg shadow-lg p-4 md:p-6 ${className}`}
     >
-      <div className="h-64 md:h-80">
-        {type === 'bar' ? (
-          <Bar ref={chartRef} data={chartData} options={options} />
-        ) : (
-          <Radar ref={chartRef} data={chartData} options={options} />
-        )}
+      <div className="h-64 md:h-80 lg:h-96 relative">
+        <div className="absolute inset-0 flex items-center justify-center">
+          {type === 'bar' ? (
+            <Bar ref={chartRef} data={chartData} options={options} />
+          ) : (
+            <Radar ref={chartRef} data={chartData} options={options} />
+          )}
+        </div>
       </div>
 
       {/* Project Impact Summary */}
-      <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
         {projectsWithMetrics.slice(0, 3).map((project, index) => (
           <motion.div
             key={project.id}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="bg-gray-50 rounded-lg p-4"
+            className="bg-gray-50 rounded-lg p-3 md:p-4"
           >
-            <h4 className="font-semibold text-sm text-gray-800 mb-2 truncate">
+            <h4 className="font-semibold text-xs md:text-sm text-gray-800 mb-2 truncate">
               {project.title}
             </h4>
             <div className="space-y-1 text-xs text-gray-600">

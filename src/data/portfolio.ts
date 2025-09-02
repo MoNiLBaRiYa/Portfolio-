@@ -725,47 +725,6 @@ export function SkillTree({ data, onNodeClick }: SkillTreeProps) {
     },
   ],
   experience: [
-    {
-      id: 'ea-software-engineering',
-      title: 'Software Engineering Job Simulation - Electronic Arts',
-      company: 'Tata Forage',
-      type: 'Simulation',
-      startDate: '2025-05-01',
-      endDate: '2025-05-31',
-      description:
-        'Participated in Electronic Arts software engineering simulation focusing on code analysis, feature design, and codebase optimization for EA Sports College Football.',
-      achievements: [
-        'Proposed a new feature for the EA Sports College Football and wrote a Feature Proposal describing it to other stakeholders',
-        'Built a class diagram and created a header file in C++ with class definitions for each object',
-        'Patched a bugfix and optimized the EA Sports College Football codebase by implementing an improved data structure',
-      ],
-      technologies: [
-        'Code Analysis',
-        'Code Readability',
-        'Data Structures',
-        'Feature Design',
-      ],
-    },
-    {
-      id: 'tata-data-visualization',
-      title: 'Tata Data Visualization Job Simulation',
-      company: 'Tata Forage',
-      type: 'Simulation',
-      startDate: '2025-02-01',
-      endDate: '2025-02-28',
-      description:
-        'Completed a simulation involving creating data visualizations for Tata Consultancy Services, focusing on data interpretation, cleanup, and executive decision-making support.',
-      achievements: [
-        'Completed a simulation involving creating data visualizations for Tata Consultancy Services',
-        'Prepared questions for a meeting with client senior leadership',
-        'Created visuals for data analysis to help executives with effective decision making',
-      ],
-      technologies: [
-        'Data Visualization',
-        'Data Interpretation',
-        'Data Cleanup',
-      ],
-    },
   ],
   education: [
     {
@@ -790,10 +749,10 @@ export function SkillTree({ data, onNodeClick }: SkillTreeProps) {
         'Compiler Design',
       ],
       achievements: [
-        'Completed multiple industry simulations including EA Software Engineering and Tata Data Visualization',
         'Active participant in coding competitions and technical events',
         'Developed multiple full-stack projects using modern technologies',
         'Gained practical experience through hands-on project development',
+        'Completed industry simulations and certifications in software engineering and data visualization',
       ],
     },
     {
@@ -896,6 +855,52 @@ export function SkillTree({ data, onNodeClick }: SkillTreeProps) {
       ],
       credentialUrl: '',
       image: '/images/certifications/nptel.jpg',
+    },
+    {
+      id: 'ea-software-engineering-simulation',
+      title: 'Software Engineering Job Simulation - Electronic Arts',
+      issuer: 'Tata Forage',
+      date: '2025-05-01',
+      description:
+        'Participated in Electronic Arts software engineering simulation focusing on code analysis, feature design, and codebase optimization for EA Sports College Football.',
+      skills: [
+        'Code Analysis',
+        'Code Readability',
+        'Data Structures',
+        'Feature Design',
+        'C++',
+        'Software Engineering',
+      ],
+      achievements: [
+        'Proposed a new feature for the EA Sports College Football and wrote a Feature Proposal describing it to other stakeholders',
+        'Built a class diagram and created a header file in C++ with class definitions for each object',
+        'Patched a bugfix and optimized the EA Sports College Football codebase by implementing an improved data structure',
+      ],
+      credentialUrl: '',
+      image: '/images/certifications/ea-simulation.jpg',
+    },
+    {
+      id: 'tata-data-visualization-simulation',
+      title: 'Tata Data Visualization Job Simulation',
+      issuer: 'Tata Forage',
+      date: '2025-02-01',
+      description:
+        'Completed a simulation involving creating data visualizations for Tata Consultancy Services, focusing on data interpretation, cleanup, and executive decision-making support.',
+      skills: [
+        'Data Visualization',
+        'Data Interpretation',
+        'Data Cleanup',
+        'Power BI',
+        'Executive Communication',
+        'Client Leadership',
+      ],
+      achievements: [
+        'Completed a simulation involving creating data visualizations for Tata Consultancy Services',
+        'Prepared questions for a meeting with client senior leadership',
+        'Created visuals for data analysis to help executives with effective decision making',
+      ],
+      credentialUrl: '',
+      image: '/images/certifications/tata-simulation.jpg',
     },
   ],
   hobbies: [
