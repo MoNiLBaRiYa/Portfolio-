@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <circle cx="8" cy="8" r="3" fill="#3B82F6"/>
+  <circle cx="16" cy="8" r="3" fill="#10B981"/>
+  <path d="M8 14C5.79 14 4 15.79 4 18V20H12V18C12 15.79 10.21 14 8 14Z" fill="#3B82F6"/>
+  <path d="M16 14C13.79 14 12 15.79 12 18V20H20V18C20 15.79 18.21 14 16 14Z" fill="#10B981"/>
+  
+  <!-- Handshake symbol -->
+  <path d="M10 12L14 12" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="10" cy="12" r="1" fill="#F59E0B"/>
+  <circle cx="14" cy="12" r="1" fill="#F59E0B"/>
+</svg>

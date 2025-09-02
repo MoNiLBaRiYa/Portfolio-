@@ -1,0 +1,11 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#764ba2"/>
+  <rect x="50" y="50" width="300" height="200" fill="white" opacity="0.9" rx="10"/>
+  <circle cx="150" cy="120" r="25" fill="#667eea" opacity="0.8"/>
+  <circle cx="250" cy="120" r="25" fill="#4facfe" opacity="0.8"/>
+  <rect x="120" y="160" width="160" height="40" fill="#00f2fe" opacity="0.8" rx="20"/>
+  <text x="150" y="130" text-anchor="middle" fill="white" font-family="Arial" font-size="12" font-weight="bold">Code</text>
+  <text x="250" y="130" text-anchor="middle" fill="white" font-family="Arial" font-size="12" font-weight="bold">Design</text>
+  <text x="200" y="185" text-anchor="middle" fill="white" font-family="Arial" font-size="14" font-weight="bold">Portfolio</text>
+  <text x="200" y="280" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="bold">Interactive Design</text>
+</svg>

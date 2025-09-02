@@ -1,0 +1,6 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" fill="#667eea" rx="128"/>
+  <circle cx="128" cy="100" r="40" fill="white" opacity="0.9"/>
+  <ellipse cx="128" cy="180" rx="60" ry="40" fill="white" opacity="0.9"/>
+  <text x="128" y="220" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">MB</text>
+</svg>

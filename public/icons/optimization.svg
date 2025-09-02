@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <circle cx="12" cy="12" r="10" fill="#F3F4F6" stroke="#6B7280" stroke-width="1"/>
+  <path d="M8 16L12 8L16 16" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="12" cy="8" r="2" fill="#10B981"/>
+  <path d="M6 18L12 6L18 18" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+  
+  <!-- Speed lines -->
+  <line x1="2" y1="12" x2="4" y2="12" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="20" y1="12" x2="22" y2="12" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="12" y1="2" x2="12" y2="4" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+</svg>

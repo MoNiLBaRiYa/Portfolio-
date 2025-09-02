@@ -1,0 +1,10 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#4facfe"/>
+  <rect x="50" y="50" width="300" height="200" fill="white" opacity="0.9" rx="10"/>
+  <circle cx="120" cy="120" r="25" fill="#667eea" opacity="0.8"/>
+  <circle cx="280" cy="120" r="25" fill="#764ba2" opacity="0.8"/>
+  <path d="M 145 120 Q 200 80 255 120" stroke="#4ecdc4" stroke-width="4" fill="none"/>
+  <text x="120" y="127" text-anchor="middle" fill="white" font-family="Arial" font-size="12" font-weight="bold">👤</text>
+  <text x="280" y="127" text-anchor="middle" fill="white" font-family="Arial" font-size="12" font-weight="bold">👤</text>
+  <text x="200" y="280" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="bold">NeedMeet Platform</text>
+</svg>

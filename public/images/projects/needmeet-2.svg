@@ -1,0 +1,11 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#764ba2"/>
+  <rect x="50" y="50" width="300" height="200" fill="white" opacity="0.9" rx="10"/>
+  <circle cx="150" cy="130" r="20" fill="#4facfe" opacity="0.8"/>
+  <circle cx="250" cy="130" r="20" fill="#00f2fe" opacity="0.8"/>
+  <rect x="180" y="120" width="40" height="20" fill="#667eea" opacity="0.8" rx="10"/>
+  <text x="150" y="137" text-anchor="middle" fill="white" font-family="Arial" font-size="10" font-weight="bold">Need</text>
+  <text x="250" y="137" text-anchor="middle" fill="white" font-family="Arial" font-size="10" font-weight="bold">Meet</text>
+  <text x="200" y="135" text-anchor="middle" fill="white" font-family="Arial" font-size="8" font-weight="bold">Match</text>
+  <text x="200" y="280" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="bold">Service Matching</text>
+</svg>

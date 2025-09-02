@@ -1,0 +1,11 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#667eea"/>
+  <rect x="50" y="50" width="300" height="200" fill="white" opacity="0.9" rx="10"/>
+  <rect x="70" y="70" width="80" height="60" fill="#4facfe" opacity="0.8" rx="5"/>
+  <rect x="160" y="70" width="80" height="60" fill="#00f2fe" opacity="0.8" rx="5"/>
+  <rect x="250" y="70" width="80" height="60" fill="#764ba2" opacity="0.8" rx="5"/>
+  <rect x="70" y="140" width="260" height="15" fill="#333" opacity="0.7"/>
+  <rect x="70" y="165" width="200" height="15" fill="#666" opacity="0.6"/>
+  <rect x="70" y="190" width="180" height="15" fill="#666" opacity="0.6"/>
+  <text x="200" y="280" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="bold">Portfolio Website</text>
+</svg>

@@ -1,0 +1,29 @@
+{
+  "name": "Monil Bariya - Interactive Portfolio",
+  "short_name": "Monil Bariya",
+  "description": "Interactive portfolio showcasing software development projects, skills, and experience in Computer Science Engineering",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "categories": ["portfolio", "technology", "education"],
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

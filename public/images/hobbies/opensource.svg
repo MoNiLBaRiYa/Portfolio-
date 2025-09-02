@@ -1,0 +1,19 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="url(#gradient4)"/>
+  <defs>
+    <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a8edea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fed6e3;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="200" cy="120" r="40" fill="white" opacity="0.9"/>
+  <circle cx="200" cy="120" r="25" fill="#333" opacity="0.7"/>
+  <circle cx="200" cy="120" r="15" fill="white"/>
+  <circle cx="150" cy="180" r="20" fill="white" opacity="0.8"/>
+  <circle cx="250" cy="180" r="20" fill="white" opacity="0.8"/>
+  <circle cx="200" cy="200" r="15" fill="white" opacity="0.7"/>
+  <line x1="200" y1="160" x2="150" y2="180" stroke="white" stroke-width="3" opacity="0.8"/>
+  <line x1="200" y1="160" x2="250" y2="180" stroke="white" stroke-width="3" opacity="0.8"/>
+  <line x1="200" y1="160" x2="200" y2="185" stroke="white" stroke-width="3" opacity="0.8"/>
+  <text x="200" y="250" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="bold">Open Source</text>
+</svg>
