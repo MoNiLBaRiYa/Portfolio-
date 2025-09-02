@@ -8,10 +8,11 @@ import {
   SkillProficiencyChart,
   ActivityCalendar,
 } from '@/components/ui/charts';
-import { PortfolioData } from '@/types/portfolio';
 
 interface DataVisualizationSectionProps {
-  data: PortfolioData;
+  data: {
+    projects: any[];
+  };
 }
 
 type ChartType = 'metrics' | 'skills' | 'activity' | 'overview';
@@ -51,11 +52,11 @@ export function DataVisualizationSection({
   const stats = {
     totalProjects: data.projects.length,
     featuredProjects: data.projects.filter(p => p.featured).length,
-    totalSkills: data.skills.reduce(
-      (sum, category) => sum + category.skills.length,
+    totalSkills: data.projects.reduce(
+      (sum, project) => sum + project.skills.length,
       0
     ),
-    certifications: data.certifications.length + data.experience.length,
+    certifications: data.projects.filter(p => p.certifications).length,
     avgPerformance: Math.round(
       data.projects
         .filter(p => p.metrics?.performanceScore)
@@ -203,7 +204,10 @@ export function DataVisualizationSection({
               <div className="space-y-6">
                 <div className="w-full max-w-md mx-auto">
                   <SkillProficiencyChart
-                    skills={data.skills}
+                    skills={data.projects.reduce(
+                      (acc, project) => acc.concat(project.skills),
+                      []
+                    )}
                     type="doughnut"
                     className="w-full"
                   />
@@ -235,14 +239,29 @@ export function DataVisualizationSection({
             >
               {/* Top row - Category overview */}
               <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
-                <SkillProficiencyChart skills={data.skills} type="doughnut" />
-                <SkillProficiencyChart skills={data.skills} type="radar" />
+                <SkillProficiencyChart
+                  skills={data.projects.reduce(
+                    (acc, project) => acc.concat(project.skills),
+                    []
+                  )}
+                  type="doughnut"
+                />
+                <SkillProficiencyChart
+                  skills={data.projects.reduce(
+                    (acc, project) => acc.concat(project.skills),
+                    []
+                  )}
+                  type="radar"
+                />
               </div>
 
               {/* Bottom row - Individual skills */}
               <div className="w-full">
                 <SkillProficiencyChart
-                  skills={data.skills}
+                  skills={data.projects.reduce(
+                    (acc, project) => acc.concat(project.skills),
+                    []
+                  )}
                   type="bar"
                   className="w-full"
                 />
@@ -259,8 +278,8 @@ export function DataVisualizationSection({
             >
               <ActivityCalendar
                 projects={data.projects}
-                experience={data.experience}
-                certifications={data.certifications}
+                experience={[]}
+                certifications={[]}
               />
             </motion.div>
           )}
