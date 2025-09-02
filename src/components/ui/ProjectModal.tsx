@@ -126,6 +126,89 @@ export default function ProjectModal({
                   ))}
                 </div>
               </div>
+
+              {/* Project Challenges & Solutions */}
+              {project.challenges && project.challenges.length > 0 && (
+                <div>
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
+                    Key Challenges & Solutions
+                  </h3>
+                  <div className="space-y-3">
+                    {project.challenges.map((challenge, index) => (
+                      <div key={index} className="bg-gray-50 rounded-lg p-3 sm:p-4 border-l-4 border-orange-500">
+                        <h4 className="font-medium text-orange-700 mb-2 flex items-center gap-2">
+                          <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                          {challenge.title}
+                        </h4>
+                        <p className="text-sm text-gray-600 mb-2">{challenge.description}</p>
+                        <div className="bg-white rounded p-2 border-l-2 border-green-500">
+                          <p className="text-xs text-green-700 font-medium">Solution:</p>
+                          <p className="text-xs text-gray-700">{challenge.solution}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Project Features */}
+              {project.features && project.features.length > 0 && (
+                <div>
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
+                    Key Features
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {project.features.map((feature, index) => (
+                      <div key={index} className="bg-green-50 rounded-lg p-3 sm:p-4 border border-green-200">
+                        <h4 className="font-medium text-green-800 mb-2">{feature.title}</h4>
+                        <p className="text-sm text-green-700">{feature.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Project Metrics */}
+              {project.metrics && (
+                <div>
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
+                    Performance Metrics
+                  </h3>
+                  <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-4 sm:p-5 border border-purple-200">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-purple-600">
+                          {project.metrics.performanceScore}%
+                        </div>
+                        <div className="text-sm text-purple-700">Performance Score</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-lg font-semibold text-pink-600">
+                          {project.teamSize}
+                        </div>
+                        <div className="text-sm text-pink-700">Team Size</div>
+                      </div>
+                    </div>
+                    {project.metrics.impact && (
+                      <div className="mt-3 text-center">
+                        <p className="text-sm text-gray-700">
+                          <span className="font-medium">Impact:</span> {project.metrics.impact}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {/* Scroll Indicator */}
+              <div className="text-center py-4 text-gray-400 text-xs">
+                <div className="flex items-center justify-center gap-2">
+                  <span>Scroll for more details</span>
+                  <svg className="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -153,6 +236,22 @@ export default function ProjectModal({
             )}
           </div>
         </div>
+
+        {/* Scroll to Top Button - Floating */}
+        <button
+          onClick={() => {
+            const content = document.querySelector('.overflow-y-auto');
+            if (content) {
+              content.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }}
+          className="absolute bottom-20 right-6 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-colors z-10"
+          aria-label="Scroll to top"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinecap="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+          </svg>
+        </button>
       </div>
     </div>
   );
