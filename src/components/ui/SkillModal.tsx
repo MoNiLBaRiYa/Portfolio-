@@ -34,14 +34,16 @@ const SkillModal: React.FC<SkillModalProps> = ({ skill, isOpen, onClose }) => {
   if (!skill) return null;
 
   // Get related projects
-  const relatedProjects = portfolioData.projects.filter(project =>
-    project.technologies.some(tech => tech.name === skill.name)
-  );
+  const relatedProjects =
+    portfolioData.projects?.filter(project =>
+      project.technologies?.some(tech => tech.name === skill.name)
+    ) || [];
 
   // Get related certifications
-  const relatedCertifications = portfolioData.certifications.filter(cert =>
-    cert.skills.includes(skill.name)
-  );
+  const relatedCertifications =
+    portfolioData.certifications?.filter(cert =>
+      cert.skills?.includes(skill.name)
+    ) || [];
 
   const modalVariants = {
     hidden: {
@@ -330,8 +332,8 @@ const SkillModal: React.FC<SkillModalProps> = ({ skill, isOpen, onClose }) => {
                           No Related Content Found
                         </h3>
                         <p className="text-gray-600 dark:text-gray-400">
-                          This skill doesn't have any associated projects or
-                          certifications yet.
+                          This skill doesn&apos;t have any associated projects
+                          or certifications yet.
                         </p>
                       </div>
                     </motion.div>

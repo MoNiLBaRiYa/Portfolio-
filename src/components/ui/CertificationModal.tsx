@@ -179,7 +179,7 @@ export function CertificationModal({
                 </h3>
                 <p className="text-gray-600 text-sm mb-3">
                   Click the link below to verify this certification on the
-                  issuer's official website.
+                  issuer&apos;s official website.
                 </p>
                 <a
                   href={certification.credentialUrl}

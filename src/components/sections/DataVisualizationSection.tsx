@@ -50,18 +50,23 @@ export function DataVisualizationSection({
   ];
 
   const stats = {
-    totalProjects: data.projects.length,
-    featuredProjects: data.projects.filter(p => p.featured).length,
-    totalSkills: data.projects.reduce(
-      (sum, project) => sum + project.skills.length,
-      0
-    ),
-    certifications: data.projects.filter(p => p.certifications).length,
+    totalProjects: data.projects?.length || 0,
+    featuredProjects: data.projects?.filter(p => p.featured)?.length || 0,
+    totalSkills:
+      data.projects?.reduce(
+        (sum, project) => sum + (project.skills?.length || 0),
+        0
+      ) || 0,
+    certifications: data.projects?.filter(p => p.certifications)?.length || 0,
     avgPerformance: Math.round(
-      data.projects
-        .filter(p => p.metrics?.performanceScore)
-        .reduce((sum, p) => sum + (p.metrics?.performanceScore || 0), 0) /
-        data.projects.filter(p => p.metrics?.performanceScore).length
+      (data.projects?.filter(p => p.metrics?.performanceScore)?.length || 0) > 0
+        ? (data.projects
+            ?.filter(p => p.metrics?.performanceScore)
+            ?.reduce((sum, p) => sum + (p.metrics?.performanceScore || 0), 0) ||
+            0) /
+            (data.projects?.filter(p => p.metrics?.performanceScore)?.length ||
+              1)
+        : 0
     ),
   };
 
@@ -190,10 +195,8 @@ export function DataVisualizationSection({
                     </div>
                     <div className="text-sm text-gray-500">
                       Based on{' '}
-                      {
-                        data.projects.filter(p => p.metrics?.performanceScore)
-                          .length
-                      }{' '}
+                      {data.projects?.filter(p => p.metrics?.performanceScore)
+                        ?.length || 0}{' '}
                       evaluated projects
                     </div>
                   </div>

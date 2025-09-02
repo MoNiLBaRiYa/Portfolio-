@@ -19,12 +19,12 @@ export function ExperienceSection({
 
   // Combine experiences and certifications into timeline items
   const timelineItems = [
-    ...experiences.map(exp => ({
+    ...(experiences || []).map(exp => ({
       ...exp,
       itemType: 'experience' as const,
       date: exp.endDate || exp.startDate,
     })),
-    ...certifications.map(cert => ({
+    ...(certifications || []).map(cert => ({
       ...cert,
       itemType: 'certification' as const,
       date: cert.date,
@@ -207,7 +207,7 @@ function ExperienceCard({ experience }: ExperienceCardProps) {
       <div className="mb-4">
         <h4 className="font-semibold text-gray-900 mb-2">Key Achievements:</h4>
         <ul className="space-y-2">
-          {experience.achievements.map((achievement, index) => (
+          {(experience.achievements || []).map((achievement, index) => (
             <li key={index} className="flex items-start gap-2">
               <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
               <span className="text-gray-600 text-sm leading-relaxed">
@@ -220,7 +220,7 @@ function ExperienceCard({ experience }: ExperienceCardProps) {
 
       {/* Technologies */}
       <div className="flex flex-wrap gap-2">
-        {experience.technologies.map((tech, index) => (
+        {(experience.technologies || []).map((tech, index) => (
           <span
             key={index}
             className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-md font-medium"
@@ -289,7 +289,7 @@ function CertificationCard({ certification, onClick }: CertificationCardProps) {
       <div className="mb-4">
         <h4 className="font-semibold text-gray-900 mb-2">Skills Gained:</h4>
         <div className="flex flex-wrap gap-2">
-          {certification.skills.map((skill, index) => (
+          {(certification.skills || []).map((skill, index) => (
             <span
               key={index}
               className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-md font-medium"

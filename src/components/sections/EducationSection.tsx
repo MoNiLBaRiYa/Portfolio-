@@ -145,7 +145,7 @@ const EducationCard: React.FC<EducationCardProps> = ({ education, index }) => {
             Relevant Coursework
           </h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {education.relevantCoursework.map((course, courseIndex) => (
+            {(education.relevantCoursework || []).map((course, courseIndex) => (
               <motion.div
                 key={course}
                 className="bg-blue-50 rounded-lg p-3 border border-blue-100"
@@ -177,25 +177,27 @@ const EducationCard: React.FC<EducationCardProps> = ({ education, index }) => {
             Key Achievements
           </h4>
           <div className="space-y-3">
-            {education.achievements.map((achievement, achievementIndex) => (
-              <motion.div
-                key={achievement}
-                className="flex items-start"
-                initial={{ opacity: 0, x: -20 }}
-                animate={
-                  isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
-                }
-                transition={{
-                  duration: 0.5,
-                  delay: 1.2 + achievementIndex * 0.1,
-                }}
-              >
-                <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mr-3 mt-0.5">
-                  <span className="text-white text-xs font-bold">★</span>
-                </div>
-                <p className="text-gray-700 leading-relaxed">{achievement}</p>
-              </motion.div>
-            ))}
+            {(education.achievements || []).map(
+              (achievement, achievementIndex) => (
+                <motion.div
+                  key={achievement}
+                  className="flex items-start"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={
+                    isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
+                  }
+                  transition={{
+                    duration: 0.5,
+                    delay: 1.2 + achievementIndex * 0.1,
+                  }}
+                >
+                  <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                    <span className="text-white text-xs font-bold">★</span>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">{achievement}</p>
+                </motion.div>
+              )
+            )}
           </div>
         </div>
       </div>
@@ -279,7 +281,7 @@ export const EducationSection: React.FC<EducationSectionProps> = ({
         {/* Education Cards */}
         <div className="max-w-4xl mx-auto">
           <div className="space-y-8">
-            {education.map((education, index) => (
+            {(education || []).map((education, index) => (
               <EducationCard
                 key={education.id}
                 education={education}
@@ -339,7 +341,7 @@ export const EducationSection: React.FC<EducationSectionProps> = ({
                   transition={{ duration: 0.8, delay: 0.7 }}
                 >
                   <span className="text-white font-bold text-xl">
-                    {education[0]?.relevantCoursework.length}+
+                    {education[0]?.relevantCoursework?.length || 0}+
                   </span>
                 </motion.div>
                 <h4 className="font-bold text-gray-900 mb-2">Core Subjects</h4>
@@ -361,7 +363,7 @@ export const EducationSection: React.FC<EducationSectionProps> = ({
                   transition={{ duration: 0.8, delay: 0.9 }}
                 >
                   <span className="text-white font-bold text-xl">
-                    {education[0]?.achievements.length}+
+                    {education[0]?.achievements?.length || 0}+
                   </span>
                 </motion.div>
                 <h4 className="font-bold text-gray-900 mb-2">Achievements</h4>

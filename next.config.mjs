@@ -14,7 +14,7 @@ const nextConfig = {
 
   // Bundle analyzer and optimization
   experimental: {
-    optimizeCss: true,
+    // optimizeCss: true, // Disabled due to critters dependency issue
     optimizePackageImports: [
       'framer-motion',
       'lucide-react',

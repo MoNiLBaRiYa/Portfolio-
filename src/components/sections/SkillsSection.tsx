@@ -82,7 +82,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({
             Something went wrong
           </h2>
           <p className="text-gray-700 dark:text-gray-300 mb-6">
-            We're having trouble loading the skills section. Please try
+            We&apos;re having trouble loading the skills section. Please try
             refreshing the page.
           </p>
           <button

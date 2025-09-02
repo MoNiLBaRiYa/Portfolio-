@@ -36,6 +36,10 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
 
   // Filter projects based on selected filter
   const filteredProjects = useMemo(() => {
+    if (!projects || !Array.isArray(projects)) {
+      return [];
+    }
+
     if (selectedFilter === 'All') {
       return projects;
     }
@@ -47,7 +51,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
       }
 
       // Check if filter matches any technology category
-      return project.technologies.some(
+      return project.technologies?.some(
         tech => tech.category === selectedFilter
       );
     });
