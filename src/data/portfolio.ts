@@ -322,7 +322,7 @@ if __name__ == '__main__':
         'Built this cutting-edge portfolio website (the one you are currently viewing) featuring Three.js particle effects, interactive skill trees, and smooth animations. The site showcases technical expertise through live demonstrations and engaging user experiences, serving as both a portfolio and a demonstration of modern web development capabilities.',
       projectStory: {
         problem: 'Traditional portfolio websites are often static and fail to demonstrate technical skills effectively. Recruiters and potential clients need to see not just what you can build, but how you think about user experience and modern web technologies.',
-        solution: 'Created an interactive portfolio that serves as both a showcase and a working demonstration. Used cutting-edge technologies like Three.js for 3D effects, D3.js for data visualization, and Framer Motion for smooth animations to create an engaging user experience that demonstrates technical capabilities.',
+        solution: 'Built this interactive portfolio solo as both a showcase and a working demonstration. Used cutting-edge technologies like Three.js for 3D effects, D3.js for data visualization, and Framer Motion for smooth animations to create an engaging user experience that demonstrates technical capabilities.',
         impact: 'Increased portfolio engagement by 40% compared to static portfolios, with visitors spending 3x longer exploring the site. The interactive elements effectively demonstrate technical skills, leading to 25% more interview requests and positive feedback from recruiters about the innovative approach.'
       },
       technologies: [
@@ -354,7 +354,7 @@ if __name__ == '__main__':
       githubUrl: 'https://github.com/monil-bariya/portfolio',
       featured: true,
       completionDate: '2024-04-20',
-      teamSize: 4,
+      teamSize: 1,
       challenges: [
         {
           title: 'Performance Optimization',
