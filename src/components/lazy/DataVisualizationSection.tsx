@@ -51,16 +51,7 @@ const chartTypes: { id: ChartType; label: string }[] = [
 
 interface DataVisualizationSectionProps {
   data: {
-    projects: Array<{
-      id: string;
-      title: string;
-      technologies: string[];
-      metrics: {
-        commits: number;
-        stars: number;
-        forks: number;
-      };
-    }>;
+    projects: any[];
   };
   className?: string;
 }
