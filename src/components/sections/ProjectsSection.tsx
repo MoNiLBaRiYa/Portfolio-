@@ -4,11 +4,12 @@ import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Project } from '@/types/portfolio';
 import ProjectCard from '@/components/ui/ProjectCard';
-import { LazyProjectModal } from '@/components/lazy';
+// import ProjectModal from '@/components/ui/ProjectModal';
 import ProgressiveLoader from '@/components/ui/ProgressiveLoader';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { staggerContainer, staggerItem } from '@/utils/animations';
 import { useResponsive } from '@/hooks/useResponsive';
+import { X, ExternalLink, Github } from 'lucide-react';
 
 interface ProjectsSectionProps {
   projects: Project[];
@@ -188,13 +189,79 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
 
           {/* Project Modal */}
           {selectedProject && (
-            <ProgressiveLoader>
-              <LazyProjectModal
-                project={selectedProject}
-                isOpen={!!selectedProject}
-                onClose={handleCloseModal}
-              />
-            </ProgressiveLoader>
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60">
+              <div className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+                <div className="relative p-6 bg-gradient-to-br from-blue-600 to-purple-600">
+                  <button
+                    onClick={handleCloseModal}
+                    className="absolute top-4 right-4 p-2 bg-white/20 rounded-full hover:bg-white/30"
+                  >
+                    <X className="w-5 h-5 text-white" />
+                  </button>
+
+                  <h2 className="text-2xl font-bold text-white mb-2">
+                    {selectedProject.title}
+                  </h2>
+                  <p className="text-white/90 text-sm">
+                    {selectedProject.description}
+                  </p>
+                </div>
+
+                <div className="p-6">
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                        Project Overview
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        {selectedProject.longDescription}
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                        Technologies Used
+                      </h3>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedProject.technologies.map(tech => (
+                          <span
+                            key={tech.name}
+                            className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
+                          >
+                            {tech.name}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex gap-4 pt-4">
+                      {selectedProject.demoUrl && (
+                        <button
+                          onClick={() =>
+                            window.open(selectedProject.demoUrl!, '_blank')
+                          }
+                          className="flex items-center gap-2 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          Live Demo
+                        </button>
+                      )}
+                      {selectedProject.githubUrl && (
+                        <button
+                          onClick={() =>
+                            window.open(selectedProject.githubUrl!, '_blank')
+                          }
+                          className="flex items-center gap-2 px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50"
+                        >
+                          <Github className="w-4 h-4" />
+                          View Code
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           )}
         </AnimatedSection>
       </div>

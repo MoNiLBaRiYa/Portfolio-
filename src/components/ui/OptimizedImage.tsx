@@ -100,19 +100,17 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
           {currentSrc &&
           typeof currentSrc === 'string' &&
           currentSrc.endsWith('.svg') ? (
-            <img
+            <Image
               src={currentSrc}
               alt={getImageAlt(src as string, alt)}
               onLoad={handleLoad}
               onError={handleError}
               loading="lazy"
+              width={props.fill ? undefined : (props.width as number)}
+              height={props.fill ? undefined : (props.height as number)}
+              fill={props.fill}
               style={{
-                width: props.fill ? '100%' : props.width,
-                height: props.fill ? '100%' : props.height,
                 objectFit: 'contain',
-                position: props.fill ? 'absolute' : 'relative',
-                top: props.fill ? 0 : 'auto',
-                left: props.fill ? 0 : 'auto',
               }}
               className={`transition-opacity duration-300 ${
                 isLoading ? 'opacity-0' : 'opacity-100'

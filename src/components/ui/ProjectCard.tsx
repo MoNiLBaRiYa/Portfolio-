@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Project } from '@/types/portfolio';
 import { ExternalLink, Github, Calendar, Users } from 'lucide-react';
 import { useResponsive } from '@/hooks/useResponsive';
@@ -83,57 +84,63 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       tabIndex={0}
       aria-label={`View details for ${project.title} project`}
     >
-      {/* Project Icon */}
-      <div className="relative h-48 bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-100 overflow-hidden flex items-center justify-center">
-        <motion.div
-          className="relative z-20"
-          animate={{
-            scale: [1, 1.1, 1],
-            rotate: [0, 3, -3, 0],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: 'easeInOut',
-            delay: Math.random() * 2,
-          }}
-        >
-          <span
-            className="text-8xl"
-            role="img"
-            aria-label={`${project.title} project icon`}
-          >
-            {getProjectEmoji(project.title, project.category)}
-          </span>
-        </motion.div>
+      {/* Project Visual */}
+      <div className="relative h-48 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 overflow-hidden flex items-center justify-center">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/10"></div>
+        </div>
 
-        {/* Featured Badge */}
-        {project.featured && (
-          <div className="absolute top-3 left-3">
-            <span className="bg-yellow-400 text-yellow-900 px-2 py-1 rounded-full text-xs font-semibold">
-              ⭐ Featured
+        {/* Project Images or Icon */}
+        {project.images && project.images.length > 0 ? (
+          <Image
+            src={project.images[0]}
+            alt={`${project.title} preview`}
+            fill
+            className="object-cover opacity-80"
+            loading="lazy"
+          />
+        ) : (
+          <div className="relative z-20">
+            <span
+              className="text-6xl sm:text-7xl md:text-8xl text-white/90"
+              role="img"
+              aria-label={`${project.title} project icon`}
+            >
+              {getProjectEmoji(project.title, project.category)}
             </span>
           </div>
         )}
 
-        {/* Category Badge */}
-        <div className="absolute top-3 right-3">
-          <span className="bg-white/90 backdrop-blur-sm text-gray-700 px-2 py-1 rounded-full text-xs font-medium">
-            {project.category}
-          </span>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+
+        {/* Badges */}
+        <div className="absolute top-3 left-3 right-3 flex justify-between items-start">
+          <div className="flex flex-col gap-2">
+            {project.featured && (
+              <span className="bg-yellow-400 text-yellow-900 px-2 py-1 rounded-full text-xs font-semibold shadow-sm">
+                ⭐ Featured
+              </span>
+            )}
+            <span className="bg-white/20 backdrop-blur-sm text-white px-2 py-1 rounded-full text-xs font-medium border border-white/20">
+              {project.category}
+            </span>
+          </div>
+          {project.metrics?.performanceScore && (
+            <span className="bg-green-500/20 backdrop-blur-sm text-green-100 px-2 py-1 rounded-full text-xs font-medium border border-green-400/20">
+              {project.metrics.performanceScore}%
+            </span>
+          )}
         </div>
 
         {/* Hover Overlay */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileHover={{ opacity: 1, scale: 1 }}
-            className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          >
+          <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="bg-white/90 backdrop-blur-sm rounded-full p-3">
               <ExternalLink className="w-6 h-6 text-gray-700" />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 
@@ -151,12 +158,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
         {/* Technology Tags */}
         <div className="flex flex-wrap gap-2 mb-4">
-          {project.technologies.slice(0, 4).map((tech, index) => (
-            <motion.span
+          {project.technologies.slice(0, 4).map((tech, techIndex) => (
+            <span
               key={tech.name}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.1 }}
               className={`px-3 py-1 text-xs rounded-full font-medium ${
                 tech.category === 'Frontend'
                   ? 'bg-blue-100 text-blue-800'
@@ -170,7 +174,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               }`}
             >
               {tech.name}
-            </motion.span>
+            </span>
           ))}
           {project.technologies.length > 4 && (
             <span className="px-3 py-1 text-xs rounded-full font-medium bg-gray-100 text-gray-600">
@@ -228,36 +232,40 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
         </div>
 
-        {/* Performance Indicator */}
-        {project.metrics?.performanceScore && (
-          <div className="mt-4 pt-4 border-t border-gray-100">
-            <div className="flex items-center justify-between text-xs">
-              <span className="text-gray-500">Performance Score</span>
-              <div className="flex items-center gap-2">
-                <div className="w-16 h-1 bg-gray-200 rounded-full overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{
-                      width: `${project.metrics.performanceScore}%`,
-                    }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                    className={`h-full rounded-full ${
-                      project.metrics.performanceScore >= 90
-                        ? 'bg-green-500'
-                        : project.metrics.performanceScore >= 70
-                          ? 'bg-yellow-500'
-                          : 'bg-red-500'
-                    }`}
-                  />
-                </div>
-                <span className="font-medium text-gray-700">
-                  {project.metrics.performanceScore}%
-                </span>
+        {/* Project Stats */}
+        <div className="mt-4 pt-4 border-t border-gray-100">
+          <div className="grid grid-cols-2 gap-4 text-xs">
+            <div className="text-center">
+              <div className="text-gray-500">Technologies</div>
+              <div className="font-semibold text-gray-700">
+                {project.technologies.length}
               </div>
             </div>
+            {project.metrics?.performanceScore ? (
+              <div className="text-center">
+                <div className="text-gray-500">Performance</div>
+                <div
+                  className={`font-semibold ${
+                    project.metrics.performanceScore >= 80
+                      ? 'text-green-600'
+                      : project.metrics.performanceScore >= 60
+                        ? 'text-yellow-600'
+                        : 'text-red-600'
+                  }`}
+                >
+                  {project.metrics.performanceScore}%
+                </div>
+              </div>
+            ) : (
+              <div className="text-center">
+                <div className="text-gray-500">Team Size</div>
+                <div className="font-semibold text-gray-700">
+                  {project.teamSize === 1 ? 'Solo' : `${project.teamSize}`}
+                </div>
+              </div>
+            )}
           </div>
-        )}
+        </div>
       </div>
     </motion.div>
   );

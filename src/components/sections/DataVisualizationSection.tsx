@@ -2,11 +2,10 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { BarChart3, PieChart, Calendar, TrendingUp } from 'lucide-react';
+import { BarChart3, PieChart, TrendingUp } from 'lucide-react';
 import {
   ProjectMetricsChart,
   SkillProficiencyChart,
-  ActivityCalendar,
 } from '@/components/ui/charts';
 
 interface DataVisualizationSectionProps {
@@ -17,7 +16,7 @@ interface DataVisualizationSectionProps {
   };
 }
 
-type ChartType = 'metrics' | 'skills' | 'activity' | 'overview';
+type ChartType = 'metrics' | 'skills' | 'overview';
 
 export function DataVisualizationSection({
   data,
@@ -42,12 +41,6 @@ export function DataVisualizationSection({
       label: 'Skill Proficiency',
       icon: PieChart,
       description: 'Technical skill levels',
-    },
-    {
-      id: 'activity' as ChartType,
-      label: 'Activity Timeline',
-      icon: Calendar,
-      description: 'Development activity calendar',
     },
   ];
 
@@ -267,21 +260,6 @@ export function DataVisualizationSection({
                   className="w-full"
                 />
               </div>
-            </motion.div>
-          )}
-
-          {activeChart === 'activity' && (
-            <motion.div
-              key="activity"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <ActivityCalendar
-                projects={data.projects}
-                experience={[]}
-                certifications={[]}
-              />
             </motion.div>
           )}
         </div>

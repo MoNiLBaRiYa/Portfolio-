@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { SkillCategory } from '@/types/portfolio';
 import { LazySkillTree } from '@/components/lazy';
 import ProgressiveLoader from '@/components/ui/ProgressiveLoader';
@@ -329,7 +330,7 @@ const SkillGrid: React.FC<SkillGridProps> = ({ skills }) => {
                       }`}
                     >
                       {skill.icon ? (
-                        <img
+                        <Image
                           src={skill.icon}
                           alt={`${skill.name} icon`}
                           width={isMobile ? 32 : 40}

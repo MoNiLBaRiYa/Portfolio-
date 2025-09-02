@@ -5,9 +5,10 @@ export const LazySkillTree = createLazyComponent(
   () => import('@/components/ui/SkillTree')
 );
 
-export const LazyProjectModal = createLazyComponent(
-  () => import('@/components/ui/ProjectModal')
-);
+// Temporarily disabled due to module resolution issue
+// export const LazyProjectModal = createLazyComponent(
+//   () => import('@/components/ui/ProjectModal')
+// );
 
 export const LazyFakeNewsDemo = createLazyComponent(() =>
   import('@/components/ui/FakeNewsDemo').then(module => ({
@@ -45,12 +46,6 @@ export const LazyProjectMetricsChart = createLazyComponent(() =>
 export const LazySkillProficiencyChart = createLazyComponent(() =>
   import('@/components/ui/charts/SkillProficiencyChart').then(module => ({
     default: module.SkillProficiencyChart,
-  }))
-);
-
-export const LazyActivityCalendar = createLazyComponent(() =>
-  import('@/components/ui/charts/ActivityCalendar').then(module => ({
-    default: module.ActivityCalendar,
   }))
 );
 

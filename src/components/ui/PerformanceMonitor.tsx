@@ -168,7 +168,15 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
       const timer = setTimeout(reportMetrics, 3000);
       return () => clearTimeout(timer);
     }
-  }, [onMetricsUpdate, enableReporting]);
+  }, [
+    onMetricsUpdate,
+    enableReporting,
+    metrics.cls,
+    metrics.fcp,
+    metrics.fid,
+    metrics.lcp,
+    metrics.ttfb,
+  ]);
 
   // This component doesn't render anything visible
   return null;

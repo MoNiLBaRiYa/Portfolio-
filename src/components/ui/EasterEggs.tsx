@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useCallback, useState } from 'react';
+import { useEffect, useCallback, useState, useMemo } from 'react';
 import { useEngagement } from '@/context/EngagementContext';
 import { toast } from 'react-hot-toast';
 
@@ -31,19 +31,22 @@ export function EasterEggs() {
     });
   }, []);
 
-  // Define Easter eggs
-  const easterEggs: EasterEgg[] = [
-    {
-      key: 'dev',
-      keys: ['d', 'e', 'v'],
-      action: showDeveloperMode,
-    },
-    {
-      key: 'secret',
-      keys: ['s', 'e', 'c', 'r', 'e', 't'],
-      action: showSecretMessage,
-    },
-  ];
+  // Define Easter eggs with useMemo to prevent recreation on every render
+  const easterEggs: EasterEgg[] = useMemo(
+    () => [
+      {
+        key: 'dev',
+        keys: ['d', 'e', 'v'],
+        action: showDeveloperMode,
+      },
+      {
+        key: 'secret',
+        keys: ['s', 'e', 'c', 'r', 'e', 't'],
+        action: showSecretMessage,
+      },
+    ],
+    [showDeveloperMode, showSecretMessage]
+  );
 
   // Handle key press
   useEffect(() => {

@@ -21,6 +21,9 @@ export function useScrollDepth(sectionIds: string[] = []) {
     totalSections: sectionIds.length,
   });
 
+  // Memoize section IDs string to prevent unnecessary re-renders
+  const sectionIdsString = sectionIds.join(',');
+
   // Initialize sections
   useEffect(() => {
     const initialSections = sectionIds.reduce(
@@ -40,7 +43,7 @@ export function useScrollDepth(sectionIds: string[] = []) {
       sections: initialSections,
       totalSections: sectionIds.length,
     }));
-  }, [sectionIds.join()]);
+  }, [sectionIds, sectionIdsString]);
 
   // Track scroll depth percentage
   useEffect(() => {
@@ -112,7 +115,7 @@ export function useScrollDepth(sectionIds: string[] = []) {
     sectionElements.forEach(el => el && observer.observe(el));
 
     return () => observer.disconnect();
-  }, [sectionIds.join()]);
+  }, [sectionIds, sectionIdsString]);
 
   // Calculate engagement score (0-100)
   const engagementScore = useCallback(() => {
