@@ -20,7 +20,6 @@ import {
 import { Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from 'next-themes';
-import * as domtoimage from 'dom-to-image';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8'];
 
@@ -59,6 +58,8 @@ export default function DataVisualizationSection() {
     if (!chartRef.current) return;
 
     try {
+      // Dynamic import to avoid SSR issues
+      const domtoimage = await import('dom-to-image');
       const dataUrl = await domtoimage.toPng(chartRef.current);
       const link = document.createElement('a');
       link.download = `chart-${activeChart}-${new Date().toISOString().slice(0, 10)}.png`;
