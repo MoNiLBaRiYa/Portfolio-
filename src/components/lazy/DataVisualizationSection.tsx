@@ -200,7 +200,7 @@ export default function DataVisualizationSection({
         <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
           <div className="h-[400px] w-full" ref={chartRef}>
             <ResponsiveContainer width="100%" height="100%">
-              {renderChart()}
+              {renderChart() || <div>No chart available</div>}
             </ResponsiveContainer>
           </div>
         </div>
