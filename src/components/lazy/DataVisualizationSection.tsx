@@ -55,10 +55,10 @@ interface DataVisualizationSectionProps {
       id: string;
       title: string;
       technologies: string[];
-      metrics?: {
-        commits?: number;
-        stars?: number;
-        forks?: number;
+      metrics: {
+        commits: number;
+        stars: number;
+        forks: number;
       };
     }>;
   };
