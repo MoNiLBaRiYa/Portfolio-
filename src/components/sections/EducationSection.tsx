@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
-import { portfolioData } from '@/data/portfolio';
 import type { Education } from '@/types/portfolio';
 
 interface EducationCardProps {
@@ -16,6 +15,11 @@ interface AnimatedProgressBarProps {
   label: string;
   color: string;
   delay?: number;
+}
+
+interface EducationSectionProps {
+  education: Education[];
+  className?: string;
 }
 
 const AnimatedProgressBar: React.FC<AnimatedProgressBarProps> = ({
@@ -199,7 +203,10 @@ const EducationCard: React.FC<EducationCardProps> = ({ education, index }) => {
   );
 };
 
-export const EducationSection: React.FC = () => {
+export const EducationSection: React.FC<EducationSectionProps> = ({
+  education,
+  className,
+}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const controls = useAnimation();
@@ -235,7 +242,7 @@ export const EducationSection: React.FC = () => {
   return (
     <section
       id="education"
-      className="py-20 bg-gradient-to-br from-gray-50 via-white to-purple-50 relative overflow-hidden"
+      className={`py-20 bg-gradient-to-br from-gray-50 via-white to-purple-50 relative overflow-hidden ${className}`}
       ref={ref}
     >
       {/* Background Pattern */}
@@ -272,7 +279,7 @@ export const EducationSection: React.FC = () => {
         {/* Education Cards */}
         <div className="max-w-4xl mx-auto">
           <div className="space-y-8">
-            {portfolioData.education.map((education, index) => (
+            {education.map((education, index) => (
               <EducationCard
                 key={education.id}
                 education={education}
@@ -310,7 +317,7 @@ export const EducationSection: React.FC = () => {
                   transition={{ duration: 0.8, delay: 0.5 }}
                 >
                   <span className="text-white font-bold text-xl">
-                    {portfolioData.education[0]?.cgpa || 0}
+                    {education[0]?.cgpa || 0}
                   </span>
                 </motion.div>
                 <h4 className="font-bold text-gray-900 mb-2">CGPA</h4>
@@ -332,7 +339,7 @@ export const EducationSection: React.FC = () => {
                   transition={{ duration: 0.8, delay: 0.7 }}
                 >
                   <span className="text-white font-bold text-xl">
-                    {portfolioData.education[0]?.relevantCoursework.length}+
+                    {education[0]?.relevantCoursework.length}+
                   </span>
                 </motion.div>
                 <h4 className="font-bold text-gray-900 mb-2">Core Subjects</h4>
@@ -354,7 +361,7 @@ export const EducationSection: React.FC = () => {
                   transition={{ duration: 0.8, delay: 0.9 }}
                 >
                   <span className="text-white font-bold text-xl">
-                    {portfolioData.education[0]?.achievements.length}+
+                    {education[0]?.achievements.length}+
                   </span>
                 </motion.div>
                 <h4 className="font-bold text-gray-900 mb-2">Achievements</h4>
