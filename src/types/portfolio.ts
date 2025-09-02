@@ -50,6 +50,7 @@ export interface Project {
   metrics?: ProjectMetrics;
   codeSnippets?: CodeSnippet[];
   liveDemo?: LiveDemo;
+  projectStory?: ProjectStory;
 }
 
 export interface Technology {
@@ -67,6 +68,12 @@ export interface Challenge {
 export interface Feature {
   title: string;
   description: string;
+}
+
+export interface ProjectStory {
+  problem: string;
+  solution: string;
+  impact: string;
 }
 
 export interface ProjectMetrics {

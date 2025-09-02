@@ -79,6 +79,38 @@ export default function ProjectModal({
                 </p>
               </div>
 
+              {/* Project Story - Problem, Solution, Impact */}
+              {project.projectStory && (
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-4 sm:p-5 border border-blue-200">
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">
+                    Project Story
+                  </h3>
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="bg-white rounded-lg p-3 sm:p-4 border-l-4 border-red-500">
+                      <h4 className="font-medium text-red-700 mb-2 flex items-center gap-2">
+                        <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                        Problem
+                      </h4>
+                      <p className="text-sm text-gray-700">{project.projectStory.problem}</p>
+                    </div>
+                    <div className="bg-white rounded-lg p-3 sm:p-4 border-l-4 border-blue-500">
+                      <h4 className="font-medium text-blue-700 mb-2 flex items-center gap-2">
+                        <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                        Solution
+                      </h4>
+                      <p className="text-sm text-gray-700">{project.projectStory.solution}</p>
+                    </div>
+                    <div className="bg-white rounded-lg p-3 sm:p-4 border-l-4 border-green-500">
+                      <h4 className="font-medium text-green-700 mb-2 flex items-center gap-2">
+                        <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                        Impact
+                      </h4>
+                      <p className="text-sm text-gray-700">{project.projectStory.impact}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <div>
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
                   Technologies Used

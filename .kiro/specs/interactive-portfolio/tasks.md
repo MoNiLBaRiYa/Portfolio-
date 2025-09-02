@@ -1,4 +1,4 @@
-# Implementation Plan
+so I can depl# Implementation Plan
 
 - [x] 1. Initialize Next.js project with TypeScript and core dependencies
   - Create Next.js 14 project with TypeScript configuration
