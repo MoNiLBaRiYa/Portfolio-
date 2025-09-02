@@ -327,7 +327,7 @@ export const validatePortfolioData = (
     errors.push('Invalid email format');
   }
 
-  if (!validatePhone(data.personal.phone)) {
+  if (data.personal.phone && !validatePhone(data.personal.phone)) {
     errors.push('Invalid phone number format');
   }
 
