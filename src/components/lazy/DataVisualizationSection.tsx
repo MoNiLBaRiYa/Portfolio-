@@ -88,7 +88,7 @@ export default function DataVisualizationSection({
     }
   };
 
-  const renderChart = () => {
+  const renderChart = (): React.ReactElement | null => {
     switch (activeChart) {
       case 'bar':
         return (
