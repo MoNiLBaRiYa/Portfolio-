@@ -66,6 +66,20 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
     setSelectedProject(null);
   };
 
+  // Determine responsive grid columns based on project count for better space usage
+  const gridClassNames = useMemo(() => {
+    const count = filteredProjects.length;
+    if (isMobile) return 'grid-cols-1 gap-6';
+    if (isTablet) return 'grid-cols-2 gap-6';
+
+    // Desktop: optimize column count by item count
+    if (count <= 1) return 'grid-cols-1 gap-8 max-w-xl mx-auto';
+    if (count === 2) return 'grid-cols-2 gap-8 max-w-5xl mx-auto';
+    if (count === 3) return 'grid-cols-3 gap-8 max-w-6xl mx-auto';
+    // 4 or more, keep 3 columns for readability
+    return 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto';
+  }, [filteredProjects.length, isMobile, isTablet]);
+
   return (
     <section
       id="projects"
@@ -140,13 +154,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
           <motion.div
             variants={staggerItem}
             layout
-            className={`grid ${
-              isMobile
-                ? 'grid-cols-1 gap-6'
-                : isTablet
-                  ? 'grid-cols-2 gap-6'
-                  : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
-            }`}
+            className={`grid ${gridClassNames}`}
           >
             <AnimatePresence mode="popLayout">
               {filteredProjects.map((project, index) => (
