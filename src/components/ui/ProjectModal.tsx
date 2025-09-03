@@ -15,6 +15,14 @@ export default function ProjectModal({
   isOpen,
   onClose,
 }: ProjectModalProps) {
+  // Debug logging
+  useEffect(() => {
+    if (isOpen && project) {
+      console.log('Modal opened for project:', project.title);
+      console.log('Modal height:', window.innerHeight * 0.9);
+      console.log('Content height:', window.innerHeight * 0.9 - 200);
+    }
+  }, [isOpen, project]);
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -50,7 +58,7 @@ export default function ProjectModal({
       className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/60"
       onClick={handleBackdropClick}
     >
-      <div className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-hidden flex flex-col">
+      <div className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full h-[90vh] overflow-hidden flex flex-col">
         {/* Header - Fixed */}
         <div className="relative p-4 sm:p-6 bg-gradient-to-br from-blue-600 to-purple-600 flex-shrink-0">
           <button
@@ -67,7 +75,10 @@ export default function ProjectModal({
         </div>
 
         {/* Content - Scrollable */}
-        <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+        <div
+          className="flex-1 min-h-0 overflow-y-auto modal-scrollbar"
+          style={{ WebkitOverflowScrolling: 'touch' as any }}
+        >
           <div className="p-4 sm:p-6">
             <div className="space-y-4 sm:space-y-6">
               <div>
@@ -91,21 +102,27 @@ export default function ProjectModal({
                         <span className="w-2 h-2 bg-red-500 rounded-full"></span>
                         Problem
                       </h4>
-                      <p className="text-sm text-gray-700">{project.projectStory.problem}</p>
+                      <p className="text-sm text-gray-700">
+                        {project.projectStory.problem}
+                      </p>
                     </div>
                     <div className="bg-white rounded-lg p-3 sm:p-4 border-l-4 border-blue-500">
                       <h4 className="font-medium text-blue-700 mb-2 flex items-center gap-2">
                         <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
                         Solution
                       </h4>
-                      <p className="text-sm text-gray-700">{project.projectStory.solution}</p>
+                      <p className="text-sm text-gray-700">
+                        {project.projectStory.solution}
+                      </p>
                     </div>
                     <div className="bg-white rounded-lg p-3 sm:p-4 border-l-4 border-green-500">
                       <h4 className="font-medium text-green-700 mb-2 flex items-center gap-2">
                         <span className="w-2 h-2 bg-green-500 rounded-full"></span>
                         Impact
                       </h4>
-                      <p className="text-sm text-gray-700">{project.projectStory.impact}</p>
+                      <p className="text-sm text-gray-700">
+                        {project.projectStory.impact}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -135,15 +152,24 @@ export default function ProjectModal({
                   </h3>
                   <div className="space-y-3">
                     {project.challenges.map((challenge, index) => (
-                      <div key={index} className="bg-gray-50 rounded-lg p-3 sm:p-4 border-l-4 border-orange-500">
+                      <div
+                        key={index}
+                        className="bg-gray-50 rounded-lg p-3 sm:p-4 border-l-4 border-orange-500"
+                      >
                         <h4 className="font-medium text-orange-700 mb-2 flex items-center gap-2">
                           <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
                           {challenge.title}
                         </h4>
-                        <p className="text-sm text-gray-600 mb-2">{challenge.description}</p>
+                        <p className="text-sm text-gray-600 mb-2">
+                          {challenge.description}
+                        </p>
                         <div className="bg-white rounded p-2 border-l-2 border-green-500">
-                          <p className="text-xs text-green-700 font-medium">Solution:</p>
-                          <p className="text-xs text-gray-700">{challenge.solution}</p>
+                          <p className="text-xs text-green-700 font-medium">
+                            Solution:
+                          </p>
+                          <p className="text-xs text-gray-700">
+                            {challenge.solution}
+                          </p>
                         </div>
                       </div>
                     ))}
@@ -159,9 +185,16 @@ export default function ProjectModal({
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {project.features.map((feature, index) => (
-                      <div key={index} className="bg-green-50 rounded-lg p-3 sm:p-4 border border-green-200">
-                        <h4 className="font-medium text-green-800 mb-2">{feature.title}</h4>
-                        <p className="text-sm text-green-700">{feature.description}</p>
+                      <div
+                        key={index}
+                        className="bg-green-50 rounded-lg p-3 sm:p-4 border border-green-200"
+                      >
+                        <h4 className="font-medium text-green-800 mb-2">
+                          {feature.title}
+                        </h4>
+                        <p className="text-sm text-green-700">
+                          {feature.description}
+                        </p>
                       </div>
                     ))}
                   </div>
@@ -180,7 +213,9 @@ export default function ProjectModal({
                         <div className="text-2xl font-bold text-purple-600">
                           {project.metrics.performanceScore}%
                         </div>
-                        <div className="text-sm text-purple-700">Performance Score</div>
+                        <div className="text-sm text-purple-700">
+                          Performance Score
+                        </div>
                       </div>
                       <div className="text-center">
                         <div className="text-lg font-semibold text-pink-600">
@@ -192,7 +227,8 @@ export default function ProjectModal({
                     {project.metrics.impact && (
                       <div className="mt-3 text-center">
                         <p className="text-sm text-gray-700">
-                          <span className="font-medium">Impact:</span> {project.metrics.impact}
+                          <span className="font-medium">Impact:</span>{' '}
+                          {project.metrics.impact}
                         </p>
                       </div>
                     )}
@@ -204,8 +240,18 @@ export default function ProjectModal({
               <div className="text-center py-4 text-gray-400 text-xs">
                 <div className="flex items-center justify-center gap-2">
                   <span>Scroll for more details</span>
-                  <svg className="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  <svg
+                    className="w-4 h-4 animate-bounce"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                    />
                   </svg>
                 </div>
               </div>
@@ -248,8 +294,18 @@ export default function ProjectModal({
           className="absolute bottom-20 right-6 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-colors z-10"
           aria-label="Scroll to top"
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinecap="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5 10l7-7m0 0l7 7m-7-7v18"
+            />
           </svg>
         </button>
       </div>

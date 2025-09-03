@@ -109,47 +109,6 @@ export function ProjectMetricsChart({
         left: 15,
       },
     },
-    plugins: {
-      legend: {
-        position: 'top' as const,
-        labels: {
-          font: {
-            family: 'Inter, sans-serif',
-            size: 12,
-          },
-          color: '#374151',
-        },
-      },
-      title: {
-        display: true,
-        text: 'Project Performance Metrics',
-        font: {
-          family: 'Inter, sans-serif',
-          size: 14,
-          weight: 'bold' as const,
-        },
-        color: '#111827',
-      },
-      tooltip: {
-        backgroundColor: 'rgba(17, 24, 39, 0.95)',
-        titleColor: '#F9FAFB',
-        bodyColor: '#F9FAFB',
-        borderColor: '#374151',
-        borderWidth: 1,
-        cornerRadius: 8,
-        displayColors: true,
-        callbacks: {
-          afterLabel: function (context: any) {
-            const project = projectsWithMetrics[context.dataIndex];
-            return [
-              `Team Size: ${project.teamSize}`,
-              `Category: ${project.category}`,
-              `Completion: ${new Date(project.completionDate).getFullYear()}`,
-            ];
-          },
-        },
-      },
-    },
     scales:
       type === 'bar'
         ? {
