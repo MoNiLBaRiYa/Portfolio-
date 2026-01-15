@@ -43,6 +43,7 @@ export interface Project {
   demoUrl?: string;
   githubUrl?: string;
   featured: boolean;
+  ongoing?: boolean;
   completionDate: string;
   teamSize: number;
   challenges: Challenge[];

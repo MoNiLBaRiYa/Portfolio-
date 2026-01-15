@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { Project } from '@/types/portfolio';
-import { X, ExternalLink, Github } from 'lucide-react';
+import { X, Github } from 'lucide-react';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -205,23 +205,25 @@ export default function ProjectModal({
               {project.metrics && (
                 <div>
                   <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
-                    Performance Metrics
+                    Project Metrics
                   </h3>
                   <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-4 sm:p-5 border border-purple-200">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-purple-600">
-                          {project.metrics.performanceScore}%
+                        <div className="text-lg font-semibold text-purple-600">
+                          {project.teamSize === 1
+                            ? 'Solo'
+                            : `${project.teamSize} members`}
                         </div>
-                        <div className="text-sm text-purple-700">
-                          Performance Score
-                        </div>
+                        <div className="text-sm text-purple-700">Team Size</div>
                       </div>
                       <div className="text-center">
                         <div className="text-lg font-semibold text-pink-600">
-                          {project.teamSize}
+                          {project.technologies.length}
                         </div>
-                        <div className="text-sm text-pink-700">Team Size</div>
+                        <div className="text-sm text-pink-700">
+                          Technologies
+                        </div>
                       </div>
                     </div>
                     {project.metrics.impact && (
@@ -262,19 +264,10 @@ export default function ProjectModal({
         {/* Footer - Fixed */}
         <div className="p-4 sm:p-6 bg-gray-50 border-t flex-shrink-0">
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            {project.demoUrl && (
-              <button
-                onClick={() => handleLinkClick(project.demoUrl!)}
-                className="flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm sm:text-base font-medium"
-              >
-                <ExternalLink className="w-4 h-4" />
-                Live Demo
-              </button>
-            )}
             {project.githubUrl && (
               <button
                 onClick={() => handleLinkClick(project.githubUrl!)}
-                className="flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors text-sm sm:text-base font-medium"
+                className="flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm sm:text-base font-medium"
               >
                 <Github className="w-4 h-4" />
                 View Code

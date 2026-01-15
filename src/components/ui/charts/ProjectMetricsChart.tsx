@@ -19,36 +19,43 @@ export function ProjectMetricsChart({
 }: ProjectMetricsChartProps) {
   const chartRef = useRef<any>(null);
 
-  // Filter projects with metrics
-  const projectsWithMetrics = projects.filter(
-    project => project.metrics?.performanceScore
-  );
+  // Use all projects and calculate metrics
+  const projectsWithMetrics = projects.map(project => ({
+    ...project,
+    techCount: project.technologies?.length || 0,
+    teamSize: project.teamSize || 1,
+    featuresCount: project.features?.length || 0,
+  }));
 
   const chartData = {
-    labels: projectsWithMetrics.map(project => project.title),
+    labels: projectsWithMetrics.map(project => {
+      const title = project.title.split('–')[0].trim();
+      return title.length > 20 ? title.substring(0, 17) + '...' : title;
+    }),
     datasets: [
       {
-        label: 'Performance Score',
-        data: projectsWithMetrics.map(
-          project => project.metrics?.performanceScore || 0
-        ),
-        backgroundColor: [
-          'rgba(59, 130, 246, 0.8)',
-          'rgba(16, 185, 129, 0.8)',
-          'rgba(245, 101, 101, 0.8)',
-          'rgba(139, 92, 246, 0.8)',
-          'rgba(251, 191, 36, 0.8)',
-        ],
-        borderColor: [
-          'rgba(59, 130, 246, 1)',
-          'rgba(16, 185, 129, 1)',
-          'rgba(245, 101, 101, 1)',
-          'rgba(139, 92, 246, 1)',
-          'rgba(251, 191, 36, 1)',
-        ],
+        label: 'Technologies',
+        data: projectsWithMetrics.map(project => project.techCount),
+        backgroundColor: 'rgba(59, 130, 246, 0.7)',
+        borderColor: 'rgba(59, 130, 246, 1)',
         borderWidth: 2,
         borderRadius: type === 'bar' ? 8 : 0,
-        borderSkipped: false,
+      },
+      {
+        label: 'Team Size',
+        data: projectsWithMetrics.map(project => project.teamSize),
+        backgroundColor: 'rgba(16, 185, 129, 0.7)',
+        borderColor: 'rgba(16, 185, 129, 1)',
+        borderWidth: 2,
+        borderRadius: type === 'bar' ? 8 : 0,
+      },
+      {
+        label: 'Features',
+        data: projectsWithMetrics.map(project => project.featuresCount),
+        backgroundColor: 'rgba(139, 92, 246, 0.7)',
+        borderColor: 'rgba(139, 92, 246, 1)',
+        borderWidth: 2,
+        borderRadius: type === 'bar' ? 8 : 0,
       },
     ],
   };
@@ -69,17 +76,22 @@ export function ProjectMetricsChart({
             size: 12,
           },
           color: '#374151',
+          padding: 15,
         },
       },
       title: {
         display: true,
-        text: 'Project Performance Metrics',
+        text: 'Project Composition Analysis',
         font: {
           family: 'Inter, sans-serif',
-          size: 14,
+          size: 16,
           weight: 'bold' as const,
         },
         color: '#111827',
+        padding: {
+          top: 10,
+          bottom: 20,
+        },
       },
       tooltip: {
         backgroundColor: 'rgba(17, 24, 39, 0.95)',
@@ -89,13 +101,14 @@ export function ProjectMetricsChart({
         borderWidth: 1,
         cornerRadius: 8,
         displayColors: true,
+        padding: 12,
         callbacks: {
           afterLabel: function (context: any) {
             const project = projectsWithMetrics[context.dataIndex];
             return [
-              `Team Size: ${project.teamSize}`,
               `Category: ${project.category}`,
-              `Completion: ${new Date(project.completionDate).getFullYear()}`,
+              `Status: ${project.ongoing ? 'Ongoing' : 'Completed'}`,
+              `Year: ${new Date(project.completionDate).getFullYear()}`,
             ];
           },
         },
@@ -114,7 +127,6 @@ export function ProjectMetricsChart({
         ? {
             y: {
               beginAtZero: true,
-              max: 100,
               grid: {
                 color: 'rgba(156, 163, 175, 0.2)',
               },
@@ -124,9 +136,7 @@ export function ProjectMetricsChart({
                   size: 11,
                 },
                 color: '#6B7280',
-                callback: function (value: any) {
-                  return value + '%';
-                },
+                stepSize: 1,
               },
             },
             x: {
@@ -139,30 +149,14 @@ export function ProjectMetricsChart({
                   size: 10,
                 },
                 color: '#6B7280',
-                maxRotation: 90,
-                minRotation: 90,
-                autoSkip: true,
-                maxTicksLimit: 3,
-                padding: 10,
-                callback: function (value: any, index: any) {
-                  const project = projectsWithMetrics[index];
-                  if (project) {
-                    // Shorten long project names for mobile
-                    const title = project.title;
-                    if (title.length > 25) {
-                      return title.substring(0, 22) + '...';
-                    }
-                    return title;
-                  }
-                  return value;
-                },
+                maxRotation: 45,
+                minRotation: 45,
               },
             },
           }
         : {
             r: {
               beginAtZero: true,
-              max: 100,
               grid: {
                 color: 'rgba(156, 163, 175, 0.2)',
               },
@@ -174,7 +168,11 @@ export function ProjectMetricsChart({
                 color: '#374151',
               },
               ticks: {
-                display: false,
+                display: true,
+                stepSize: 1,
+                font: {
+                  size: 10,
+                },
               },
             },
           },
@@ -196,7 +194,7 @@ export function ProjectMetricsChart({
       <div
         className={`flex items-center justify-center h-64 bg-gray-50 rounded-lg ${className}`}
       >
-        <p className="text-gray-500">No project metrics available</p>
+        <p className="text-gray-500">No projects available</p>
       </div>
     );
   }
@@ -218,7 +216,7 @@ export function ProjectMetricsChart({
         </div>
       </div>
 
-      {/* Project Impact Summary */}
+      {/* Project Summary */}
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
         {projectsWithMetrics.slice(0, 3).map((project, index) => (
           <motion.div
@@ -226,23 +224,39 @@ export function ProjectMetricsChart({
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="bg-gray-50 rounded-lg p-3 md:p-4"
+            className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-3 md:p-4 border border-blue-200"
           >
             <h4 className="font-semibold text-xs md:text-sm text-gray-800 mb-2 truncate">
-              {project.title}
+              {project.title.split('–')[0].trim()}
             </h4>
             <div className="space-y-1 text-xs text-gray-600">
-              <p>
-                <span className="font-medium">Performance:</span>{' '}
-                {project.metrics?.performanceScore}%
+              <p className="flex justify-between">
+                <span className="font-medium">Technologies:</span>
+                <span className="text-blue-600 font-semibold">
+                  {project.techCount}
+                </span>
               </p>
-              <p>
-                <span className="font-medium">Impact:</span>{' '}
-                {project.metrics?.impact}
+              <p className="flex justify-between">
+                <span className="font-medium">Team Size:</span>
+                <span className="text-green-600 font-semibold">
+                  {project.teamSize === 1
+                    ? 'Solo'
+                    : `${project.teamSize} members`}
+                </span>
               </p>
-              <p>
-                <span className="font-medium">Quality:</span>{' '}
-                {project.metrics?.codeQuality}
+              <p className="flex justify-between">
+                <span className="font-medium">Features:</span>
+                <span className="text-purple-600 font-semibold">
+                  {project.featuresCount}
+                </span>
+              </p>
+              <p className="flex justify-between">
+                <span className="font-medium">Status:</span>
+                <span
+                  className={`font-semibold ${project.ongoing ? 'text-orange-600' : 'text-emerald-600'}`}
+                >
+                  {project.ongoing ? 'Ongoing' : 'Completed'}
+                </span>
               </p>
             </div>
           </motion.div>

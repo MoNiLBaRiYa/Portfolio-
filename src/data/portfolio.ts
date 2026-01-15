@@ -22,6 +22,14 @@ export const portfolioData: PortfolioData = {
           icon: '/icons/python.svg',
         },
         {
+          name: 'JavaScript',
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+        },
+        {
+          name: 'TypeScript',
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+        },
+        {
           name: 'Java',
           icon: '/icons/java.svg',
         },
@@ -37,10 +45,32 @@ export const portfolioData: PortfolioData = {
           name: 'CSS',
           icon: '/icons/css.svg',
         },
+      ],
+    },
+    {
+      category: 'Web Development',
+      skills: [
+        {
+          name: 'Next.js',
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+        },
+        {
+          name: 'Tailwind CSS',
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
+        },
         {
           name: 'Flask',
           icon: '/icons/flask.svg',
         },
+        {
+          name: 'Three.js',
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/threejs/threejs-original.svg',
+        },
+      ],
+    },
+    {
+      category: 'Backend & Databases',
+      skills: [
         {
           name: 'MongoDB',
           icon: '/icons/mongodb.svg',
@@ -48,27 +78,44 @@ export const portfolioData: PortfolioData = {
       ],
     },
     {
-      category: 'Developer Tools',
+      category: 'AI Tools',
       skills: [
         {
-          name: 'Power BI',
-          icon: '/icons/powerbi.svg',
+          name: 'Generative AI',
+          icon: 'https://cdn-icons-png.flaticon.com/512/8637/8637099.png',
         },
         {
-          name: 'IntelliJ IDEA',
-          icon: '/icons/intellij.svg',
+          name: 'Prompt Engineering',
+          icon: 'https://cdn-icons-png.flaticon.com/512/9334/9334577.png',
         },
+        {
+          name: 'AI Agents',
+          icon: 'https://cdn-icons-png.flaticon.com/512/4712/4712027.png',
+        },
+        {
+          name: 'Automation',
+          icon: 'https://cdn-icons-png.flaticon.com/512/2920/2920277.png',
+        },
+      ],
+    },
+    {
+      category: 'Developer Tools',
+      skills: [
         {
           name: 'VS Code',
           icon: '/icons/vscode.svg',
         },
         {
-          name: 'Cursor',
+          name: 'Cursor IDE',
           icon: '/icons/cursor.svg',
         },
         {
-          name: 'Kiro IDE',
+          name: 'Kiro',
           icon: '/icons/kiro.svg',
+        },
+        {
+          name: 'Power BI',
+          icon: '/icons/powerbi.svg',
         },
         {
           name: 'Git',
@@ -77,19 +124,23 @@ export const portfolioData: PortfolioData = {
       ],
     },
     {
-      category: 'Core Concepts',
+      category: 'Core Skills',
       skills: [
         {
-          name: 'Data Structure',
-          icon: '/icons/datastructure.svg',
+          name: 'Documentation',
+          icon: 'https://cdn-icons-png.flaticon.com/512/1087/1087815.png',
         },
         {
-          name: 'Frontend Design',
-          icon: '/icons/frontend.svg',
+          name: 'UI/UX Basics',
+          icon: 'https://cdn-icons-png.flaticon.com/512/4341/4341139.png',
         },
         {
-          name: 'Code Optimization',
-          icon: '/icons/optimization.svg',
+          name: 'API Understanding',
+          icon: 'https://cdn-icons-png.flaticon.com/512/2721/2721297.png',
+        },
+        {
+          name: 'Data Visualization',
+          icon: 'https://cdn-icons-png.flaticon.com/512/9672/9672887.png',
         },
       ],
     },
@@ -97,233 +148,338 @@ export const portfolioData: PortfolioData = {
       category: 'Soft Skills',
       skills: [
         {
+          name: 'Analytical Thinking',
+          icon: 'https://cdn-icons-png.flaticon.com/512/3588/3588592.png',
+        },
+        {
+          name: 'Problem Solving',
+          icon: 'https://cdn-icons-png.flaticon.com/512/4133/4133589.png',
+        },
+        {
           name: 'Collaboration',
           icon: '/icons/collaboration.svg',
         },
         {
-          name: 'Critical and Creative Thinking',
-          icon: '/icons/thinking.svg',
-        },
-        {
-          name: 'Communication',
-          icon: '/icons/communication.svg',
+          name: 'Quick Learning',
+          icon: 'https://cdn-icons-png.flaticon.com/512/2490/2490402.png',
         },
       ],
     },
   ],
   projects: [
     {
+      id: 'needmeet',
+      title: 'NeedMeet – Service Booking & Management Platform',
+      description:
+        'AI-Assisted Full Stack service booking platform with scheduling, user access management, and AI-based advisory system for repair/replace decisions. (Ongoing)',
+      longDescription:
+        'Designed end-to-end workflow for service booking, scheduling, and user access. Built responsive UI components and modular navigation using AI-assisted development tools. Created forms, dashboard layouts, and user data flow architecture similar to public service portals.',
+      projectStory: {
+        problem:
+          'Service booking platforms often lack intelligent decision-making tools and have complex user interfaces that make scheduling and management difficult for both service providers and customers.',
+        solution:
+          'Built a comprehensive service booking platform with AI-assisted development, featuring responsive UI components, modular navigation, and an integrated AI-based advisory system that helps users make informed repair/replace decisions.',
+        impact:
+          'Created a scalable platform architecture that streamlines service booking workflows and provides intelligent recommendations, improving user decision-making and operational efficiency.',
+      },
+      technologies: [
+        { name: 'Next.js', category: 'Frontend', icon: '/icons/nextjs.svg' },
+        {
+          name: 'TypeScript',
+          category: 'Frontend',
+          icon: '/icons/typescript.svg',
+        },
+        {
+          name: 'Tailwind CSS',
+          category: 'Frontend',
+          icon: '/icons/tailwind.svg',
+        },
+        { name: 'AI Tools', category: 'AI/ML', icon: '/icons/ai.svg' },
+      ],
+      category: 'Web Development',
+      images: [
+        '/images/projects/needmeet-1.svg',
+        '/images/projects/needmeet-2.svg',
+      ],
+      githubUrl: 'https://github.com/MoNiLBaRiYa/NeedMeet',
+      featured: true,
+      ongoing: true,
+      completionDate: '2025-01-15',
+      teamSize: 1,
+      challenges: [
+        {
+          title: 'Complex Workflow Design',
+          description:
+            'Creating intuitive user flows for service booking and management',
+          solution:
+            'Used AI-assisted development to rapidly prototype and iterate on UI/UX designs',
+        },
+        {
+          title: 'AI Integration',
+          description:
+            'Implementing intelligent advisory system for repair/replace decisions',
+          solution:
+            'Integrated AI-based recommendation engine with user-friendly interface',
+        },
+      ],
+      features: [
+        {
+          title: 'Service Booking System',
+          description:
+            'Complete workflow for scheduling and managing service appointments',
+        },
+        {
+          title: 'AI Advisory System',
+          description:
+            'Intelligent recommendations for repair vs replace decisions',
+        },
+        {
+          title: 'Dashboard Layouts',
+          description:
+            'User-friendly dashboards for both customers and service providers',
+        },
+      ],
+      metrics: {
+        userEngagement: 'Streamlined booking workflow with AI assistance',
+        codeQuality: 'AI-assisted development with modern tools',
+        impact: 'Improved service booking efficiency and decision-making',
+      },
+    },
+    {
+      id: 'talentscout',
+      title: 'TalentScout – AI Hiring Platform',
+      description:
+        'AI Workflow Development platform for career profiling that recommends suitable job roles based on user skills and preferences. (Ongoing)',
+      longDescription:
+        'Developed structured prompt workflows to recommend suitable job roles to users. Designed UI screens and form-based inputs used in many government career portals. Planned backend schema and matching logic with AI assistance.',
+      projectStory: {
+        problem:
+          'Job seekers often struggle to identify suitable career paths that match their skills and interests, while traditional career counseling is time-consuming and not always accessible.',
+        solution:
+          'Created an AI-powered platform that uses structured prompt workflows to analyze user profiles and recommend personalized job roles. Designed intuitive form-based inputs and matching logic to provide accurate career guidance.',
+        impact:
+          'Automated the career recommendation process, making professional guidance accessible to more users while providing data-driven insights for better career decisions.',
+      },
+      technologies: [
+        { name: 'Next.js', category: 'Frontend', icon: '/icons/nextjs.svg' },
+        {
+          name: 'TypeScript',
+          category: 'Frontend',
+          icon: '/icons/typescript.svg',
+        },
+        { name: 'AI Workflows', category: 'AI/ML', icon: '/icons/ai.svg' },
+        {
+          name: 'Prompt Engineering',
+          category: 'AI/ML',
+          icon: '/icons/prompt.svg',
+        },
+      ],
+      category: 'AI/ML',
+      images: [
+        '/images/projects/talentscout-1.svg',
+        '/images/projects/talentscout-2.svg',
+      ],
+      githubUrl: 'https://github.com/MoNiLBaRiYa/TalentScout',
+      featured: true,
+      ongoing: true,
+      completionDate: '2025-01-10',
+      teamSize: 1,
+      challenges: [
+        {
+          title: 'Accurate Job Matching',
+          description:
+            'Creating algorithms that accurately match user skills to job roles',
+          solution:
+            'Developed structured prompt workflows and matching logic with AI assistance',
+        },
+        {
+          title: 'User-Friendly Interface',
+          description:
+            'Designing forms that capture comprehensive user profiles',
+          solution:
+            'Created intuitive form-based inputs inspired by government career portals',
+        },
+      ],
+      features: [
+        {
+          title: 'AI-Powered Recommendations',
+          description:
+            'Intelligent job role suggestions based on user profiles',
+        },
+        {
+          title: 'Career Profiling System',
+          description: 'Comprehensive skill and preference assessment',
+        },
+        {
+          title: 'Form-Based Inputs',
+          description: 'User-friendly data collection interface',
+        },
+      ],
+      metrics: {
+        userEngagement: 'Effective career guidance through AI workflows',
+        codeQuality: 'AI-assisted development with structured approach',
+        impact: 'Democratized access to career counseling',
+      },
+    },
+    {
+      id: 'neolearn',
+      title: 'NeoLearn – AI-Integrated Learning App',
+      description:
+        'Accessibility-focused learning interface designed for disabled learners with high-contrast themes and inclusive design principles.',
+      longDescription:
+        'Built an accessibility-focused UI for disabled learners using AI-assisted development. Designed high-contrast themes, readable text, and simple navigation for inclusive access. Created responsive learning screens aligned with basic accessibility guidelines.',
+      projectStory: {
+        problem:
+          'Many educational platforms lack proper accessibility features, making it difficult for disabled learners to access quality educational content and participate in online learning.',
+        solution:
+          'Developed an inclusive learning platform with AI-assisted development, featuring high-contrast themes, readable typography, and simplified navigation specifically designed for learners with disabilities.',
+        impact:
+          'Made online learning more accessible to disabled students, promoting inclusive education and ensuring equal access to learning resources.',
+      },
+      technologies: [
+        { name: 'Next.js', category: 'Frontend', icon: '/icons/nextjs.svg' },
+        {
+          name: 'TypeScript',
+          category: 'Frontend',
+          icon: '/icons/typescript.svg',
+        },
+        {
+          name: 'Tailwind CSS',
+          category: 'Frontend',
+          icon: '/icons/tailwind.svg',
+        },
+        { name: 'AI Tools', category: 'AI/ML', icon: '/icons/ai.svg' },
+      ],
+      category: 'Web Development',
+      images: [
+        '/images/projects/neolearn-1.svg',
+        '/images/projects/neolearn-2.svg',
+      ],
+      githubUrl: 'https://github.com/MoNiLBaRiYa/NeoLearn',
+      featured: true,
+      completionDate: '2024-12-20',
+      teamSize: 4,
+      challenges: [
+        {
+          title: 'Accessibility Compliance',
+          description:
+            'Ensuring the platform meets accessibility standards for disabled users',
+          solution:
+            'Implemented WCAG guidelines with high-contrast themes and screen reader support',
+        },
+        {
+          title: 'Inclusive Design',
+          description:
+            'Creating an interface that works for users with various disabilities',
+          solution:
+            'Used AI-assisted development to rapidly test and iterate on accessible designs',
+        },
+      ],
+      features: [
+        {
+          title: 'High-Contrast Themes',
+          description:
+            'Multiple color schemes optimized for visual accessibility',
+        },
+        {
+          title: 'Readable Typography',
+          description:
+            'Clear, large fonts with proper spacing for easy reading',
+        },
+        {
+          title: 'Simple Navigation',
+          description:
+            'Intuitive interface designed for users with cognitive disabilities',
+        },
+      ],
+      metrics: {
+        userEngagement: 'High accessibility compliance and user satisfaction',
+        codeQuality: 'AI-assisted development with accessibility focus',
+        impact: 'Promoted inclusive education for disabled learners',
+      },
+    },
+    {
       id: 'fake-news-detection',
-      title: 'AI-Powered Fake News Detection System',
+      title: 'Fake News AI Detection Model',
       description:
         'Machine learning system that analyzes news articles to detect potential misinformation using NLP techniques.',
       longDescription:
-        'Developed a comprehensive fake news detection system using advanced machine learning algorithms and natural language processing. The system analyzes multiple features including text patterns, source credibility, and linguistic markers to provide accurate detection results.',
+        'Created responsive UI for login, signup, and news verification. Assisted in database setup for secure user data handling. Helped integrate the AI classification pipeline with UI output display.',
       projectStory: {
-        problem: 'The rapid spread of misinformation online has become a critical challenge, with fake news articles often going viral before fact-checking can occur. Traditional manual verification is too slow and cannot scale to handle the volume of content being shared daily.',
-        solution: 'Developed an AI-powered system that automatically analyzes news articles in real-time using NLP techniques and machine learning. The solution combines TF-IDF vectorization with logistic regression to identify linguistic patterns that distinguish fake from real news, providing instant classification with confidence scores.',
-        impact: 'Successfully reduced fake news classification error by 18% compared to baseline keyword-based approaches, while achieving sub-second response times. The system can process and classify news articles 50x faster than manual verification, making it practical for real-time content moderation.'
+        problem:
+          'The rapid spread of misinformation online has become a critical challenge, with fake news articles often going viral before fact-checking can occur.',
+        solution:
+          'Developed an AI-powered system with responsive UI that automatically analyzes news articles using NLP techniques and machine learning, providing instant classification with confidence scores.',
+        impact:
+          'Successfully created a functional fake news detection system with secure user authentication and real-time analysis capabilities.',
       },
       technologies: [
-        { name: 'Python', category: 'Backend', icon: '/icons/python.svg' },
-        { name: 'Scikit-learn', category: 'AI/ML', icon: '/icons/sklearn.svg' },
-        { name: 'NLTK', category: 'AI/ML', icon: '/icons/nltk.svg' },
-        { name: 'Pandas', category: 'AI/ML', icon: '/icons/pandas.svg' },
+        { name: 'HTML', category: 'Frontend', icon: '/icons/html.svg' },
+        { name: 'CSS', category: 'Frontend', icon: '/icons/css.svg' },
         { name: 'Flask', category: 'Backend', icon: '/icons/flask.svg' },
-        { name: 'React', category: 'Frontend', icon: '/icons/react.svg' },
+        { name: 'MongoDB', category: 'Database', icon: '/icons/mongodb.svg' },
+        { name: 'Python', category: 'Backend', icon: '/icons/python.svg' },
       ],
       category: 'AI/ML',
       images: [
         '/images/projects/fake-news-1.svg',
         '/images/projects/fake-news-2.svg',
       ],
-      demoUrl: 'https://fake-news-detector-demo.vercel.app',
-      githubUrl: 'https://github.com/monil-bariya/fake-news-detection',
+      githubUrl: 'https://github.com/MoNiLBaRiYa/FakeNews_AI_Detection',
       featured: true,
       completionDate: '2024-03-15',
       teamSize: 4,
       challenges: [
         {
-          title: 'Data Quality and Bias',
+          title: 'Database Security',
           description:
-            'Ensuring the training dataset was balanced and free from inherent biases',
+            'Implementing secure user authentication and data storage',
           solution:
-            'Implemented comprehensive data preprocessing and used multiple diverse datasets to train the model',
+            'Set up MongoDB with proper encryption and authentication mechanisms',
         },
         {
-          title: 'Real-time Processing',
+          title: 'UI/ML Integration',
           description:
-            'Optimizing the model for real-time analysis of news articles',
+            'Connecting the frontend interface with AI classification pipeline',
           solution:
-            'Used efficient vectorization techniques and model optimization to achieve sub-second response times',
+            'Created Flask API endpoints to bridge UI and ML model seamlessly',
         },
       ],
       features: [
         {
-          title: 'Multi-feature Analysis',
-          description:
-            'Analyzes text patterns, source credibility, and linguistic markers',
+          title: 'User Authentication',
+          description: 'Secure login and signup system with MongoDB',
         },
         {
-          title: 'Interactive Demo',
-          description:
-            'Real-time analysis with confidence scores and explanations',
+          title: 'News Verification',
+          description: 'Real-time analysis with AI classification results',
         },
         {
-          title: 'API Integration',
-          description: 'RESTful API for integration with other applications',
+          title: 'Responsive UI',
+          description: 'Clean interface for news input and result display',
         },
       ],
       metrics: {
-        performanceScore: 65,
-        userEngagement: 'Good user interaction with demo interface',
-        codeQuality: 'AI-generated code with basic testing',
-        impact: 'Successfully demonstrates ML concepts with AI help',
-      },
-      codeSnippets: [
-        {
-          id: 'ml-model',
-          title: 'Machine Learning Model Implementation',
-          description:
-            'Core ML model using scikit-learn for fake news detection',
-          language: 'python',
-          filename: 'fake_news_detector.py',
-          code: `import pandas as pd
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn.pipeline import Pipeline
-from sklearn.model_selection import train_test_split
-import nltk
-from nltk.corpus import stopwords
-import re
-
-class FakeNewsDetector:
-    def __init__(self):
-        self.pipeline = None
-        self.vectorizer = TfidfVectorizer(
-            max_features=10000,
-            stop_words='english',
-            ngram_range=(1, 2)
-        )
-        self.model = LogisticRegression(random_state=42)
-        
-    def preprocess_text(self, text):
-        # Remove special characters and digits
-        text = re.sub(r'[^a-zA-Z\\s]', '', text)
-        # Convert to lowercase
-        text = text.lower()
-        # Remove extra whitespace
-        text = ' '.join(text.split())
-        return text
-    
-    def train(self, X_train, y_train):
-        # Preprocess training data
-        X_train_processed = [self.preprocess_text(text) for text in X_train]
-        
-        # Create and train pipeline
-        self.pipeline = Pipeline([
-            ('tfidf', self.vectorizer),
-            ('classifier', self.model)
-        ])
-        
-        self.pipeline.fit(X_train_processed, y_train)
-        
-    def predict(self, text):
-        if not self.pipeline:
-            raise ValueError("Model not trained yet")
-            
-        processed_text = self.preprocess_text(text)
-        prediction = self.pipeline.predict([processed_text])[0]
-        confidence = self.pipeline.predict_proba([processed_text]).max()
-        
-        return {
-            'prediction': 'Real' if prediction == 1 else 'Fake',
-            'confidence': round(confidence * 100, 2)
-        }`,
-        },
-        {
-          id: 'api-endpoint',
-          title: 'Flask API Endpoint',
-          description: 'RESTful API endpoint for real-time news analysis',
-          language: 'python',
-          filename: 'app.py',
-          code: `from flask import Flask, request, jsonify
-from flask_cors import CORS
-from fake_news_detector import FakeNewsDetector
-import logging
-
-app = Flask(__name__)
-CORS(app)
-
-# Initialize the detector
-detector = FakeNewsDetector()
-
-@app.route('/api/analyze', methods=['POST'])
-def analyze_news():
-    try:
-        data = request.get_json()
-        
-        if not data or 'text' not in data:
-            return jsonify({
-                'error': 'Missing text field in request'
-            }), 400
-            
-        text = data['text']
-        
-        if len(text.strip()) < 10:
-            return jsonify({
-                'error': 'Text too short for analysis'
-            }), 400
-            
-        # Analyze the text
-        result = detector.predict(text)
-        
-        return jsonify({
-            'success': True,
-            'prediction': result['prediction'],
-            'confidence': result['confidence'],
-            'analysis': {
-                'word_count': len(text.split()),
-                'char_count': len(text),
-                'sentiment': 'neutral'  # Could add sentiment analysis
-            }
-        })
-        
-    except Exception as e:
-        logging.error(f"Error analyzing text: {str(e)}")
-        return jsonify({
-            'error': 'Internal server error'
-        }), 500
-
-@app.route('/api/health', methods=['GET'])
-def health_check():
-    return jsonify({
-        'status': 'healthy',
-        'model_loaded': detector.pipeline is not None
-    })
-
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)`,
-        },
-      ],
-      liveDemo: {
-        type: 'interactive',
-        description:
-          'Try the fake news detection system with sample articles or your own text',
-        component: 'FakeNewsDemo',
+        userEngagement: 'Good user interaction with verification interface',
+        codeQuality: 'Team collaboration with proper database integration',
+        impact:
+          'Successfully demonstrates ML concepts in practical application',
       },
     },
     {
       id: 'portfolio-website',
       title: 'Interactive Portfolio Website',
       description:
-        'This very portfolio website - a modern, responsive showcase with 3D animations and interactive data visualizations.',
+        'Modern, responsive personal website with subtle animations, smooth transitions, and clean minimalistic UI.',
       longDescription:
-        'Built this cutting-edge portfolio website (the one you are currently viewing) featuring Three.js particle effects, interactive skill trees, and smooth animations. The site showcases technical expertise through live demonstrations and engaging user experiences, serving as both a portfolio and a demonstration of modern web development capabilities.',
+        'Developed a fast, responsive personal website showcasing work and skills. Built with Next.js, TypeScript, and Tailwind CSS featuring Three.js for visual effects. Added subtle animations, smooth transitions, and clean minimalistic UI.',
       projectStory: {
-        problem: 'Traditional portfolio websites are often static and fail to demonstrate technical skills effectively. Recruiters and potential clients need to see not just what you can build, but how you think about user experience and modern web technologies.',
-        solution: 'Built this interactive portfolio solo as both a showcase and a working demonstration. Used cutting-edge technologies like Three.js for 3D effects, D3.js for data visualization, and Framer Motion for smooth animations to create an engaging user experience that demonstrates technical capabilities.',
-        impact: 'Increased portfolio engagement by 40% compared to static portfolios, with visitors spending 3x longer exploring the site. The interactive elements effectively demonstrate technical skills, leading to 25% more interview requests and positive feedback from recruiters about the innovative approach.'
+        problem:
+          'Traditional portfolio websites are often static and fail to demonstrate technical skills effectively. Need a modern platform to showcase projects and abilities.',
+        solution:
+          'Built this interactive portfolio using modern web technologies like Next.js, TypeScript, and Tailwind CSS. Incorporated Three.js for visual effects and created an engaging user experience that demonstrates technical capabilities.',
+        impact:
+          'Created a professional online presence that effectively showcases projects and skills, leading to increased visibility and opportunities.',
       },
       technologies: [
         { name: 'Next.js', category: 'Frontend', icon: '/icons/nextjs.svg' },
@@ -338,20 +494,13 @@ if __name__ == '__main__':
           icon: '/icons/tailwind.svg',
         },
         { name: 'Three.js', category: 'Frontend', icon: '/icons/threejs.svg' },
-        {
-          name: 'Framer Motion',
-          category: 'Frontend',
-          icon: '/icons/framer.svg',
-        },
-        { name: 'D3.js', category: 'Frontend', icon: '/icons/d3.svg' },
       ],
       category: 'Web Development',
       images: [
         '/images/projects/portfolio-1.svg',
         '/images/projects/portfolio-2.svg',
       ],
-      demoUrl: 'https://monil-bariya.vercel.app',
-      githubUrl: 'https://github.com/monil-bariya/portfolio',
+      githubUrl: 'https://github.com/MoNiLBaRiYa/Protfolio',
       featured: true,
       completionDate: '2024-04-20',
       teamSize: 1,
@@ -361,275 +510,41 @@ if __name__ == '__main__':
           description:
             'Maintaining smooth animations while ensuring fast load times',
           solution:
-            'Implemented lazy loading, code splitting, and optimized Three.js rendering',
-        },
-        {
-          title: 'Cross-browser Compatibility',
-          description:
-            'Ensuring consistent experience across different browsers and devices',
-          solution: 'Extensive testing and progressive enhancement techniques',
-        },
-      ],
-      features: [
-        {
-          title: '3D Particle System',
-          description:
-            'Interactive particle background responding to mouse movement',
-        },
-        {
-          title: 'Interactive Skill Tree',
-          description:
-            'D3.js visualization showing skill relationships and proficiency',
+            'Implemented lazy loading, code splitting, and optimized rendering',
         },
         {
           title: 'Responsive Design',
           description:
-            'Optimized for all screen sizes with touch-friendly interactions',
+            'Ensuring consistent experience across different devices',
+          solution:
+            'Used Tailwind CSS responsive utilities and extensive testing',
+        },
+      ],
+      features: [
+        {
+          title: 'Subtle Animations',
+          description:
+            'Smooth transitions and animations for enhanced user experience',
+        },
+        {
+          title: 'Clean UI',
+          description:
+            'Minimalistic design focusing on content and readability',
+        },
+        {
+          title: 'Fast Performance',
+          description:
+            'Optimized for speed with Next.js and modern web practices',
         },
       ],
       metrics: {
-        performanceScore: 70,
-        userEngagement: 'Good user engagement and interaction',
-        codeQuality: 'AI-assisted development with modern tools',
-        impact: 'Showcases ability to build with AI assistance',
-      },
-      codeSnippets: [
-        {
-          id: 'particle-system',
-          title: 'Three.js Particle Background',
-          description: 'Interactive particle system with mouse responsiveness',
-          language: 'typescript',
-          filename: 'ParticleBackground.tsx',
-          code: `import { useRef, useMemo } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import * as THREE from 'three';
-
-interface ParticleSystemProps {
-  count: number;
-  mousePosition: { x: number; y: number };
-}
-
-function ParticleSystem({ count, mousePosition }: ParticleSystemProps) {
-  const mesh = useRef<THREE.Points>(null);
-  
-  const particles = useMemo(() => {
-    const positions = new Float32Array(count * 3);
-    const colors = new Float32Array(count * 3);
-    
-    for (let i = 0; i < count; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 10;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 10;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
-      
-      // Color based on skill categories
-      const colorIndex = Math.floor(Math.random() * 4);
-      const colors_array = [
-        [0.3, 0.7, 1.0], // Blue - Frontend
-        [0.2, 0.8, 0.4], // Green - Backend
-        [0.9, 0.4, 0.9], // Purple - AI/ML
-        [1.0, 0.6, 0.2], // Orange - Tools
-      ];
-      
-      colors[i * 3] = colors_array[colorIndex][0];
-      colors[i * 3 + 1] = colors_array[colorIndex][1];
-      colors[i * 3 + 2] = colors_array[colorIndex][2];
-    }
-    
-    return { positions, colors };
-  }, [count]);
-  
-  useFrame((state) => {
-    if (mesh.current) {
-      const positions = mesh.current.geometry.attributes.position.array as Float32Array;
-      
-      for (let i = 0; i < count; i++) {
-        const i3 = i * 3;
-        
-        // Mouse interaction
-        const mouseInfluence = 0.1;
-        const dx = mousePosition.x - positions[i3];
-        const dy = mousePosition.y - positions[i3 + 1];
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        
-        if (distance < 2) {
-          positions[i3] += dx * mouseInfluence;
-          positions[i3 + 1] += dy * mouseInfluence;
-        }
-        
-        // Gentle floating animation
-        positions[i3 + 1] += Math.sin(state.clock.elapsedTime + i) * 0.001;
-      }
-      
-      mesh.current.geometry.attributes.position.needsUpdate = true;
-    }
-  });
-  
-  return (
-    <points ref={mesh}>
-      <bufferGeometry>
-        <bufferAttribute
-          attach="attributes-position"
-          count={particles.positions.length / 3}
-          array={particles.positions}
-          itemSize={3}
-        />
-        <bufferAttribute
-          attach="attributes-color"
-          count={particles.colors.length / 3}
-          array={particles.colors}
-          itemSize={3}
-        />
-      </bufferGeometry>
-      <pointsMaterial
-        size={0.05}
-        vertexColors
-        transparent
-        opacity={0.8}
-        sizeAttenuation
-      />
-    </points>
-  );
-}`,
-        },
-        {
-          id: 'skill-tree',
-          title: 'Interactive Skill Tree with D3.js',
-          description: 'Custom D3.js visualization for skill relationships',
-          language: 'typescript',
-          filename: 'SkillTree.tsx',
-          code: `import { useEffect, useRef } from 'react';
-import * as d3 from 'd3';
-import { SkillTreeNode } from '@/types/portfolio';
-
-interface SkillTreeProps {
-  data: SkillTreeNode[];
-  onNodeClick: (node: SkillTreeNode) => void;
-}
-
-export function SkillTree({ data, onNodeClick }: SkillTreeProps) {
-  const svgRef = useRef<SVGSVGElement>(null);
-  
-  useEffect(() => {
-    if (!svgRef.current || !data.length) return;
-    
-    const svg = d3.select(svgRef.current);
-    svg.selectAll("*").remove();
-    
-    const width = 800;
-    const height = 600;
-    const margin = { top: 20, right: 20, bottom: 20, left: 20 };
-    
-    // Create force simulation
-    const simulation = d3.forceSimulation(data)
-      .force("link", d3.forceLink().id((d: any) => d.id))
-      .force("charge", d3.forceManyBody().strength(-300))
-      .force("center", d3.forceCenter(width / 2, height / 2))
-      .force("collision", d3.forceCollide().radius(50));
-    
-    // Create links data
-    const links = data.flatMap(node => 
-      node.children?.map(child => ({ source: node.id, target: child.id })) || []
-    );
-    
-    // Add links
-    const link = svg.append("g")
-      .selectAll("line")
-      .data(links)
-      .enter().append("line")
-      .attr("stroke", "#999")
-      .attr("stroke-opacity", 0.6)
-      .attr("stroke-width", 2);
-    
-    // Add nodes
-    const node = svg.append("g")
-      .selectAll("g")
-      .data(data)
-      .enter().append("g")
-      .attr("class", "node")
-      .call(d3.drag<SVGGElement, SkillTreeNode>()
-        .on("start", dragstarted)
-        .on("drag", dragged)
-        .on("end", dragended));
-    
-    // Add circles for nodes
-    node.append("circle")
-      .attr("r", d => 20 + (d.proficiency / 100) * 15)
-      .attr("fill", d => {
-        const hue = (d.proficiency / 100) * 120; // Red to green
-        return \`hsl(\${hue}, 70%, 50%)\`;
-      })
-      .attr("stroke", "#fff")
-      .attr("stroke-width", 2)
-      .on("click", (event, d) => onNodeClick(d))
-      .on("mouseover", function(event, d) {
-        d3.select(this).transition().duration(200).attr("r", 40);
-      })
-      .on("mouseout", function(event, d) {
-        d3.select(this).transition().duration(200)
-          .attr("r", 20 + (d.proficiency / 100) * 15);
-      });
-    
-    // Add labels
-    node.append("text")
-      .text(d => d.name)
-      .attr("text-anchor", "middle")
-      .attr("dy", ".35em")
-      .attr("font-size", "12px")
-      .attr("fill", "#333")
-      .attr("pointer-events", "none");
-    
-    // Update positions on simulation tick
-    simulation.on("tick", () => {
-      link
-        .attr("x1", (d: any) => d.source.x)
-        .attr("y1", (d: any) => d.source.y)
-        .attr("x2", (d: any) => d.target.x)
-        .attr("y2", (d: any) => d.target.y);
-      
-      node.attr("transform", d => \`translate(\${d.x},\${d.y})\`);
-    });
-    
-    function dragstarted(event: any, d: SkillTreeNode) {
-      if (!event.active) simulation.alphaTarget(0.3).restart();
-      d.fx = d.x;
-      d.fy = d.y;
-    }
-    
-    function dragged(event: any, d: SkillTreeNode) {
-      d.fx = event.x;
-      d.fy = event.y;
-    }
-    
-    function dragended(event: any, d: SkillTreeNode) {
-      if (!event.active) simulation.alphaTarget(0);
-      d.fx = null;
-      d.fy = null;
-    }
-    
-  }, [data, onNodeClick]);
-  
-  return (
-    <svg
-      ref={svgRef}
-      width="100%"
-      height="600"
-      viewBox="0 0 800 600"
-      className="skill-tree-svg"
-    />
-  );
-}`,
-        },
-      ],
-      liveDemo: {
-        type: 'iframe',
-        url: 'https://monil-bariya.vercel.app',
-        description:
-          'Experience the live portfolio with all interactive features',
+        userEngagement: 'Professional presentation with good user experience',
+        codeQuality: 'Modern development with TypeScript and best practices',
+        impact: 'Effective showcase of technical skills and projects',
       },
     },
   ],
-  experience: [
-  ],
+  experience: [],
   education: [
     {
       id: 'btech-cse',
@@ -702,6 +617,29 @@ export function SkillTree({ data, onNodeClick }: SkillTreeProps) {
     },
   ],
   certifications: [
+    {
+      id: 'generative-ai-mastermind',
+      title: 'Generative AI Mastermind – Certificate of Completion',
+      issuer: 'Outskill',
+      date: '2025-11-01',
+      description:
+        'Completed a practical, industry-oriented program focusing on Generative AI, prompt engineering, automation workflows, and AI-assisted development.',
+      skills: [
+        'Generative AI',
+        'Prompt Engineering',
+        'Automation Workflows',
+        'AI-Assisted Development',
+        'AI Tools',
+      ],
+      achievements: [
+        'Mastered Generative AI concepts and practical applications',
+        'Developed expertise in prompt engineering techniques',
+        'Learned automation workflows for AI-assisted development',
+        'Gained hands-on experience with industry-standard AI tools',
+      ],
+      credentialUrl: '',
+      image: '/images/certifications/generative-ai-mastermind.jpg',
+    },
     {
       id: 'aws-cloudverse-appreciation',
       title: 'Certificate of Appreciation - AWS CloudVerse',

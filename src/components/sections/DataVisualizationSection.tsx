@@ -47,22 +47,22 @@ export function DataVisualizationSection({
   const stats = {
     totalProjects: data.projects?.length || 0,
     featuredProjects: data.projects?.filter(p => p.featured)?.length || 0,
+    ongoingProjects: data.projects?.filter(p => p.ongoing)?.length || 0,
+    completedProjects: data.projects?.filter(p => !p.ongoing)?.length || 0,
     totalSkills:
       data.skills?.reduce(
         (sum, category) => sum + (category.skills?.length || 0),
         0
       ) || 0,
     certifications: data.certifications?.length || 0,
-    avgPerformance: Math.round(
-      (data.projects?.filter(p => p.metrics?.performanceScore)?.length || 0) > 0
-        ? (data.projects
-            ?.filter(p => p.metrics?.performanceScore)
-            ?.reduce((sum, p) => sum + (p.metrics?.performanceScore || 0), 0) ||
-            0) /
-            (data.projects?.filter(p => p.metrics?.performanceScore)?.length ||
-              1)
-        : 0
-    ),
+    totalTechnologies: new Set(
+      data.projects?.flatMap(p => p.technologies?.map((t: any) => t.name) || [])
+    ).size,
+    soloProjects: data.projects?.filter(p => p.teamSize === 1)?.length || 0,
+    teamProjects: data.projects?.filter(p => p.teamSize > 1)?.length || 0,
+    aiProjects: data.projects?.filter(p => p.category === 'AI/ML')?.length || 0,
+    webProjects:
+      data.projects?.filter(p => p.category === 'Web Development')?.length || 0,
   };
 
   return (
@@ -171,28 +171,109 @@ export function DataVisualizationSection({
 
                 <div className="bg-white rounded-lg shadow-lg p-6">
                   <h3 className="text-lg font-bold text-gray-800 mb-4">
-                    Performance Overview
+                    Project Distribution
                   </h3>
                   <div className="space-y-4">
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-600">
-                        Average Performance Score
-                      </span>
-                      <span className="text-2xl font-bold text-blue-600">
-                        {stats.avgPerformance}%
-                      </span>
+                    {/* Ongoing vs Completed */}
+                    <div>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-sm text-gray-600">
+                          Ongoing Projects
+                        </span>
+                        <span className="text-lg font-bold text-blue-600">
+                          {stats.ongoingProjects}
+                        </span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-2">
+                        <div
+                          className="bg-blue-500 h-2 rounded-full transition-all duration-1000"
+                          style={{
+                            width: `${(stats.ongoingProjects / stats.totalProjects) * 100}%`,
+                          }}
+                        />
+                      </div>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-3">
-                      <div
-                        className="bg-gradient-to-r from-blue-500 to-green-500 h-3 rounded-full transition-all duration-1000"
-                        style={{ width: `${stats.avgPerformance}%` }}
-                      />
+
+                    <div>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-sm text-gray-600">
+                          Completed Projects
+                        </span>
+                        <span className="text-lg font-bold text-green-600">
+                          {stats.completedProjects}
+                        </span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-2">
+                        <div
+                          className="bg-green-500 h-2 rounded-full transition-all duration-1000"
+                          style={{
+                            width: `${(stats.completedProjects / stats.totalProjects) * 100}%`,
+                          }}
+                        />
+                      </div>
                     </div>
-                    <div className="text-sm text-gray-500">
-                      Based on{' '}
-                      {data.projects?.filter(p => p.metrics?.performanceScore)
-                        ?.length || 0}{' '}
-                      evaluated projects
+
+                    {/* Solo vs Team */}
+                    <div className="pt-4 border-t border-gray-200">
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-sm text-gray-600">
+                          Solo Projects
+                        </span>
+                        <span className="text-lg font-bold text-purple-600">
+                          {stats.soloProjects}
+                        </span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-2">
+                        <div
+                          className="bg-purple-500 h-2 rounded-full transition-all duration-1000"
+                          style={{
+                            width: `${(stats.soloProjects / stats.totalProjects) * 100}%`,
+                          }}
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-sm text-gray-600">
+                          Team Projects
+                        </span>
+                        <span className="text-lg font-bold text-orange-600">
+                          {stats.teamProjects}
+                        </span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-2">
+                        <div
+                          className="bg-orange-500 h-2 rounded-full transition-all duration-1000"
+                          style={{
+                            width: `${(stats.teamProjects / stats.totalProjects) * 100}%`,
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-lg shadow-lg p-6">
+                  <h3 className="text-lg font-bold text-gray-800 mb-4">
+                    Technology Stack
+                  </h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-center p-4 bg-slate-100 rounded-lg border-2 border-slate-300">
+                      <div className="text-3xl font-bold text-slate-800">
+                        {stats.totalTechnologies}
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        Technologies Used
+                      </div>
+                    </div>
+                    <div className="text-center p-4 bg-pink-50 rounded-lg border-2 border-pink-200">
+                      <div className="text-3xl font-bold text-pink-700">
+                        {stats.aiProjects}
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        AI/ML Projects
+                      </div>
                     </div>
                   </div>
                 </div>

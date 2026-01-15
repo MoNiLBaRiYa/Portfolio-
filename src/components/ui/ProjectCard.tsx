@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Project } from '@/types/portfolio';
-import { ExternalLink, Github, Calendar, Users } from 'lucide-react';
+import { Github, Calendar, Users } from 'lucide-react';
 import { useResponsive } from '@/hooks/useResponsive';
 import { useAccessibility } from '@/components/ui/AccessibilityProvider';
 
@@ -123,22 +123,22 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 ⭐ Featured
               </span>
             )}
+            {project.ongoing && (
+              <span className="bg-blue-400 text-blue-900 px-2 py-1 rounded-full text-xs font-semibold shadow-sm">
+                🚧 Ongoing
+              </span>
+            )}
             <span className="bg-white/20 backdrop-blur-sm text-white px-2 py-1 rounded-full text-xs font-medium border border-white/20">
               {project.category}
             </span>
           </div>
-          {project.metrics?.performanceScore && (
-            <span className="bg-green-500/20 backdrop-blur-sm text-green-100 px-2 py-1 rounded-full text-xs font-medium border border-green-400/20">
-              {project.metrics.performanceScore}%
-            </span>
-          )}
         </div>
 
         {/* Hover Overlay */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
           <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="bg-white/90 backdrop-blur-sm rounded-full p-3">
-              <ExternalLink className="w-6 h-6 text-gray-700" />
+              <Github className="w-6 h-6 text-gray-700" />
             </div>
           </div>
         </div>
@@ -211,15 +211,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </button>
 
           <div className="flex items-center gap-3">
-            {project.demoUrl && (
-              <button
-                onClick={e => handleLinkClick(e, project.demoUrl!)}
-                className="p-2 text-gray-400 hover:text-blue-600 transition-colors duration-200"
-                title="Live Demo"
-              >
-                <ExternalLink className="w-4 h-4" />
-              </button>
-            )}
             {project.githubUrl && (
               <button
                 onClick={e => handleLinkClick(e, project.githubUrl!)}
@@ -241,29 +232,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 {project.technologies.length}
               </div>
             </div>
-            {project.metrics?.performanceScore ? (
-              <div className="text-center">
-                <div className="text-gray-500">Performance</div>
-                <div
-                  className={`font-semibold ${
-                    project.metrics.performanceScore >= 80
-                      ? 'text-green-600'
-                      : project.metrics.performanceScore >= 60
-                        ? 'text-yellow-600'
-                        : 'text-red-600'
-                  }`}
-                >
-                  {project.metrics.performanceScore}%
-                </div>
+            <div className="text-center">
+              <div className="text-gray-500">Team Size</div>
+              <div className="font-semibold text-gray-700">
+                {project.teamSize === 1 ? 'Solo' : `${project.teamSize}`}
               </div>
-            ) : (
-              <div className="text-center">
-                <div className="text-gray-500">Team Size</div>
-                <div className="font-semibold text-gray-700">
-                  {project.teamSize === 1 ? 'Solo' : `${project.teamSize}`}
-                </div>
-              </div>
-            )}
+            </div>
           </div>
         </div>
       </div>

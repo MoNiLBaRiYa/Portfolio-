@@ -211,24 +211,14 @@ const SkillModal: React.FC<SkillModalProps> = ({ skill, isOpen, onClose }) => {
                             )}
                           </div>
                           <div className="flex gap-2">
-                            {project.demoUrl && (
-                              <a
-                                href={project.demoUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-xs bg-green-500 text-white px-3 py-1 rounded-full hover:bg-green-600 transition-colors"
-                              >
-                                Live Demo
-                              </a>
-                            )}
                             {project.githubUrl && (
                               <a
                                 href={project.githubUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-xs bg-gray-800 text-white px-3 py-1 rounded-full hover:bg-gray-900 transition-colors"
+                                className="text-xs bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 transition-colors"
                               >
-                                GitHub
+                                View Code
                               </a>
                             )}
                           </div>
