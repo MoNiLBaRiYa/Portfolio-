@@ -67,7 +67,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       whileHover={{
         y: -8,
         scale: 1.02,
-        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
       }}
       whileTap={{ scale: 0.98 }}
       initial={{ opacity: 0, y: 20 }}
@@ -77,7 +76,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         delay: reducedMotion ? 0 : index * 0.1,
         ease: [0.6, -0.05, 0.01, 0.99],
       }}
-      className="group bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
+      className="group glass-card rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl"
+      style={{
+        boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+      }}
       onClick={handleCardClick}
       onKeyDown={handleKeyDown}
       role="button"
@@ -85,7 +87,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       aria-label={`View details for ${project.title} project`}
     >
       {/* Project Visual */}
-      <div className="relative h-48 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 overflow-hidden flex items-center justify-center">
+      <div className="relative h-48 bg-gradient-to-br from-[var(--accent-primary)] via-[var(--accent-secondary)] to-[var(--accent-tertiary)] overflow-hidden flex items-center justify-center">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/10"></div>
@@ -148,10 +150,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <div className="p-6">
         {/* Title and Description */}
         <div className="mb-4">
-          <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-200">
+          <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent-secondary)] transition-colors duration-200 glow-text">
             {project.title}
           </h3>
-          <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+          <p className="text-[var(--text-secondary)] text-sm leading-relaxed line-clamp-3">
             {project.description}
           </p>
         </div>
@@ -161,30 +163,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           {project.technologies.slice(0, 4).map((tech, techIndex) => (
             <span
               key={tech.name}
-              className={`px-3 py-1 text-xs rounded-full font-medium ${
-                tech.category === 'Frontend'
-                  ? 'bg-blue-100 text-blue-800'
-                  : tech.category === 'Backend'
-                    ? 'bg-green-100 text-green-800'
-                    : tech.category === 'AI/ML'
-                      ? 'bg-purple-100 text-purple-800'
-                      : tech.category === 'Database'
-                        ? 'bg-orange-100 text-orange-800'
-                        : 'bg-gray-100 text-gray-800'
-              }`}
+              className="px-3 py-1 text-xs rounded-full font-medium bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-secondary)] backdrop-blur-sm"
             >
               {tech.name}
             </span>
           ))}
           {project.technologies.length > 4 && (
-            <span className="px-3 py-1 text-xs rounded-full font-medium bg-gray-100 text-gray-600">
+            <span className="px-3 py-1 text-xs rounded-full font-medium bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-muted)] backdrop-blur-sm">
               +{project.technologies.length - 4} more
             </span>
           )}
         </div>
 
         {/* Project Meta Info */}
-        <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
+        <div className="flex items-center justify-between text-xs text-[var(--text-muted)] mb-4">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1">
               <Calendar className="w-3 h-3" />
@@ -205,7 +197,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className="flex items-center justify-between">
           <button
             onClick={handleCardClick}
-            className="text-blue-600 hover:text-blue-800 font-medium text-sm transition-colors duration-200"
+            className="text-[var(--accent-secondary)] hover:text-[var(--accent-primary)] font-medium text-sm transition-colors duration-200"
           >
             View Details →
           </button>
@@ -214,7 +206,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             {project.githubUrl && (
               <button
                 onClick={e => handleLinkClick(e, project.githubUrl!)}
-                className="p-2 text-gray-400 hover:text-gray-700 transition-colors duration-200"
+                className="p-2 text-[var(--text-muted)] hover:text-[var(--accent-secondary)] transition-colors duration-200"
                 title="View Code"
               >
                 <Github className="w-4 h-4" />
@@ -224,17 +216,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
 
         {/* Project Stats */}
-        <div className="mt-4 pt-4 border-t border-gray-100">
+        <div className="mt-4 pt-4 border-t border-[var(--glass-border)]">
           <div className="grid grid-cols-2 gap-4 text-xs">
             <div className="text-center">
-              <div className="text-gray-500">Technologies</div>
-              <div className="font-semibold text-gray-700">
+              <div className="text-[var(--text-muted)]">Technologies</div>
+              <div className="font-semibold text-[var(--text-primary)]">
                 {project.technologies.length}
               </div>
             </div>
             <div className="text-center">
-              <div className="text-gray-500">Team Size</div>
-              <div className="font-semibold text-gray-700">
+              <div className="text-[var(--text-muted)]">Team Size</div>
+              <div className="font-semibold text-[var(--text-primary)]">
                 {project.teamSize === 1 ? 'Solo' : `${project.teamSize}`}
               </div>
             </div>

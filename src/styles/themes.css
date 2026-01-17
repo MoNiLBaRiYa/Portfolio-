@@ -1,0 +1,108 @@
+/* Black & Blue Theme (Default) */
+:root[data-theme='blue'],
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0f;
+  --bg-tertiary: #0f172a;
+
+  --accent-primary: #3b82f6;
+  --accent-secondary: #60a5fa;
+  --accent-tertiary: #93c5fd;
+
+  --glass-bg: rgba(15, 23, 42, 0.4);
+  --glass-border: rgba(59, 130, 246, 0.2);
+  --glass-hover: rgba(59, 130, 246, 0.1);
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  --glow-color: rgba(59, 130, 246, 0.5);
+  --shadow-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Black & Red Theme */
+:root[data-theme='red'] {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0000;
+  --bg-tertiary: #1a0505;
+
+  --accent-primary: #ef4444;
+  --accent-secondary: #f87171;
+  --accent-tertiary: #fca5a5;
+
+  --glass-bg: rgba(26, 5, 5, 0.4);
+  --glass-border: rgba(239, 68, 68, 0.2);
+  --glass-hover: rgba(239, 68, 68, 0.1);
+
+  --text-primary: #fef2f2;
+  --text-secondary: #fecaca;
+  --text-muted: #fca5a5;
+
+  --glow-color: rgba(239, 68, 68, 0.5);
+  --shadow-color: rgba(239, 68, 68, 0.3);
+}
+
+/* Glass Morphism Utilities */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card:hover {
+  background: var(--glass-hover);
+  border-color: var(--accent-secondary);
+  box-shadow: 0 8px 32px 0 var(--shadow-color);
+}
+
+.glass-button {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.glass-button:hover {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 20px var(--glow-color);
+  transform: translateY(-2px);
+}
+
+.glass-button.active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 20px var(--glow-color);
+}
+
+/* Glow Effects */
+.glow-text {
+  text-shadow: 0 0 20px var(--glow-color);
+}
+
+.glow-border {
+  box-shadow:
+    0 0 20px var(--glow-color),
+    inset 0 0 20px var(--glow-color);
+}
+
+/* Animated Gradient Background */
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animated-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
