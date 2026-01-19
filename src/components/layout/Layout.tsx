@@ -1,10 +1,9 @@
 'use client';
 
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Header from './Header';
 import Footer from './Footer';
-import { EmailTestPanel } from '@/components/dev/EmailTestPanel';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { ScrollToTop } from '@/components/ui/ScrollToTop';
 import { pageTransition } from '@/utils/animations';
@@ -15,12 +14,7 @@ interface LayoutProps {
 }
 
 export default function Layout({ children }: LayoutProps) {
-  // Removed scrollProgress state as we now use ScrollProgress component
-  const [showEmailTestPanel, setShowEmailTestPanel] = useState(false);
-
-  // Scroll progress is now handled by ScrollProgress component
-
-  // Performance monitoring and EmailJS test panel activation
+  // Performance monitoring
   useEffect(() => {
     // Measure Core Web Vitals in production
     if (process.env.NODE_ENV === 'production') {
@@ -29,27 +23,6 @@ export default function Layout({ children }: LayoutProps) {
         console.log('Core Web Vitals:', metrics);
       });
     }
-
-    // Check URL parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('emailtest') === 'true') {
-      setShowEmailTestPanel(true);
-    }
-
-    // Keyboard shortcut: Ctrl+Shift+E (or Cmd+Shift+E on Mac)
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (
-        (event.ctrlKey || event.metaKey) &&
-        event.shiftKey &&
-        event.key === 'E'
-      ) {
-        event.preventDefault();
-        setShowEmailTestPanel(prev => !prev);
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   return (
@@ -83,11 +56,6 @@ export default function Layout({ children }: LayoutProps) {
 
       {/* Scroll to Top Button */}
       <ScrollToTop />
-
-      {/* Conditional Email Test Panel */}
-      {showEmailTestPanel && (
-        <EmailTestPanel onClose={() => setShowEmailTestPanel(false)} />
-      )}
 
       {/* JSON-LD Structured Data */}
       <script

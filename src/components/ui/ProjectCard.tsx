@@ -76,9 +76,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         delay: reducedMotion ? 0 : index * 0.1,
         ease: [0.6, -0.05, 0.01, 0.99],
       }}
-      className="group glass-card rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl"
+      className="group bg-white rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl border border-gray-200"
       style={{
-        boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
       }}
       onClick={handleCardClick}
       onKeyDown={handleKeyDown}
@@ -150,10 +150,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <div className="p-6">
         {/* Title and Description */}
         <div className="mb-4">
-          <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent-secondary)] transition-colors duration-200 glow-text">
+          <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-200">
             {project.title}
           </h3>
-          <p className="text-[var(--text-secondary)] text-sm leading-relaxed line-clamp-3">
+          <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
             {project.description}
           </p>
         </div>
@@ -163,20 +163,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           {project.technologies.slice(0, 4).map((tech, techIndex) => (
             <span
               key={tech.name}
-              className="px-3 py-1 text-xs rounded-full font-medium bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-secondary)] backdrop-blur-sm"
+              className="px-3 py-1 text-xs rounded-full font-medium bg-blue-50 text-blue-700 border border-blue-200"
             >
               {tech.name}
             </span>
           ))}
           {project.technologies.length > 4 && (
-            <span className="px-3 py-1 text-xs rounded-full font-medium bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-muted)] backdrop-blur-sm">
+            <span className="px-3 py-1 text-xs rounded-full font-medium bg-gray-100 text-gray-600 border border-gray-200">
               +{project.technologies.length - 4} more
             </span>
           )}
         </div>
 
         {/* Project Meta Info */}
-        <div className="flex items-center justify-between text-xs text-[var(--text-muted)] mb-4">
+        <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1">
               <Calendar className="w-3 h-3" />
@@ -197,7 +197,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className="flex items-center justify-between">
           <button
             onClick={handleCardClick}
-            className="text-[var(--accent-secondary)] hover:text-[var(--accent-primary)] font-medium text-sm transition-colors duration-200"
+            className="text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors duration-200"
           >
             View Details →
           </button>
@@ -206,7 +206,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             {project.githubUrl && (
               <button
                 onClick={e => handleLinkClick(e, project.githubUrl!)}
-                className="p-2 text-[var(--text-muted)] hover:text-[var(--accent-secondary)] transition-colors duration-200"
+                className="p-2 text-gray-500 hover:text-blue-600 transition-colors duration-200"
                 title="View Code"
               >
                 <Github className="w-4 h-4" />
@@ -216,17 +216,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
 
         {/* Project Stats */}
-        <div className="mt-4 pt-4 border-t border-[var(--glass-border)]">
+        <div className="mt-4 pt-4 border-t border-gray-200">
           <div className="grid grid-cols-2 gap-4 text-xs">
             <div className="text-center">
-              <div className="text-[var(--text-muted)]">Technologies</div>
-              <div className="font-semibold text-[var(--text-primary)]">
+              <div className="text-gray-500">Technologies</div>
+              <div className="font-semibold text-gray-900">
                 {project.technologies.length}
               </div>
             </div>
             <div className="text-center">
-              <div className="text-[var(--text-muted)]">Team Size</div>
-              <div className="font-semibold text-[var(--text-primary)]">
+              <div className="text-gray-500">Team Size</div>
+              <div className="font-semibold text-gray-900">
                 {project.teamSize === 1 ? 'Solo' : `${project.teamSize}`}
               </div>
             </div>

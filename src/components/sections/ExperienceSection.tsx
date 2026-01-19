@@ -59,12 +59,12 @@ export function ExperienceSection({
   return (
     <section
       id="experience"
-      className="py-20 bg-gradient-to-br from-[var(--bg-primary)] via-[var(--bg-secondary)] to-[var(--bg-tertiary)] relative overflow-hidden"
+      className="py-20 bg-white relative overflow-hidden"
     >
-      {/* Glowing orbs */}
+      {/* Subtle background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-1/4 w-96 h-96 bg-[var(--accent-primary)] rounded-full filter blur-3xl opacity-10 animate-pulse-slow"></div>
-        <div className="absolute bottom-20 left-1/4 w-96 h-96 bg-[var(--accent-secondary)] rounded-full filter blur-3xl opacity-10 animate-pulse-slow animation-delay-2000"></div>
+        <div className="absolute top-20 right-1/4 w-96 h-96 bg-blue-50 rounded-full filter blur-3xl opacity-50"></div>
+        <div className="absolute bottom-20 left-1/4 w-96 h-96 bg-purple-50 rounded-full filter blur-3xl opacity-50"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -75,11 +75,11 @@ export function ExperienceSection({
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4 glow-text">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Professional{' '}
-            <span className="text-[var(--accent-secondary)]">Journey</span>
+            <span className="text-blue-600">Journey</span>
           </h2>
-          <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             My experience through simulations, certifications, and continuous
             learning
           </p>
@@ -97,8 +97,7 @@ export function ExperienceSection({
           >
             {/* Timeline Line */}
             <div
-              className="absolute left-4 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-gradient-to-b from-[var(--accent-primary)] to-[var(--accent-secondary)] shadow-lg"
-              style={{ boxShadow: '0 0 10px var(--glow-color)' }}
+              className="absolute left-4 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-gradient-to-b from-blue-400 to-purple-400"
             ></div>
 
             {timelineItems.map((item, index) => (
@@ -111,7 +110,7 @@ export function ExperienceSection({
                 }`}
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[var(--accent-primary)] border-4 border-[var(--bg-secondary)] rounded-full z-10 shadow-lg glow-border"></div>
+                <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-500 border-4 border-white rounded-full z-10 shadow-lg"></div>
 
                 {/* Content Card */}
                 <div
@@ -148,7 +147,7 @@ export function ExperienceSection({
                     index % 2 === 0 ? 'right-0' : 'left-0'
                   } transform ${
                     index % 2 === 0 ? 'translate-x-full' : '-translate-x-full'
-                  } glass-card px-3 py-1 rounded-full text-sm font-medium text-[var(--text-primary)] shadow-lg`}
+                  } bg-white shadow-md px-3 py-1 rounded-full text-sm font-medium text-gray-700`}
                 >
                   {formatDate(item.date)}
                 </div>
@@ -178,21 +177,21 @@ function ExperienceCard({ experience }: ExperienceCardProps) {
     <motion.div
       whileHover={{ scale: 1.02, y: -5 }}
       transition={{ duration: 0.3 }}
-      className="glass-card rounded-2xl p-6 hover:shadow-2xl transition-all duration-300"
+      className="bg-white rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 shadow-lg border border-gray-200"
     >
       <div className="flex items-start justify-between mb-4">
         <div className="flex-1">
-          <h3 className="text-xl font-bold text-[var(--text-primary)] mb-1 glow-text">
+          <h3 className="text-xl font-bold text-gray-900 mb-1">
             {experience.title}
           </h3>
-          <p className="text-[var(--accent-secondary)] font-semibold mb-2">
+          <p className="text-blue-600 font-semibold mb-2">
             {experience.company}
           </p>
           <div className="flex items-center gap-2 mb-3">
-            <span className="px-3 py-1 glass-card text-[var(--accent-secondary)] text-sm font-medium rounded-full">
+            <span className="px-3 py-1 bg-blue-50 text-blue-600 text-sm font-medium rounded-full border border-blue-200">
               {experience.type}
             </span>
-            <span className="text-[var(--text-muted)] text-sm">
+            <span className="text-gray-500 text-sm">
               {new Date(experience.startDate).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'short',
@@ -209,20 +208,20 @@ function ExperienceCard({ experience }: ExperienceCardProps) {
         </div>
       </div>
 
-      <p className="text-[var(--text-secondary)] mb-4 leading-relaxed">
+      <p className="text-gray-600 mb-4 leading-relaxed">
         {experience.description}
       </p>
 
       {/* Key Achievements */}
       <div className="mb-4">
-        <h4 className="font-semibold text-[var(--text-primary)] mb-2">
+        <h4 className="font-semibold text-gray-900 mb-2">
           Key Achievements:
         </h4>
         <ul className="space-y-2">
           {(experience.achievements || []).map((achievement, index) => (
             <li key={index} className="flex items-start gap-2">
-              <div className="w-2 h-2 bg-[var(--accent-primary)] rounded-full mt-2 flex-shrink-0 glow-border"></div>
-              <span className="text-[var(--text-secondary)] text-sm leading-relaxed">
+              <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+              <span className="text-gray-600 text-sm leading-relaxed">
                 {achievement}
               </span>
             </li>
@@ -235,7 +234,7 @@ function ExperienceCard({ experience }: ExperienceCardProps) {
         {(experience.technologies || []).map((tech, index) => (
           <span
             key={index}
-            className="px-2 py-1 glass-card text-[var(--text-secondary)] text-xs rounded-md font-medium"
+            className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-md font-medium border border-gray-200"
           >
             {tech}
           </span>
@@ -256,16 +255,12 @@ function CertificationCard({ certification, onClick }: CertificationCardProps) {
       whileHover={{ scale: 1.02, y: -5 }}
       transition={{ duration: 0.3 }}
       onClick={onClick}
-      className="glass-card rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 cursor-pointer group"
-      style={{
-        background:
-          'linear-gradient(135deg, var(--glass-bg) 0%, rgba(var(--accent-primary), 0.1) 100%)',
-      }}
+      className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 cursor-pointer group border border-purple-200"
     >
       <div className="flex items-start justify-between mb-4">
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-[var(--accent-primary)] to-[var(--accent-secondary)] rounded-lg flex items-center justify-center shadow-lg glow-border">
+            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
               <svg
                 className="w-4 h-4 text-white"
                 fill="currentColor"
@@ -278,17 +273,17 @@ function CertificationCard({ certification, onClick }: CertificationCardProps) {
                 />
               </svg>
             </div>
-            <span className="px-3 py-1 glass-card text-[var(--accent-secondary)] text-sm font-medium rounded-full">
+            <span className="px-3 py-1 bg-purple-100 text-purple-700 text-sm font-medium rounded-full border border-purple-200">
               Certification
             </span>
           </div>
-          <h3 className="text-xl font-bold text-[var(--text-primary)] mb-1 group-hover:text-[var(--accent-secondary)] transition-colors glow-text">
+          <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
             {certification.title}
           </h3>
-          <p className="text-[var(--accent-secondary)] font-semibold mb-2">
+          <p className="text-purple-600 font-semibold mb-2">
             {certification.issuer}
           </p>
-          <p className="text-[var(--text-muted)] text-sm mb-3">
+          <p className="text-gray-500 text-sm mb-3">
             {new Date(certification.date).toLocaleDateString('en-US', {
               year: 'numeric',
               month: 'long',
@@ -297,20 +292,20 @@ function CertificationCard({ certification, onClick }: CertificationCardProps) {
         </div>
       </div>
 
-      <p className="text-[var(--text-secondary)] mb-4 leading-relaxed">
+      <p className="text-gray-600 mb-4 leading-relaxed">
         {certification.description}
       </p>
 
       {/* Skills */}
       <div className="mb-4">
-        <h4 className="font-semibold text-[var(--text-primary)] mb-2">
+        <h4 className="font-semibold text-gray-900 mb-2">
           Skills Gained:
         </h4>
         <div className="flex flex-wrap gap-2">
           {(certification.skills || []).map((skill, index) => (
             <span
               key={index}
-              className="px-2 py-1 glass-card text-[var(--text-secondary)] text-xs rounded-md font-medium"
+              className="px-2 py-1 bg-white text-gray-700 text-xs rounded-md font-medium border border-gray-200"
             >
               {skill}
             </span>
@@ -320,11 +315,11 @@ function CertificationCard({ certification, onClick }: CertificationCardProps) {
 
       {/* Click to view more indicator */}
       <div className="flex items-center justify-between">
-        <span className="text-[var(--accent-secondary)] text-sm font-medium group-hover:text-[var(--accent-primary)] transition-colors">
+        <span className="text-purple-600 text-sm font-medium group-hover:text-purple-700 transition-colors">
           Click to view details
         </span>
         <svg
-          className="w-5 h-5 text-[var(--accent-secondary)] group-hover:text-[var(--accent-primary)] group-hover:translate-x-1 transition-all"
+          className="w-5 h-5 text-purple-600 group-hover:text-purple-700 group-hover:translate-x-1 transition-all"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

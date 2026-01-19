@@ -68,14 +68,8 @@ export function DataVisualizationSection({
   return (
     <section
       id="data-visualization"
-      className="py-20 bg-gradient-to-br from-[var(--bg-primary)] via-[var(--bg-secondary)] to-[var(--bg-tertiary)] relative overflow-hidden"
+      className="py-20 bg-gray-50 relative overflow-hidden"
     >
-      {/* Glowing orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-[var(--accent-primary)] rounded-full filter blur-3xl opacity-10 animate-pulse-slow"></div>
-        <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-[var(--accent-secondary)] rounded-full filter blur-3xl opacity-10 animate-pulse-slow animation-delay-2000"></div>
-      </div>
-
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -84,11 +78,11 @@ export function DataVisualizationSection({
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold text-[var(--text-primary)] mb-4 glow-text">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
             Data Insights &{' '}
-            <span className="text-[var(--accent-secondary)]">Analytics</span>
+            <span className="text-blue-600">Analytics</span>
           </h2>
-          <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Interactive visualizations showcasing project metrics, skill
             proficiency, and development activity patterns
           </p>
@@ -108,8 +102,10 @@ export function DataVisualizationSection({
               <button
                 key={option.id}
                 onClick={() => setActiveChart(option.id)}
-                className={`glass-button flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
-                  activeChart === option.id ? 'active' : ''
+                className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                  activeChart === option.id
+                    ? 'bg-blue-600 text-white shadow-lg'
+                    : 'bg-white text-gray-700 hover:bg-gray-100 shadow-md'
                 }`}
               >
                 <Icon size={20} />
@@ -131,64 +127,64 @@ export function DataVisualizationSection({
             >
               {/* Stats Cards */}
               <div className="space-y-6">
-                <div className="glass-card rounded-lg p-6">
-                  <h3 className="text-lg font-bold text-[var(--text-primary)] mb-6">
+                <div className="bg-white rounded-lg shadow-lg p-6">
+                  <h3 className="text-lg font-bold text-gray-900 mb-6">
                     Portfolio Statistics
                   </h3>
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="text-center p-4 glass-card rounded-lg">
-                      <div className="text-3xl font-bold text-[var(--accent-primary)] glow-text">
+                    <div className="text-center p-4 bg-blue-50 rounded-lg border-2 border-blue-200">
+                      <div className="text-3xl font-bold text-blue-600">
                         {stats.totalProjects}
                       </div>
-                      <div className="text-sm text-[var(--text-muted)]">
+                      <div className="text-sm text-gray-600">
                         Total Projects
                       </div>
                     </div>
-                    <div className="text-center p-4 glass-card rounded-lg">
-                      <div className="text-3xl font-bold text-[var(--accent-secondary)] glow-text">
+                    <div className="text-center p-4 bg-purple-50 rounded-lg border-2 border-purple-200">
+                      <div className="text-3xl font-bold text-purple-600">
                         {stats.featuredProjects}
                       </div>
-                      <div className="text-sm text-[var(--text-muted)]">
+                      <div className="text-sm text-gray-600">
                         Featured Projects
                       </div>
                     </div>
-                    <div className="text-center p-4 glass-card rounded-lg">
-                      <div className="text-3xl font-bold text-[var(--accent-primary)] glow-text">
+                    <div className="text-center p-4 bg-green-50 rounded-lg border-2 border-green-200">
+                      <div className="text-3xl font-bold text-green-600">
                         {stats.totalSkills}
                       </div>
-                      <div className="text-sm text-[var(--text-muted)]">
+                      <div className="text-sm text-gray-600">
                         Technical Skills
                       </div>
                     </div>
-                    <div className="text-center p-4 glass-card rounded-lg">
-                      <div className="text-3xl font-bold text-[var(--accent-secondary)] glow-text">
+                    <div className="text-center p-4 bg-orange-50 rounded-lg border-2 border-orange-200">
+                      <div className="text-3xl font-bold text-orange-600">
                         {stats.certifications}
                       </div>
-                      <div className="text-sm text-[var(--text-muted)]">
+                      <div className="text-sm text-gray-600">
                         Certifications
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="glass-card rounded-lg p-6">
-                  <h3 className="text-lg font-bold text-[var(--text-primary)] mb-4">
+                <div className="bg-white rounded-lg shadow-lg p-6">
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">
                     Project Distribution
                   </h3>
                   <div className="space-y-4">
                     {/* Ongoing vs Completed */}
                     <div>
                       <div className="flex justify-between items-center mb-2">
-                        <span className="text-sm text-[var(--text-secondary)]">
+                        <span className="text-sm text-gray-600">
                           Ongoing Projects
                         </span>
-                        <span className="text-lg font-bold text-[var(--accent-primary)]">
+                        <span className="text-lg font-bold text-blue-600">
                           {stats.ongoingProjects}
                         </span>
                       </div>
-                      <div className="w-full glass-card rounded-full h-2">
+                      <div className="w-full bg-gray-200 rounded-full h-2">
                         <div
-                          className="bg-[var(--accent-primary)] h-2 rounded-full transition-all duration-1000 glow-border"
+                          className="bg-blue-500 h-2 rounded-full transition-all duration-1000"
                           style={{
                             width: `${(stats.ongoingProjects / stats.totalProjects) * 100}%`,
                           }}
@@ -198,16 +194,16 @@ export function DataVisualizationSection({
 
                     <div>
                       <div className="flex justify-between items-center mb-2">
-                        <span className="text-sm text-[var(--text-secondary)]">
+                        <span className="text-sm text-gray-600">
                           Completed Projects
                         </span>
-                        <span className="text-lg font-bold text-[var(--accent-secondary)]">
+                        <span className="text-lg font-bold text-green-600">
                           {stats.completedProjects}
                         </span>
                       </div>
-                      <div className="w-full glass-card rounded-full h-2">
+                      <div className="w-full bg-gray-200 rounded-full h-2">
                         <div
-                          className="bg-[var(--accent-secondary)] h-2 rounded-full transition-all duration-1000 glow-border"
+                          className="bg-green-500 h-2 rounded-full transition-all duration-1000"
                           style={{
                             width: `${(stats.completedProjects / stats.totalProjects) * 100}%`,
                           }}
@@ -355,7 +351,7 @@ export function DataVisualizationSection({
           viewport={{ once: true }}
           className="mt-8 text-center"
         >
-          <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto">
             {
               chartOptions.find(option => option.id === activeChart)
                 ?.description

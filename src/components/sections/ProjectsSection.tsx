@@ -83,18 +83,11 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
   return (
     <section
       id="projects"
-      className={`bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden ${
+      className={`bg-white ${
         isMobile ? 'py-12' : isTablet ? 'py-16' : 'py-20'
       }`}
     >
-      {/* Animated background - More visible */}
-      <div className="absolute inset-0 opacity-50">
-        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-blue-500 to-cyan-400 rounded-full filter blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-cyan-500 to-teal-400 rounded-full filter blur-3xl animate-pulse-slow animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-gradient-to-br from-teal-400 to-blue-500 rounded-full filter blur-3xl animate-pulse-slow animation-delay-4000"></div>
-      </div>
-
-      <div className="container-responsive relative z-10">
+      <div className="container-responsive">
         <AnimatedSection variants={staggerContainer}>
           {/* Section Header */}
           <motion.div
@@ -104,7 +97,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
             }`}
           >
             <h2
-              className={`font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-400 to-teal-400 bg-clip-text text-transparent drop-shadow-2xl ${
+              className={`font-bold text-gray-900 mb-4 ${
                 isMobile
                   ? 'text-2xl'
                   : isTablet
@@ -115,7 +108,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
               Featured Projects
             </h2>
             <p
-              className={`text-gray-200 max-w-2xl mx-auto ${
+              className={`text-gray-600 max-w-2xl mx-auto ${
                 isMobile ? 'text-base px-2' : isTablet ? 'text-base' : 'text-lg'
               }`}
             >
@@ -135,12 +128,12 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
               <button
                 key={filter}
                 onClick={() => setSelectedFilter(filter)}
-                className={`rounded-full font-semibold transition-all duration-300 ${
+                className={`rounded-full font-medium transition-all duration-300 ${
                   isMobile ? 'px-3 py-1 text-xs' : 'px-4 py-2 text-sm'
                 } ${
                   selectedFilter === filter
-                    ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-2xl shadow-blue-500/50 transform scale-105'
-                    : 'bg-white/10 backdrop-blur-md text-gray-200 hover:bg-white/20 hover:shadow-lg border border-white/20'
+                    ? 'bg-blue-600 text-white shadow-lg transform scale-105'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:shadow-md'
                 } ${isTouchDevice ? 'touch-target' : ''}`}
               >
                 {filter}
