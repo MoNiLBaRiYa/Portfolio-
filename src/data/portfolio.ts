@@ -552,7 +552,7 @@ export const portfolioData: PortfolioData = {
       institution: 'Parul University',
       startDate: '2022-08-01',
       endDate: '2026-06-30',
-      cgpa: 6.56,
+      cgpa: 6.68,
       relevantCoursework: [
         'Data Structures and Algorithms',
         'Machine Learning',
@@ -568,6 +568,7 @@ export const portfolioData: PortfolioData = {
         'Compiler Design',
       ],
       achievements: [
+        'Currently in 8th Semester with CGPA of 6.68',
         'Active participant in coding competitions and technical events',
         'Developed multiple full-stack projects using modern technologies',
         'Gained practical experience through hands-on project development',
