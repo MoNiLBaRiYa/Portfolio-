@@ -745,6 +745,28 @@ export const portfolioData: PortfolioData = {
       credentialUrl: '',
       image: '/images/certifications/tata-simulation.jpg',
     },
+    {
+      id: 'deloitte-cyber-simulation',
+      title: 'Deloitte Australia Cyber Job Simulation',
+      issuer: 'Deloitte Australia on Forage',
+      date: '2026-01-01',
+      description:
+        'Completed a job simulation involving reading web activity logs, supporting a client in a cyber security breach, and identifying suspicious user activity.',
+      skills: [
+        'Cyber Security',
+        'Log Analysis',
+        'Threat Detection',
+        'Incident Response',
+        'Security Analysis',
+      ],
+      achievements: [
+        'Completed a job simulation involving reading web activity logs',
+        'Supported a client in a cyber security breach',
+        'Answered questions to identify suspicious user activity',
+      ],
+      credentialUrl: '',
+      image: '/images/certifications/deloitte-cyber.jpg',
+    },
   ],
   hobbies: [
     {
