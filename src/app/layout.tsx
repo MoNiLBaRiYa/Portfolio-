@@ -75,6 +75,26 @@ export default function RootLayout({
 
         {/* DNS prefetch for external services */}
         <link rel="dns-prefetch" href="//api.emailjs.com" />
+        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+
+        {/* Google Analytics */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-XGV4YH6JPX"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-XGV4YH6JPX', {
+                page_title: document.title,
+                page_location: window.location.href,
+              });
+            `,
+          }}
+        />
 
         {/* Favicon and app icons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
