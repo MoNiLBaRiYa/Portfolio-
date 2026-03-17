@@ -196,9 +196,9 @@ export const AboutSection: React.FC = () => {
               variants={itemVariants}
             >
               <div className="relative">
-                {/* Main Icon Container */}
+                {/* Main Profile Image Container */}
                 <motion.div
-                  className={`rounded-full bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 shadow-2xl border-4 border-white flex items-center justify-center ${
+                  className={`rounded-full shadow-2xl border-4 border-white overflow-hidden ${
                     isMobile
                       ? 'w-48 h-48'
                       : isTablet
@@ -215,13 +215,11 @@ export const AboutSection: React.FC = () => {
                     ease: 'easeInOut',
                   }}
                 >
-                  <span
-                    className={`${isMobile ? 'text-6xl' : isTablet ? 'text-7xl' : 'text-8xl'}`}
-                    role="img"
-                    aria-label="Person icon representing About Me section"
-                  >
-                    👤
-                  </span>
+                  <img
+                    src={portfolioData.personal.profileImage}
+                    alt={`${portfolioData.personal.name} - Professional headshot`}
+                    className="w-full h-full object-cover"
+                  />
                 </motion.div>
 
                 {/* Floating Elements */}

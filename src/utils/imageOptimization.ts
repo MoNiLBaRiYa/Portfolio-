@@ -7,7 +7,7 @@ export interface ImageAltConfig {
 // Comprehensive alt text mapping for all images
 export const imageAltTexts: ImageAltConfig = {
   // Profile images
-  '/images/profile.svg': `${portfolioData.personal.name} - Professional headshot`,
+  '/images/monilbariya.jpeg': `${portfolioData.personal.name} - Professional headshot`,
 
   // Project images
   '/images/projects/fake-news-1.svg':

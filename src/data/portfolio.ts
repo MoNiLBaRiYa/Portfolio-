@@ -11,7 +11,7 @@ export const portfolioData: PortfolioData = {
     summary:
       'Passionate Computer Science Engineering student leveraging modern development practices and AI-assisted tools to build innovative software solutions. Experienced in creating interactive web applications, AI/ML projects, and data visualization dashboards using contemporary development workflows.',
     availability: 'Available',
-    profileImage: '/images/profile.svg',
+    profileImage: '/images/monilbariya.jpeg',
   },
   skills: [
     {

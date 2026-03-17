@@ -83,7 +83,7 @@ export {
 export const preloadCriticalResources = () => {
   // Preload critical images
   const profileImage = new Image();
-  profileImage.src = '/images/profile.svg';
+  profileImage.src = '/images/monilbariya.jpeg';
 
   // Preload project images
   const projectImages = [
