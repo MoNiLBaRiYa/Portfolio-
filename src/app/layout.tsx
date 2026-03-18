@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import ErrorBoundary from '@/components/ui/ErrorBoundary';
 import { ThemeProvider } from '@/components/theme-provider';
-import { generateStructuredData, generateBreadcrumbStructuredData } from '@/utils/seo';
+import { generateStructuredData, generateBreadcrumbStructuredData, generateSkillsStructuredData, generateEducationStructuredData, generateExperienceStructuredData } from '@/utils/seo';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -34,6 +34,10 @@ export const metadata: Metadata = {
   publisher: 'Monil Bariya',
   alternates: {
     canonical: '/',
+    languages: {
+      'en-US': '/',
+      'x-default': '/',
+    },
   },
   openGraph: {
     type: 'website',
@@ -52,14 +56,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Monil Bariya | Full-Stack Developer & AI Enthusiast',
-    description:
-      'Explore the portfolio of Monil Bariya, featuring projects in AI, Web Development, and Data Visualization.',
-    images: ['/og-image.png'],
-    creator: '@monilbariya',
-  },
   robots: {
     index: true,
     follow: true,
@@ -74,6 +70,19 @@ export const metadata: Metadata = {
   verification: {
     google: 'fb54a6b0d2601101',
   },
+  manifest: '/site.webmanifest',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Monil Bariya Portfolio',
+  },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  category: 'Technology',
+  classification: 'Portfolio Website',
 };
 
 export default function RootLayout({
@@ -83,6 +92,9 @@ export default function RootLayout({
 }) {
   const structuredData = generateStructuredData();
   const breadcrumbData = generateBreadcrumbStructuredData();
+  const skillsData = generateSkillsStructuredData();
+  const educationData = generateEducationStructuredData();
+  const experienceData = generateExperienceStructuredData();
 
   return (
     <html lang="en" className="scroll-smooth">
@@ -106,6 +118,42 @@ export default function RootLayout({
             __html: JSON.stringify(breadcrumbData),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(skillsData),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData.portfolio),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData.organization),
+          }}
+        />
+        {educationData.map((edu, index) => (
+          <script
+            key={`education-${index}`}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(edu),
+            }}
+          />
+        ))}
+        {experienceData.map((exp, index) => (
+          <script
+            key={`experience-${index}`}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(exp),
+            }}
+          />
+        ))}
 
         {/* Preload critical resources */}
         <link
@@ -158,6 +206,22 @@ export default function RootLayout({
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        
+        {/* Security headers */}
+        <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+        <meta name="referrer" content="origin-when-cross-origin" />
+        
+        {/* Performance and caching */}
+        <meta httpEquiv="Cache-Control" content="public, max-age=31536000, immutable" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://api.emailjs.com" />
+        
+        {/* Theme and appearance */}
+        <meta name="theme-color" content="#0f172a" />
+        <meta name="color-scheme" content="dark light" />
+        <meta name="msapplication-TileColor" content="#0f172a" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
       </head>
       <body
         className={`${inter.className} antialiased`}

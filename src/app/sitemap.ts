@@ -5,13 +5,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://monilbariya.vercel.app';
   const currentDate = new Date().toISOString();
 
-  // Main pages
-  const routes = [
+  // Main pages with proper priorities and change frequencies
+  const mainRoutes = [
     {
       url: baseUrl,
       lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 1,
+      changeFrequency: 'weekly' as const,
+      priority: 1.0,
     },
     {
       url: `${baseUrl}/#about`,
@@ -51,13 +51,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Add project pages (if they have individual URLs in the future)
+  // Project-specific routes with individual project data
   const projectRoutes = portfolioData.projects.map(project => ({
     url: `${baseUrl}/#projects/${project.id}`,
-    lastModified: project.completionDate,
+    lastModified: project.completionDate || currentDate,
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   }));
 
-  return [...routes, ...projectRoutes];
+  // Skill category routes
+  const skillRoutes = portfolioData.skills.map((skillCategory, index) => ({
+    url: `${baseUrl}/#skills/${skillCategory.category.toLowerCase().replace(/\s+/g, '-')}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.5,
+  }));
+
+  // Additional important pages
+  const additionalRoutes = [
+    {
+      url: `${baseUrl}/sitemap.xml`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/robots.txt`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.1,
+    },
+  ];
+
+  return [...mainRoutes, ...projectRoutes, ...skillRoutes, ...additionalRoutes];
 }

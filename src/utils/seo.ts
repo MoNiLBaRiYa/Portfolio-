@@ -100,12 +100,31 @@ export function generateMetadata(config: SEOConfig = {}): Metadata {
       title,
       description,
       images: [image],
-      creator: '@monilbariya28',
     },
     alternates: {
       canonical: url,
+      languages: {
+        'en-US': url,
+        'x-default': url,
+      },
     },
     category: 'Technology',
+    classification: 'Portfolio Website',
+    referrer: 'origin-when-cross-origin',
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
+    manifest: '/site.webmanifest',
+    appleWebApp: {
+      capable: true,
+      statusBarStyle: 'default',
+      title: portfolioData.personal.name,
+    },
+    verification: {
+      google: 'fb54a6b0d2601101',
+    },
   };
 }
 
@@ -282,4 +301,59 @@ export function generateProjectStructuredData(projectId: string) {
       reviewCount: '1',
     },
   };
+}
+
+export function generateSkillsStructuredData() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Technical Skills',
+    description: 'Programming languages and technologies expertise',
+    itemListElement: portfolioData.skills.flatMap((category, categoryIndex) =>
+      category.skills.map((skill, skillIndex) => ({
+        '@type': 'ListItem',
+        position: categoryIndex * 10 + skillIndex + 1,
+        item: {
+          '@type': 'Thing',
+          name: skill.name,
+          description: `${skill.name} - ${category.category}`,
+          image: skill.icon,
+        },
+      }))
+    ),
+  };
+}
+
+export function generateEducationStructuredData() {
+  return portfolioData.education.map(edu => ({
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOccupationalCredential',
+    name: edu.degree,
+    description: `${edu.degree} from ${edu.institution}`,
+    educationalLevel: 'Bachelor',
+    credentialCategory: 'degree',
+    recognizedBy: {
+      '@type': 'EducationalOrganization',
+      name: edu.institution,
+    },
+    dateCreated: edu.startDate,
+    expires: edu.endDate,
+  }));
+}
+
+export function generateExperienceStructuredData() {
+  return portfolioData.experience.map(exp => ({
+    '@context': 'https://schema.org',
+    '@type': 'WorkExperience',
+    name: exp.title,
+    description: exp.description,
+    startDate: exp.startDate,
+    endDate: exp.endDate || new Date().toISOString().split('T')[0],
+    employer: {
+      '@type': 'Organization',
+      name: exp.company,
+    },
+    jobTitle: exp.title,
+    skills: exp.technologies || [],
+  }));
 }
