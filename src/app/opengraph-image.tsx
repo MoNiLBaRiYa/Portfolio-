@@ -3,14 +3,10 @@ import { portfolioData } from '@/data/portfolio';
 
 export const runtime = 'edge';
 export const alt = `${portfolioData.personal.name} - ${portfolioData.personal.title}`;
-export const size = {
-  width: 1200,
-  height: 630,
-};
+export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
 export default async function Image() {
-  // Fetch the profile image and logo
   const profileImageUrl = `https://monilbariya.vercel.app${portfolioData.personal.profileImage}`;
   const logoUrl = `https://monilbariya.vercel.app/android-chrome-512x512.png`;
 
@@ -21,294 +17,101 @@ export default async function Image() {
           height: '100%',
           width: '100%',
           display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
           backgroundColor: '#0f172a',
-          backgroundImage:
-            'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)',
-          padding: '60px',
-          position: 'relative',
+          padding: '50px 60px',
+          gap: '60px',
+          alignItems: 'center',
         }}
       >
-        {/* Background Pattern */}
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundImage:
-              'radial-gradient(circle at 20% 20%, #3b82f6 0%, transparent 40%), radial-gradient(circle at 80% 80%, #8b5cf6 0%, transparent 40%), radial-gradient(circle at 40% 60%, #10b981 0%, transparent 30%)',
-            opacity: 0.15,
-          }}
-        />
-
-        {/* Top Left Logo Badge */}
-        <div
-          style={{
-            position: 'absolute',
-            top: '40px',
-            left: '60px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '12px',
-            zIndex: 2,
-          }}
-        >
-          <div
-            style={{
-              width: '48px',
-              height: '48px',
-              borderRadius: '12px',
-              overflow: 'hidden',
-              background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
-              padding: '2px',
-              boxShadow: '0 8px 16px rgba(59, 130, 246, 0.3)',
-            }}
-          >
-            <img
-              src={logoUrl}
-              alt="Logo"
-              style={{
-                width: '100%',
-                height: '100%',
-                borderRadius: '10px',
-                objectFit: 'cover',
-                background: '#ffffff',
-              }}
-            />
-          </div>
-          <div
-            style={{
-              fontSize: '18px',
-              fontWeight: '600',
-              color: '#ffffff',
-              textShadow: '0 2px 4px rgba(0,0,0,0.3)',
-            }}
-          >
-            Portfolio
-          </div>
-        </div>
-
-        {/* Left Side - Content */}
+        {/* Left: Text Content */}
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'flex-start',
-            justifyContent: 'center',
             flex: 1,
-            zIndex: 1,
-            paddingRight: '40px',
-            paddingTop: '40px',
+            gap: '0px',
           }}
         >
-          <h1
-            style={{
-              fontSize: '64px',
-              fontWeight: 'bold',
-              color: '#ffffff',
-              marginBottom: '16px',
-              textShadow: '0 4px 8px rgba(0,0,0,0.3)',
-              lineHeight: 1.1,
-            }}
-          >
+          {/* Logo Badge top */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '24px' }}>
+            <img
+              src={logoUrl}
+              alt="logo"
+              style={{ width: '36px', height: '36px', borderRadius: '8px' }}
+            />
+            <span style={{ color: '#94a3b8', fontSize: '16px', fontWeight: 500 }}>
+              monilbariya.vercel.app
+            </span>
+          </div>
+
+          {/* Name */}
+          <div style={{ display: 'flex', fontSize: '58px', fontWeight: 700, color: '#ffffff', lineHeight: 1.1, marginBottom: '12px' }}>
             {portfolioData.personal.name}
-          </h1>
+          </div>
 
-          <p
-            style={{
-              fontSize: '28px',
-              color: '#94a3b8',
-              marginBottom: '32px',
-              lineHeight: 1.3,
-            }}
-          >
+          {/* Title */}
+          <div style={{ display: 'flex', fontSize: '24px', color: '#94a3b8', marginBottom: '32px', lineHeight: 1.3 }}>
             {portfolioData.personal.title}
-          </p>
+          </div>
 
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '16px',
-            }}
-          >
-            <div
-              style={{
-                display: 'flex',
-                gap: '16px',
-                flexWrap: 'wrap',
-              }}
-            >
-              <div
-                style={{
-                  padding: '10px 20px',
-                  backgroundColor: '#3b82f6',
-                  borderRadius: '6px',
-                  color: '#ffffff',
-                  fontSize: '16px',
-                  fontWeight: '600',
-                }}
-              >
-                Interactive Portfolio
-              </div>
-
-              <div
-                style={{
-                  padding: '10px 20px',
-                  backgroundColor: '#8b5cf6',
-                  borderRadius: '6px',
-                  color: '#ffffff',
-                  fontSize: '16px',
-                  fontWeight: '600',
-                }}
-              >
-                AI/ML Projects
-              </div>
+          {/* Skill Badges */}
+          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', padding: '8px 18px', backgroundColor: '#3b82f6', borderRadius: '6px', color: '#fff', fontSize: '15px', fontWeight: 600 }}>
+              Full Stack Dev
             </div>
-
-            <div
-              style={{
-                display: 'flex',
-                gap: '16px',
-              }}
-            >
-              <div
-                style={{
-                  padding: '10px 20px',
-                  backgroundColor: '#10b981',
-                  borderRadius: '6px',
-                  color: '#ffffff',
-                  fontSize: '16px',
-                  fontWeight: '600',
-                }}
-              >
-                Full Stack Dev
-              </div>
-
-              <div
-                style={{
-                  padding: '10px 20px',
-                  backgroundColor: '#f59e0b',
-                  borderRadius: '6px',
-                  color: '#ffffff',
-                  fontSize: '16px',
-                  fontWeight: '600',
-                }}
-              >
-                Available for Work
-              </div>
+            <div style={{ display: 'flex', padding: '8px 18px', backgroundColor: '#8b5cf6', borderRadius: '6px', color: '#fff', fontSize: '15px', fontWeight: 600 }}>
+              AI/ML Projects
+            </div>
+            <div style={{ display: 'flex', padding: '8px 18px', backgroundColor: '#10b981', borderRadius: '6px', color: '#fff', fontSize: '15px', fontWeight: 600 }}>
+              Available for Work
             </div>
           </div>
         </div>
 
-        {/* Right Side - Profile Image with Logo Badge */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 1,
-            position: 'relative',
-          }}
-        >
+        {/* Right: Profile Photo + Logo Badge */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
+          {/* Profile Photo */}
           <div
             style={{
-              width: '280px',
-              height: '280px',
+              display: 'flex',
+              width: '260px',
+              height: '260px',
               borderRadius: '50%',
+              border: '5px solid #3b82f6',
               overflow: 'hidden',
-              border: '6px solid #3b82f6',
-              boxShadow: '0 20px 40px rgba(59, 130, 246, 0.3)',
-              background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
-              padding: '4px',
-              position: 'relative',
             }}
           >
             <img
               src={profileImageUrl}
               alt={portfolioData.personal.name}
-              style={{
-                width: '100%',
-                height: '100%',
-                borderRadius: '50%',
-                objectFit: 'cover',
-              }}
+              style={{ width: '260px', height: '260px', objectFit: 'cover' }}
             />
           </div>
 
-          {/* Small Logo Badge on Profile Image */}
+          {/* Favicon Badge below photo */}
           <div
             style={{
-              position: 'absolute',
-              bottom: '20px',
-              right: '20px',
-              width: '64px',
-              height: '64px',
-              borderRadius: '50%',
-              background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
-              padding: '3px',
-              boxShadow: '0 8px 16px rgba(0, 0, 0, 0.3)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              backgroundColor: '#1e293b',
+              border: '1px solid #334155',
+              borderRadius: '20px',
+              padding: '6px 14px',
             }}
           >
-            <div
-              style={{
-                width: '100%',
-                height: '100%',
-                borderRadius: '50%',
-                overflow: 'hidden',
-                background: '#ffffff',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <img
-                src={logoUrl}
-                alt="Brand Logo"
-                style={{
-                  width: '80%',
-                  height: '80%',
-                  objectFit: 'contain',
-                }}
-              />
-            </div>
+            <img
+              src={logoUrl}
+              alt="brand"
+              style={{ width: '24px', height: '24px', borderRadius: '6px' }}
+            />
+            <span style={{ color: '#e2e8f0', fontSize: '14px', fontWeight: 600 }}>
+              Portfolio
+            </span>
           </div>
         </div>
-
-        {/* Bottom Right Website URL */}
-        <div
-          style={{
-            position: 'absolute',
-            bottom: '40px',
-            right: '60px',
-            fontSize: '14px',
-            color: '#64748b',
-            zIndex: 1,
-          }}
-        >
-          monilbariya.vercel.app
-        </div>
-
-        {/* Decorative Corner Element */}
-        <div
-          style={{
-            position: 'absolute',
-            top: '40px',
-            right: '60px',
-            width: '4px',
-            height: '60px',
-            background: 'linear-gradient(180deg, #3b82f6, #8b5cf6)',
-            borderRadius: '2px',
-            zIndex: 1,
-          }}
-        />
       </div>
     ),
-    {
-      ...size,
-    }
+    { ...size }
   );
 }
