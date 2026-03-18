@@ -12,7 +12,7 @@ export interface SEOConfig {
 
 export function generateMetadata(config: SEOConfig = {}): Metadata {
   const baseUrl = 'https://monilbariya.vercel.app';
-  const defaultImage = `${baseUrl}/opengraph-image`;
+  const defaultImage = `${baseUrl}/opengraph-image.png`;
 
   const title =
     config.title ||

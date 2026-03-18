@@ -49,10 +49,11 @@ export const metadata: Metadata = {
     siteName: 'Monil Bariya Portfolio',
     images: [
       {
-        url: '/opengraph-image',
+        url: 'https://monilbariya.vercel.app/opengraph-image.png',
         width: 1200,
         height: 630,
-        alt: 'Monil Bariya Portfolio',
+        alt: 'Monil Bariya - Full-Stack Developer & AI Enthusiast',
+        type: 'image/png',
       },
     ],
   },
@@ -154,6 +155,12 @@ export default function RootLayout({
             }}
           />
         ))}
+
+        {/* Explicit OG image meta for WhatsApp large preview */}
+        <meta property="og:image" content="https://monilbariya.vercel.app/opengraph-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/png" />
 
         {/* Preload critical resources */}
         <link

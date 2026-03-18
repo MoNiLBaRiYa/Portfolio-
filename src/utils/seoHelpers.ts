@@ -22,7 +22,7 @@ export function generatePageMetadata(config: PageSEOConfig = {}): Metadata {
     : `${portfolioData.personal.name} - ${portfolioData.personal.title}`;
     
   const description = config.description || portfolioData.personal.summary;
-  const image = config.image || `${baseUrl}/opengraph-image`;
+  const image = config.image || `${baseUrl}/opengraph-image.png`;
 
   const baseKeywords = [
     'Monil Bariya',
