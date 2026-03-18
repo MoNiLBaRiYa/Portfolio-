@@ -133,6 +133,5 @@ export const getSkillProficiencyColor = (proficiency: number): string => {
 // Export SEO utilities
 export * from './seo';
 export * from './imageOptimization';
-export * from './seoAudit';
 export * from './smoothScroll';
 export * from './animations';
