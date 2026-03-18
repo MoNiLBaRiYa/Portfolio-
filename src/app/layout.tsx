@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import ErrorBoundary from '@/components/ui/ErrorBoundary';
 import { ThemeProvider } from '@/components/theme-provider';
+import { generateStructuredData, generateBreadcrumbStructuredData } from '@/utils/seo';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -11,28 +12,53 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Monil Bariya - Portfolio',
+  metadataBase: new URL('https://monilbariya.vercel.app'),
+  title: {
+    default: 'Monil Bariya | Full-Stack Developer & AI Enthusiast',
+    template: '%s | Monil Bariya',
+  },
   description:
-    'Computer Science Engineering Student | Full-Stack Developer | AI/ML Enthusiast',
-  keywords:
-    'Monil Bariya, Computer Science, Full Stack Developer, AI ML, Portfolio, Next.js, React',
-  authors: [{ name: 'Monil Bariya' }],
+    'Portfolio of Monil Bariya, a Computer Science Engineering student and Full-Stack Developer specializing in React, Next.js, and AI-assisted development.',
+  keywords: [
+    'Monil Bariya',
+    'Full-Stack Developer',
+    'AI/ML Enthusiast',
+    'Next.js Portfolio',
+    'React Developer',
+    'Computer Science Student',
+    'Web Development',
+    'India',
+  ],
+  authors: [{ name: 'Monil Bariya', url: 'https://github.com/MoNiLBaRiYa' }],
   creator: 'Monil Bariya',
   publisher: 'Monil Bariya',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://monilbariya.vercel.app',
-    title: 'Monil Bariya - Portfolio',
+    title: 'Monil Bariya | Full-Stack Developer & AI Enthusiast',
     description:
-      'Computer Science Engineering Student | Full-Stack Developer | AI/ML Enthusiast',
+      'Explore the portfolio of Monil Bariya, featuring projects in AI, Web Development, and Data Visualization.',
     siteName: 'Monil Bariya Portfolio',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Monil Bariya Portfolio',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Monil Bariya - Portfolio',
+    title: 'Monil Bariya | Full-Stack Developer & AI Enthusiast',
     description:
-      'Computer Science Engineering Student | Full-Stack Developer | AI/ML Enthusiast',
+      'Explore the portfolio of Monil Bariya, featuring projects in AI, Web Development, and Data Visualization.',
+    images: ['/og-image.png'],
+    creator: '@monilbariya',
   },
   robots: {
     index: true,
@@ -55,9 +81,32 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const structuredData = generateStructuredData();
+  const breadcrumbData = generateBreadcrumbStructuredData();
+
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData.person),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData.website),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbData),
+          }}
+        />
+
         {/* Preload critical resources */}
         <link
           rel="preload"

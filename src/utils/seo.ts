@@ -11,7 +11,7 @@ export interface SEOConfig {
 }
 
 export function generateMetadata(config: SEOConfig = {}): Metadata {
-  const baseUrl = 'https://monil-bariya.vercel.app';
+  const baseUrl = 'https://monilbariya.vercel.app';
   const defaultImage = `${baseUrl}/opengraph-image`;
 
   const title =
@@ -110,7 +110,7 @@ export function generateMetadata(config: SEOConfig = {}): Metadata {
 }
 
 export function generateStructuredData() {
-  const baseUrl = 'https://monil-bariya.vercel.app';
+  const baseUrl = 'https://monilbariya.vercel.app';
 
   const personSchema = {
     '@context': 'https://schema.org',
@@ -215,7 +215,7 @@ export function generateStructuredData() {
 }
 
 export function generateBreadcrumbStructuredData() {
-  const baseUrl = 'https://monil-bariya.vercel.app';
+  const baseUrl = 'https://monilbariya.vercel.app';
 
   return {
     '@context': 'https://schema.org',
@@ -268,7 +268,7 @@ export function generateProjectStructuredData(projectId: string) {
     dateCreated: project.completionDate,
     programmingLanguage: project.technologies.map(tech => tech.name),
     screenshot: project.images.map(
-      img => `https://monil-bariya.vercel.app${img}`
+      img => `https://monilbariya.vercel.app${img}`
     ),
     offers: {
       '@type': 'Offer',

@@ -124,7 +124,6 @@ const HeroSection = () => {
         initial="hidden"
         animate="visible"
       >
-        {/* Main heading with typewriter effect */}
         <motion.div className={isMobile ? 'mb-4' : 'mb-6'}>
           <h1
             className={`font-bold text-gray-900 mb-2 ${
@@ -135,7 +134,8 @@ const HeroSection = () => {
                   : 'text-4xl md:text-6xl lg:text-7xl'
             }`}
           >
-            <span className="inline-block">
+            <span className="sr-only">{fullText}</span>
+            <span className="inline-block" aria-hidden="true">
               {displayedText}
               <motion.span
                 className={`inline-block w-1 bg-blue-600 ml-1 ${

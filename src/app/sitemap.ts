@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { portfolioData } from '@/data/portfolio';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://monil-bariya.vercel.app';
+  const baseUrl = 'https://monilbariya.vercel.app';
   const currentDate = new Date().toISOString();
 
   // Main pages
