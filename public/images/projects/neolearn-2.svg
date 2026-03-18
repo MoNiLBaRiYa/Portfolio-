@@ -1,0 +1,8 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#764ba2"/>
+  <rect x="50" y="50" width="300" height="200" fill="white" opacity="0.9" rx="10"/>
+  <text x="200" y="140" text-anchor="middle" fill="#ffde03" font-family="Arial" font-size="60" font-weight="bold">📚</text>
+  <text x="200" y="210" text-anchor="middle" fill="#1a1a1a" font-family="Arial" font-size="24" font-weight="bold">Inclusive Learning UI</text>
+  <rect x="100" y="230" width="200" height="30" fill="#1a1a1a" rx="5"/>
+  <text x="200" y="250" text-anchor="middle" fill="white" font-family="Arial" font-size="14" font-weight="bold">HIGH CONTRAST</text>
+</svg>

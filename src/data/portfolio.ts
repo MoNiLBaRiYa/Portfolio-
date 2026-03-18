@@ -3,19 +3,19 @@ import { PortfolioData } from '@/types/portfolio';
 export const portfolioData: PortfolioData = {
   personal: {
     name: 'Monil Bariya',
-    title: 'Computer Science Engineering Student',
+    title: 'Computer Science Engineering Student & Developer',
     location: 'India',
     email: 'monil.bariya2003@gmail.com',
     linkedin: 'https://www.linkedin.com/in/monilbariya28',
     github: 'https://github.com/MoNiLBaRiYa',
     summary:
-      'Passionate Computer Science Engineering student leveraging modern development practices and AI-assisted tools to build innovative software solutions. Experienced in creating interactive web applications, AI/ML projects, and data visualization dashboards using contemporary development workflows.',
+      'I am a Computer Science Engineering student who enjoys building real-world projects and exploring modern technologies. I focus on web development, using AI as a workflow accelerator to learn faster and improve productivity while ensuring I deeply understand the underlying logic.',
     availability: 'Available',
     profileImage: '/images/monilbariya.jpeg',
   },
   skills: [
     {
-      category: 'Languages',
+      category: 'Core Programming Languages',
       skills: [
         {
           name: 'Python',
@@ -48,7 +48,7 @@ export const portfolioData: PortfolioData = {
       ],
     },
     {
-      category: 'Web Development',
+      category: 'Modern Web Development',
       skills: [
         {
           name: 'Next.js',
@@ -78,7 +78,7 @@ export const portfolioData: PortfolioData = {
       ],
     },
     {
-      category: 'AI Tools',
+      category: 'Generative AI & Prompt Engineering',
       skills: [
         {
           name: 'Generative AI',
@@ -99,7 +99,7 @@ export const portfolioData: PortfolioData = {
       ],
     },
     {
-      category: 'Developer Tools',
+      category: 'Professional Developer Workflow (IDE, Git)',
       skills: [
         {
           name: 'VS Code',
@@ -108,6 +108,10 @@ export const portfolioData: PortfolioData = {
         {
           name: 'Cursor IDE',
           icon: '/icons/cursor.svg',
+        },
+        {
+          name: 'Antigravity',
+          icon: 'https://cdn-icons-png.flaticon.com/512/6295/6295417.png',
         },
         {
           name: 'Kiro',
@@ -124,7 +128,7 @@ export const portfolioData: PortfolioData = {
       ],
     },
     {
-      category: 'Core Skills',
+      category: 'Engineering Fundamentals',
       skills: [
         {
           name: 'Documentation',
@@ -169,9 +173,9 @@ export const portfolioData: PortfolioData = {
   projects: [
     {
       id: 'needmeet',
-      title: 'NeedMeet – Service Booking & Management Platform',
+      title: 'NeedMeet: AI-Assisted Service Discovery & Marketplace',
       description:
-        'AI-Assisted Full Stack service booking platform with scheduling, user access management, and AI-based advisory system for repair/replace decisions. (Ongoing)',
+        'An AI-assisted service marketplace for local discovery. Features a scalable full-stack architecture, role-based access, and an intelligent advisory system for repair/replace decisions.',
       longDescription:
         'Designed end-to-end workflow for service booking, scheduling, and user access. Built responsive UI components and modular navigation using AI-assisted development tools. Created forms, dashboard layouts, and user data flow architecture similar to public service portals.',
       projectStory: {
@@ -247,9 +251,9 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: 'talentscout',
-      title: 'TalentScout – AI Hiring Platform',
+      title: 'TalentScout: AI-Powered Career Recommendation System',
       description:
-        'AI Workflow Development platform for career profiling that recommends suitable job roles based on user skills and preferences. (Ongoing)',
+        'An AI recommendation system using structured LLM workflows and prompt chaining to analyze user skills and generate personalized career paths with controlled outputs.',
       longDescription:
         'Developed structured prompt workflows to recommend suitable job roles to users. Designed UI screens and form-based inputs used in many government career portals. Planned backend schema and matching logic with AI assistance.',
       projectStory: {
@@ -323,9 +327,9 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: 'neolearn',
-      title: 'NeoLearn – AI-Integrated Learning App',
+      title: 'NeoLearn: Accessibility-Focused Learning Platform',
       description:
-        'Accessibility-focused learning interface designed for disabled learners with high-contrast themes and inclusive design principles.',
+        'An accessibility-focused learning platform using WCAG principles and high-contrast UI. Leveraged AI-assisted design to refine usability and ensure inclusive access.',
       longDescription:
         'Built an accessibility-focused UI for disabled learners using AI-assisted development. Designed high-contrast themes, readable text, and simple navigation for inclusive access. Created responsive learning screens aligned with basic accessibility guidelines.',
       projectStory: {
@@ -400,9 +404,9 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: 'fake-news-detection',
-      title: 'Fake News AI Detection Model',
+      title: 'Fake News AI Detection: ML-Powered Misinformation Analysis',
       description:
-        'Machine learning system that analyzes news articles to detect potential misinformation using NLP techniques.',
+        'A Python-based misinformation detection system using NLP and ML. Features a pipeline for real-time predictions with confidence scores to address digital misinformation.',
       longDescription:
         'Created responsive UI for login, signup, and news verification. Assisted in database setup for secure user data handling. Helped integrate the AI classification pipeline with UI output display.',
       projectStory: {
