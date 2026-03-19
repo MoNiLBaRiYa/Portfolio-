@@ -11,8 +11,8 @@ const navigationItems = [
   { id: 'about', label: 'About', href: '#about' },
   { id: 'skills', label: 'Skills', href: '#skills' },
   { id: 'projects', label: 'Projects', href: '#projects' },
-  { id: 'experience', label: 'Experience', href: '#experience' },
   { id: 'data-visualization', label: 'Analytics', href: '#data-visualization' },
+  { id: 'experience', label: 'Experience', href: '#experience' },
   { id: 'education', label: 'Education', href: '#education' },
   { id: 'contact', label: 'Contact', href: '#contact' },
 ];
