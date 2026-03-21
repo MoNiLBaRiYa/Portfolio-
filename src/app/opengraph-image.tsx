@@ -6,6 +6,12 @@ export const alt = `${portfolioData.personal.name} - ${portfolioData.personal.ti
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
+// Prevent Google from indexing this OG banner as a standalone image in search results.
+// It's intended for social sharing previews only.
+export const headers = {
+  'X-Robots-Tag': 'noindex',
+};
+
 export default async function Image() {
   const profileImageUrl = `https://monilbariya.vercel.app${portfolioData.personal.profileImage}`;
   const logoUrl = `https://monilbariya.vercel.app/android-chrome-512x512.png`;

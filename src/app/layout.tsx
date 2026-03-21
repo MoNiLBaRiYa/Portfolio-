@@ -64,7 +64,7 @@ export const metadata: Metadata = {
       index: true,
       follow: true,
       'max-video-preview': -1,
-      'max-image-preview': 'large',
+      'max-image-preview': 'standard',
       'max-snippet': -1,
     },
   },
@@ -156,11 +156,16 @@ export default function RootLayout({
           />
         ))}
 
-        {/* Explicit OG image meta for WhatsApp large preview */}
+        {/* Explicit OG image meta for WhatsApp/social sharing preview only */}
         <meta property="og:image" content="https://monilbariya.vercel.app/opengraph-image.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:type" content="image/png" />
+
+        {/* Tell Google to use profile photo as the representative image, not the OG banner */}
+        <link rel="image_src" href="https://monilbariya.vercel.app/images/monilbariya.jpeg" />
+        {/* Prevent Google from using the OG banner image as a search result thumbnail */}
+        <meta name="robots" content="max-image-preview:standard" />
 
         {/* Preload critical resources */}
         <link
