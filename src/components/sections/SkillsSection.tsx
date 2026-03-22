@@ -335,6 +335,7 @@ const SkillGrid: React.FC<SkillGridProps> = ({ skills }) => {
                           alt={`${skill.name} icon`}
                           width={isMobile ? 32 : 40}
                           height={isMobile ? 32 : 40}
+                          unoptimized={true}
                           className={`object-contain ${
                             isMobile ? 'w-8 h-8' : 'w-10 h-10'
                           }`}

@@ -177,12 +177,15 @@ export function ContactSection() {
               >
                 <div>
                   <h3
-                    className={`font-semibold text-gray-900 mb-6 ${
+                    className={`font-semibold text-gray-900 mb-2 ${
                       isMobile ? 'text-xl' : 'text-2xl'
                     }`}
                   >
                     Get in Touch
                   </h3>
+                  <p className="text-blue-600 font-medium mb-4">
+                    Open to freelance opportunities and real-world projects.
+                  </p>
                   <p
                     className={`text-gray-600 mb-8 ${
                       isMobile ? 'text-sm' : 'text-base'

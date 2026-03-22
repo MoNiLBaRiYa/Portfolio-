@@ -1,12 +1,8 @@
 <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="300" fill="#20c997"/>
+  <rect width="400" height="300" fill="#20c997"/> <!-- Teal color -->
   <rect x="50" y="50" width="300" height="200" fill="white" opacity="0.9" rx="10"/>
-  <!-- Search icon -->
-  <circle cx="190" cy="125" r="30" fill="none" stroke="#20c997" stroke-width="6"/>
-  <line x1="212" y1="147" x2="232" y2="167" stroke="#20c997" stroke-width="6" stroke-linecap="round"/>
-  <!-- Person icon inside circle -->
-  <circle cx="190" cy="118" r="8" fill="#20c997"/>
-  <path d="M174 138 Q190 128 206 138" fill="#20c997"/>
-  <text x="200" y="210" text-anchor="middle" fill="#1a1a1a" font-family="Arial" font-size="20" font-weight="bold">TalentScout AI</text>
-  <text x="200" y="235" text-anchor="middle" fill="#555" font-family="Arial" font-size="13">AI-Powered Career Profiling</text>
+  <circle cx="200" cy="140" r="40" fill="#20c997" opacity="0.2"/>
+  <text x="200" y="140" text-anchor="middle" fill="#007bff" font-family="Arial" font-size="60" font-weight="bold">🔍</text>
+  <text x="200" y="210" text-anchor="middle" fill="#1a1a1a" font-family="Arial" font-size="24" font-weight="bold">TalentScout AI</text>
+  <text x="200" y="240" text-anchor="middle" fill="#555" font-family="Arial" font-size="14">AI-Powered Career Profiling</text>
 </svg>

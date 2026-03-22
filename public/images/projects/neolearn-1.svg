@@ -1,10 +1,7 @@
 <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
   <rect width="400" height="300" fill="#667eea"/>
   <rect x="50" y="50" width="300" height="200" fill="#1a1a1a" rx="10"/>
-  <!-- Eye icon -->
-  <ellipse cx="200" cy="135" rx="45" ry="25" fill="none" stroke="#ffde03" stroke-width="4"/>
-  <circle cx="200" cy="135" r="12" fill="#ffde03"/>
-  <circle cx="200" cy="135" r="5" fill="#1a1a1a"/>
-  <text x="200" y="200" text-anchor="middle" fill="white" font-family="Arial" font-size="20" font-weight="bold">NeoLearn</text>
-  <rect x="70" y="220" width="260" height="8" fill="#ffde03" rx="4"/>
+  <text x="200" y="140" text-anchor="middle" fill="#ffde03" font-family="Arial" font-size="60" font-weight="bold">👁️</text>
+  <text x="200" y="210" text-anchor="middle" fill="white" font-family="Arial" font-size="24" font-weight="bold">NeoLearn Accessibility</text>
+  <rect x="70" y="230" width="260" height="10" fill="#ffde03" rx="5"/>
 </svg>

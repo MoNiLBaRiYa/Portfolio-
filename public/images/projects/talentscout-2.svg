@@ -1,11 +1,8 @@
 <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="300" fill="#17a589"/>
+  <rect width="400" height="300" fill="#fd7e14"/> <!-- Orange color -->
   <rect x="50" y="50" width="300" height="200" fill="white" opacity="0.9" rx="10"/>
-  <!-- Bar chart icon -->
-  <rect x="110" y="160" width="30" height="60" fill="#20c997" rx="3"/>
-  <rect x="155" y="130" width="30" height="90" fill="#17a589" rx="3"/>
-  <rect x="200" y="110" width="30" height="110" fill="#20c997" rx="3"/>
-  <rect x="245" y="140" width="30" height="80" fill="#17a589" rx="3"/>
-  <line x1="95" y1="225" x2="295" y2="225" stroke="#ccc" stroke-width="2"/>
-  <text x="200" y="210" text-anchor="middle" fill="#1a1a1a" font-family="Arial" font-size="20" font-weight="bold">Career Analytics</text>
+  <text x="200" y="140" text-anchor="middle" fill="#fd7e14" font-family="Arial" font-size="60" font-weight="bold">🧠</text>
+  <text x="200" y="210" text-anchor="middle" fill="#1a1a1a" font-family="Arial" font-size="24" font-weight="bold">Career Matching Logic</text>
+  <text x="200" y="240" text-anchor="middle" fill="#555" font-family="Arial" font-size="14">Structured LLM Workflows</text>
+  <path d="M 100 120 L 300 120 M 100 160 L 300 160" stroke="#fd7e14" stroke-width="2" opacity="0.3"/>
 </svg>

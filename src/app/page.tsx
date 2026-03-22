@@ -6,6 +6,8 @@ import { Layout } from '@/components/layout';
 import {
   HeroSection,
   AboutSection,
+  ServicesSection,
+  OfferingsSection,
   SkillsSection,
   ProjectsSection,
   ExperienceSection,
@@ -53,6 +55,14 @@ export default function Home() {
             </Suspense>
 
             <Suspense fallback={<SkeletonLoader />}>
+              <OfferingsSection />
+            </Suspense>
+
+            <Suspense fallback={<SkeletonLoader />}>
+              <ServicesSection />
+            </Suspense>
+
+            <Suspense fallback={<SkeletonLoader />}>
               <DataVisualizationSection
                 data={{
                   projects: portfolioData.projects,
@@ -64,7 +74,7 @@ export default function Home() {
 
             <Suspense fallback={<SkeletonLoader />}>
               <ExperienceSection
-                experiences={portfolioData.experience}
+                experiences={[]}
                 certifications={portfolioData.certifications}
               />
             </Suspense>

@@ -97,10 +97,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {project.images && project.images.length > 0 ? (
           <Image
             src={project.images[0]}
-            alt={`${project.title} preview`}
+            alt={`${project.title} - ${project.category} platform UI`}
             fill
             className="object-cover opacity-80"
             loading="lazy"
+            unoptimized={true}
           />
         ) : (
           <div className="relative z-20">
@@ -203,13 +204,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </button>
 
           <div className="flex items-center gap-3">
+
             {project.githubUrl && (
               <button
                 onClick={e => handleLinkClick(e, project.githubUrl!)}
-                className="p-2 text-gray-500 hover:text-blue-600 transition-colors duration-200"
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 text-gray-700 hover:bg-gray-100 border border-gray-200 hover:border-gray-300 rounded-lg text-xs font-semibold transition-colors duration-200"
                 title="View Code"
               >
-                <Github className="w-4 h-4" />
+                💻 GitHub
               </button>
             )}
           </div>

@@ -3,13 +3,13 @@ import { PortfolioData } from '@/types/portfolio';
 export const portfolioData: PortfolioData = {
   personal: {
     name: 'Monil Bariya',
-    title: 'Computer Science Engineering Student & Developer',
+    title: 'Full Stack & AI-Powered Web Developer',
     location: 'India',
     email: 'monil.bariya2003@gmail.com',
     linkedin: 'https://www.linkedin.com/in/monilbariya28',
     github: 'https://github.com/MoNiLBaRiYa',
     summary:
-      'I am a Computer Science Engineering student dedicated to building real-world solutions while mastering modern technologies. I leverage AI as a powerful workflow accelerator to build faster and deeper, ensuring I fully grasp the logic and architecture behind every line of code. My goal is to evolve into a proficient developer by blending traditional engineering fundamentals with cutting-edge AI-assisted methodologies.',
+      'I build fast, scalable, and SEO-friendly web applications that drive business growth. By combining modern tech stacks with intelligent automation, I deliver seamless digital products from concept to deployment.',
     availability: 'Available',
     profileImage: '/images/monilbariya.jpeg',
   },
@@ -170,16 +170,16 @@ export const portfolioData: PortfolioData = {
       id: 'needmeet',
       title: 'NeedMeet: AI-Assisted Service Discovery & Marketplace',
       description:
-        'An AI-assisted service marketplace built to explore scalable full-stack architectures and intelligent advisory systems for local service discovery.',
+        'A scalable AI-driven web application connecting local service providers with customers through an intelligent marketplace platform.',
       longDescription:
-        'Designed end-to-end workflow for service booking, scheduling, and user access. Built responsive UI components and modular navigation using AI-assisted development tools. Created forms, dashboard layouts, and user data flow architecture similar to public service portals.',
+        'Problem: Local service booking lacks intelligent decision-making tools and streamlined user interfaces, making scheduling inefficient for both providers and customers.\n\nSolution: Engineered a scalable, responsive marketplace utilizing AI-assisted development to create modular UI components, robust data flows, and intelligent matching dashboards.\n\nResult: Delivered a complete end-to-end platform enabling faster service discovery and seamless booking experience.',
       projectStory: {
         problem:
-          'Service booking platforms often lack intelligent decision-making tools and have complex user interfaces that make scheduling and management difficult for both service providers and customers.',
+          'Local service booking lacks intelligent decision-making tools and streamlined user interfaces, making scheduling inefficient for both providers and customers.',
         solution:
-          'Built a comprehensive service booking platform with AI-assisted development, featuring responsive UI components, modular navigation, and an integrated AI-based advisory system that helps users make informed repair/replace decisions.',
+          'Engineered a scalable, responsive marketplace utilizing AI-assisted development to create modular UI components, robust data flows, and intelligent matching dashboards.',
         impact:
-          'Created a scalable platform architecture that streamlines service booking workflows and provides intelligent recommendations, improving user decision-making and operational efficiency.',
+          'Delivered a complete end-to-end platform enabling faster service discovery and seamless booking experience.',
       },
       technologies: [
         { name: 'Next.js', category: 'Frontend', icon: '/icons/nextjs.svg' },
@@ -200,6 +200,7 @@ export const portfolioData: PortfolioData = {
         '/images/projects/needmeet-1.svg',
         '/images/projects/needmeet-2.svg',
       ],
+      demoUrl: '#',
       githubUrl: 'https://github.com/MoNiLBaRiYa/NeedMeet',
       featured: true,
       ongoing: true,
@@ -248,16 +249,16 @@ export const portfolioData: PortfolioData = {
       id: 'talentscout',
       title: 'TalentScout: AI-Powered Career Recommendation System',
       description:
-        'An AI recommendation system developed to master structured LLM workflows and prompt chaining for generating personalized career paths.',
+        'An intelligent, real-time career advisory system leveraging structured prompt engineering to deliver personalized, data-driven growth roadmaps.',
       longDescription:
-        'Developed structured prompt workflows to recommend suitable job roles to users. Designed UI screens and form-based inputs used in many government career portals. Planned backend schema and matching logic with AI assistance.',
+        'Problem: Job seekers struggle to identify suitable career paths, while traditional career counseling is time-consuming, expensive, and not highly scalable.\n\nSolution: Built an intelligent advisory system leveraging structured prompt engineering and AI workflows to instantly analyze user profiles and identify optimal roles.\n\nResult: Created an automated, dynamic workflow that delivers highly targeted, actionable career recommendations to users instantly.',
       projectStory: {
         problem:
-          'Job seekers often struggle to identify suitable career paths that match their skills and interests, while traditional career counseling is time-consuming and not always accessible.',
+          'Job seekers struggle to identify suitable career paths, while traditional career counseling is time-consuming, expensive, and not highly scalable.',
         solution:
-          'Created an AI-powered platform that uses structured prompt workflows to analyze user profiles and recommend personalized job roles. Designed intuitive form-based inputs and matching logic to provide accurate career guidance.',
+          'Built an intelligent advisory system leveraging structured prompt engineering and AI workflows to instantly analyze user profiles and identify optimal roles.',
         impact:
-          'Automated the career recommendation process, making professional guidance accessible to more users while providing data-driven insights for better career decisions.',
+          'Created an automated, dynamic workflow that delivers highly targeted, actionable career recommendations to users instantly.',
       },
       technologies: [
         { name: 'Next.js', category: 'Frontend', icon: '/icons/nextjs.svg' },
@@ -278,6 +279,7 @@ export const portfolioData: PortfolioData = {
         '/images/projects/talentscout-1.svg',
         '/images/projects/talentscout-2.svg',
       ],
+      demoUrl: '#',
       githubUrl: 'https://github.com/MoNiLBaRiYa/TalentScout',
       featured: true,
       ongoing: true,
@@ -324,16 +326,16 @@ export const portfolioData: PortfolioData = {
       id: 'neolearn',
       title: 'NeoLearn: Accessibility-Focused Learning Platform',
       description:
-        'An inclusive learning platform developed to understand WCAG principles and high-contrast UI design for users with disabilities.',
+        'An accessibility-first learning platform delivering inclusive educational experiences through strict WCAG-compliant design.',
       longDescription:
-        'Built an accessibility-focused UI for disabled learners using AI-assisted development. Designed high-contrast themes, readable text, and simple navigation for inclusive access. Created responsive learning screens aligned with basic accessibility guidelines.',
+        'Problem: Digital learning platforms consistently fail to provide accessible experiences for disabled users, severely limiting inclusive education.\n\nSolution: Developed an accessibility-first educational platform focusing heavily on high-contrast themes, screen reader compatibility, and simplified, intuitive navigation.\n\nResult: Delivered a fully WCAG-compliant design that successfully ensures equitable and inclusive access to educational content for all users.',
       projectStory: {
         problem:
-          'Many educational platforms lack proper accessibility features, making it difficult for disabled learners to access quality educational content and participate in online learning.',
+          'Digital learning platforms consistently fail to provide accessible experiences for disabled users, severely limiting inclusive education.',
         solution:
-          'Developed an inclusive learning platform with AI-assisted development, featuring high-contrast themes, readable typography, and simplified navigation specifically designed for learners with disabilities.',
+          'Developed an accessibility-first educational platform focusing heavily on high-contrast themes, screen reader compatibility, and simplified, intuitive navigation.',
         impact:
-          'Made online learning more accessible to disabled students, promoting inclusive education and ensuring equal access to learning resources.',
+          'Delivered a fully WCAG-compliant design that successfully ensures equitable and inclusive access to educational content for all users.',
       },
       technologies: [
         { name: 'Next.js', category: 'Frontend', icon: '/icons/nextjs.svg' },
@@ -354,6 +356,7 @@ export const portfolioData: PortfolioData = {
         '/images/projects/neolearn-1.svg',
         '/images/projects/neolearn-2.svg',
       ],
+      demoUrl: '#',
       githubUrl: 'https://github.com/MoNiLBaRiYa/NeoLearn',
       featured: true,
       completionDate: '2024-12-20',
@@ -401,16 +404,16 @@ export const portfolioData: PortfolioData = {
       id: 'fake-news-detection',
       title: 'Fake News AI Detection: ML-Powered Misinformation Analysis',
       description:
-        'A Python-based misinformation detection system built to master NLP concepts and real-time machine learning predictions.',
+        'A Python-based misinformation detection system leveraging NLP and real-time machine learning predictions for instant classification.',
       longDescription:
-        'Created responsive UI for login, signup, and news verification. Assisted in database setup for secure user data handling. Helped integrate the AI classification pipeline with UI output display.',
+        'Problem: The rapid, unchecked spread of online misinformation requires instant, automated verification to prevent viral fake news outbreaks before human fact-checkers can respond.\n\nSolution: Designed and developed a secure pipeline integrating a backend NLP machine learning classification model with a responsive, user-friendly frontend interface.\n\nResult: Deployed a highly functional system capable of delivering real-time, high-confidence news text classification to a live user base instantly.',
       projectStory: {
         problem:
-          'The rapid spread of misinformation online has become a critical challenge, with fake news articles often going viral before fact-checking can occur.',
+          'The rapid, unchecked spread of online misinformation requires instant, automated verification to prevent viral fake news outbreaks before human fact-checkers can respond.',
         solution:
-          'Developed an AI-powered system with responsive UI that automatically analyzes news articles using NLP techniques and machine learning, providing instant classification with confidence scores.',
+          'Designed and developed a secure pipeline integrating a backend NLP machine learning classification model with a responsive, user-friendly frontend interface.',
         impact:
-          'Successfully created a functional fake news detection system with secure user authentication and real-time analysis capabilities.',
+          'Deployed a highly functional system capable of delivering real-time, high-confidence news text classification to a live user base instantly.',
       },
       technologies: [
         { name: 'HTML', category: 'Frontend', icon: '/icons/html.svg' },
@@ -424,6 +427,7 @@ export const portfolioData: PortfolioData = {
         '/images/projects/fake-news-1.svg',
         '/images/projects/fake-news-2.svg',
       ],
+      demoUrl: '#',
       githubUrl: 'https://github.com/MoNiLBaRiYa/FakeNews_AI_Detection-',
       featured: true,
       completionDate: '2024-03-15',

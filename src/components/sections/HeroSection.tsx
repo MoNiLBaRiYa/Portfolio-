@@ -134,7 +134,7 @@ const HeroSection = () => {
                   : 'text-4xl md:text-6xl lg:text-7xl'
             }`}
           >
-            <span className="sr-only">{fullText}</span>
+            <span className="sr-only">Monil Bariya - AI-Powered Full Stack Developer</span>
             <span className="inline-block" aria-hidden="true">
               {displayedText}
               <motion.span
@@ -151,6 +151,8 @@ const HeroSection = () => {
             </span>
           </h1>
         </motion.div>
+
+
 
         {/* Subtitle with fade-in animation */}
         <motion.div
@@ -173,7 +175,7 @@ const HeroSection = () => {
         {/* Summary with staggered animation */}
         <motion.div
           variants={itemVariants}
-          className={isMobile ? 'mb-8' : 'mb-12'}
+          className={isMobile ? 'mb-4' : 'mb-6'}
         >
           <p
             className={`text-gray-600 max-w-3xl mx-auto leading-relaxed ${
@@ -191,7 +193,7 @@ const HeroSection = () => {
         {/* Key skills highlight */}
         <motion.div
           variants={itemVariants}
-          className={isMobile ? 'mb-8' : 'mb-12'}
+          className={isMobile ? 'mb-4' : 'mb-8'}
         >
           <p
             className={`text-gray-500 mb-4 font-medium ${

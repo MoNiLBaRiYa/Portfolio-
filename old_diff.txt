@@ -1,0 +1,223 @@
+diff --git a/src/data/portfolio.ts b/src/data/portfolio.ts
+index 5084ab3..ecd903e 100644
+--- a/src/data/portfolio.ts
++++ b/src/data/portfolio.ts
+@@ -9,7 +9,7 @@ export const portfolioData: PortfolioData = {
+     linkedin: 'https://www.linkedin.com/in/monilbariya28',
+     github: 'https://github.com/MoNiLBaRiYa',
+     summary:
+-      'I am a Computer Science Engineering student who enjoys building real-world projects and exploring modern technologies. I focus on web development, using AI as a workflow accelerator to learn faster and improve productivity while ensuring I deeply understand the underlying logic.',
++      'I am a Computer Science Engineering student dedicated to building real-world solutions while mastering modern technologies. I leverage AI as a powerful workflow accelerator to build faster and deeper, ensuring I fully grasp the logic and architecture behind every line of code. My goal is to evolve into a proficient developer by blending traditional engineering fundamentals with cutting-edge AI-assisted methodologies.',
+     availability: 'Available',
+     profileImage: '/images/monilbariya.jpeg',
+   },
+@@ -48,7 +48,7 @@ export const portfolioData: PortfolioData = {
+       ],
+     },
+     {
+-      category: 'Modern Web Development',
++      category: 'Modern Web & Backend',
+       skills: [
+         {
+           name: 'Next.js',
+@@ -62,23 +62,18 @@ export const portfolioData: PortfolioData = {
+           name: 'Flask',
+           icon: '/icons/flask.svg',
+         },
+-        {
+-          name: 'Three.js',
+-          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/threejs/threejs-original.svg',
+-        },
+-      ],
+-    },
+-    {
+-      category: 'Backend & Databases',
+-      skills: [
+         {
+           name: 'MongoDB',
+           icon: '/icons/mongodb.svg',
+         },
++        {
++          name: 'Three.js',
++          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/threejs/threejs-original.svg',
++        },
+       ],
+     },
+     {
+-      category: 'Generative AI & Prompt Engineering',
++      category: 'AI & Intelligence',
+       skills: [
+         {
+           name: 'Generative AI',
+@@ -99,7 +94,7 @@ export const portfolioData: PortfolioData = {
+       ],
+     },
+     {
+-      category: 'Professional Developer Workflow (IDE, Git)',
++      category: 'Professional Tools and IDE',
+       skills: [
+         {
+           name: 'VS Code',
+@@ -109,6 +104,10 @@ export const portfolioData: PortfolioData = {
+           name: 'Cursor IDE',
+           icon: '/icons/cursor.svg',
+         },
++        {
++          name: 'Git',
++          icon: '/icons/git.svg',
++        },
+         {
+           name: 'Antigravity',
+           icon: 'https://cdn-icons-png.flaticon.com/512/6295/6295417.png',
+@@ -121,15 +120,15 @@ export const portfolioData: PortfolioData = {
+           name: 'Power BI',
+           icon: '/icons/powerbi.svg',
+         },
+-        {
+-          name: 'Git',
+-          icon: '/icons/git.svg',
+-        },
+       ],
+     },
+     {
+-      category: 'Engineering Fundamentals',
++      category: 'Engineering & Digital Workflow',
+       skills: [
++        {
++          name: 'API Understanding',
++          icon: 'https://cdn-icons-png.flaticon.com/512/2721/2721297.png',
++        },
+         {
+           name: 'Documentation',
+           icon: 'https://cdn-icons-png.flaticon.com/512/1087/1087815.png',
+@@ -138,10 +137,6 @@ export const portfolioData: PortfolioData = {
+           name: 'UI/UX Basics',
+           icon: 'https://cdn-icons-png.flaticon.com/512/4341/4341139.png',
+         },
+-        {
+-          name: 'API Understanding',
+-          icon: 'https://cdn-icons-png.flaticon.com/512/2721/2721297.png',
+-        },
+         {
+           name: 'Data Visualization',
+           icon: 'https://cdn-icons-png.flaticon.com/512/9672/9672887.png',
+@@ -175,7 +170,7 @@ export const portfolioData: PortfolioData = {
+       id: 'needmeet',
+       title: 'NeedMeet: AI-Assisted Service Discovery & Marketplace',
+       description:
+-        'An AI-assisted service marketplace for local discovery. Features a scalable full-stack architecture, role-based access, and an intelligent advisory system for repair/replace decisions.',
++        'An AI-assisted service marketplace built to explore scalable full-stack architectures and intelligent advisory systems for local service discovery.',
+       longDescription:
+         'Designed end-to-end workflow for service booking, scheduling, and user access. Built responsive UI components and modular navigation using AI-assisted development tools. Created forms, dashboard layouts, and user data flow architecture similar to public service portals.',
+       projectStory: {
+@@ -253,7 +248,7 @@ export const portfolioData: PortfolioData = {
+       id: 'talentscout',
+       title: 'TalentScout: AI-Powered Career Recommendation System',
+       description:
+-        'An AI recommendation system using structured LLM workflows and prompt chaining to analyze user skills and generate personalized career paths with controlled outputs.',
++        'An AI recommendation system developed to master structured LLM workflows and prompt chaining for generating personalized career paths.',
+       longDescription:
+         'Developed structured prompt workflows to recommend suitable job roles to users. Designed UI screens and form-based inputs used in many government career portals. Planned backend schema and matching logic with AI assistance.',
+       projectStory: {
+@@ -329,7 +324,7 @@ export const portfolioData: PortfolioData = {
+       id: 'neolearn',
+       title: 'NeoLearn: Accessibility-Focused Learning Platform',
+       description:
+-        'An accessibility-focused learning platform using WCAG principles and high-contrast UI. Leveraged AI-assisted design to refine usability and ensure inclusive access.',
++        'An inclusive learning platform developed to understand WCAG principles and high-contrast UI design for users with disabilities.',
+       longDescription:
+         'Built an accessibility-focused UI for disabled learners using AI-assisted development. Designed high-contrast themes, readable text, and simple navigation for inclusive access. Created responsive learning screens aligned with basic accessibility guidelines.',
+       projectStory: {
+@@ -406,7 +401,7 @@ export const portfolioData: PortfolioData = {
+       id: 'fake-news-detection',
+       title: 'Fake News AI Detection: ML-Powered Misinformation Analysis',
+       description:
+-        'A Python-based misinformation detection system using NLP and ML. Features a pipeline for real-time predictions with confidence scores to address digital misinformation.',
++        'A Python-based misinformation detection system built to master NLP concepts and real-time machine learning predictions.',
+       longDescription:
+         'Created responsive UI for login, signup, and news verification. Assisted in database setup for secure user data handling. Helped integrate the AI classification pipeline with UI output display.',
+       projectStory: {
+@@ -470,83 +465,6 @@ export const portfolioData: PortfolioData = {
+           'Successfully demonstrates ML concepts in practical application',
+       },
+     },
+-    {
+-      id: 'portfolio-website',
+-      title: 'Interactive Portfolio Website',
+-      description:
+-        'Modern, responsive personal website with subtle animations, smooth transitions, and clean minimalistic UI.',
+-      longDescription:
+-        'Developed a fast, responsive personal website showcasing work and skills. Built with Next.js, TypeScript, and Tailwind CSS featuring Three.js for visual effects. Added subtle animations, smooth transitions, and clean minimalistic UI.',
+-      projectStory: {
+-        problem:
+-          'Traditional portfolio websites are often static and fail to demonstrate technical skills effectively. Need a modern platform to showcase projects and abilities.',
+-        solution:
+-          'Built this interactive portfolio using modern web technologies like Next.js, TypeScript, and Tailwind CSS. Incorporated Three.js for visual effects and created an engaging user experience that demonstrates technical capabilities.',
+-        impact:
+-          'Created a professional online presence that effectively showcases projects and skills, leading to increased visibility and opportunities.',
+-      },
+-      technologies: [
+-        { name: 'Next.js', category: 'Frontend', icon: '/icons/nextjs.svg' },
+-        {
+-          name: 'TypeScript',
+-          category: 'Frontend',
+-          icon: '/icons/typescript.svg',
+-        },
+-        {
+-          name: 'Tailwind CSS',
+-          category: 'Frontend',
+-          icon: '/icons/tailwind.svg',
+-        },
+-        { name: 'Three.js', category: 'Frontend', icon: '/icons/threejs.svg' },
+-      ],
+-      category: 'Web Development',
+-      images: [
+-        '/images/projects/portfolio-1.svg',
+-        '/images/projects/portfolio-2.svg',
+-      ],
+-      githubUrl: 'https://github.com/MoNiLBaRiYa/Portfolio-',
+-      featured: true,
+-      completionDate: '2024-04-20',
+-      teamSize: 1,
+-      challenges: [
+-        {
+-          title: 'Performance Optimization',
+-          description:
+-            'Maintaining smooth animations while ensuring fast load times',
+-          solution:
+-            'Implemented lazy loading, code splitting, and optimized rendering',
+-        },
+-        {
+-          title: 'Responsive Design',
+-          description:
+-            'Ensuring consistent experience across different devices',
+-          solution:
+-            'Used Tailwind CSS responsive utilities and extensive testing',
+-        },
+-      ],
+-      features: [
+-        {
+-          title: 'Subtle Animations',
+-          description:
+-            'Smooth transitions and animations for enhanced user experience',
+-        },
+-        {
+-          title: 'Clean UI',
+-          description:
+-            'Minimalistic design focusing on content and readability',
+-        },
+-        {
+-          title: 'Fast Performance',
+-          description:
+-            'Optimized for speed with Next.js and modern web practices',
+-        },
+-      ],
+-      metrics: {
+-        userEngagement: 'Professional presentation with good user experience',
+-        codeQuality: 'Modern development with TypeScript and best practices',
+-        impact: 'Effective showcase of technical skills and projects',
+-      },
+-    },
+   ],
+   experience: [],
+   education: [

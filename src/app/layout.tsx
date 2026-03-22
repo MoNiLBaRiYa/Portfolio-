@@ -14,20 +14,20 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://monilbariya.vercel.app'),
   title: {
-    default: 'Monil Bariya | Full-Stack Developer & AI Enthusiast',
+    default: 'Monil Bariya | AI-Powered Full Stack Developer',
     template: '%s | Monil Bariya',
   },
   description:
-    'Portfolio of Monil Bariya, a Computer Science Engineering student and Full-Stack Developer specializing in React, Next.js, and AI-assisted development.',
+    'Portfolio of Monil Bariya, an AI-Powered Full Stack Developer focused on AI Web Applications, MERN Stack, MVP Development & Automation.',
   keywords: [
     'Monil Bariya',
-    'Full-Stack Developer',
-    'AI/ML Enthusiast',
-    'Next.js Portfolio',
-    'React Developer',
-    'Computer Science Student',
-    'Web Development',
-    'India',
+    'AI-Powered Web Developer',
+    'Full Stack Developer',
+    'AI Web Applications',
+    'MERN Stack Developer',
+    'Web App Development',
+    'MVP Development',
+    'Automation & AI Integration',
   ],
   authors: [{ name: 'Monil Bariya', url: 'https://github.com/MoNiLBaRiYa' }],
   creator: 'Monil Bariya',
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://monilbariya.vercel.app',
-    title: 'Monil Bariya | Full-Stack Developer & AI Enthusiast',
+    title: 'Monil Bariya | AI-Powered Full Stack Developer',
     description:
-      'Explore the portfolio of Monil Bariya, featuring projects in AI, Web Development, and Data Visualization.',
+      'Portfolio of Monil Bariya, an AI-Powered Full Stack Developer focused on AI Web Applications, MERN Stack, MVP Development & Automation.',
     siteName: 'Monil Bariya Portfolio',
     images: [
       {
