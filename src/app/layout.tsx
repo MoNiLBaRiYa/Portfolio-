@@ -167,20 +167,9 @@ export default function RootLayout({
         {/* Prevent Google from using the OG banner image as a search result thumbnail */}
         <meta name="robots" content="max-image-preview:standard" />
 
-        {/* Preload critical resources */}
-        <link
-          rel="preload"
-          href="/fonts/inter-var.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
+        {/* DNS prefetch for external services */}
+        <link rel="dns-prefetch" href="//api.emailjs.com" />
+        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
 
         {/* DNS prefetch for external services */}
         <link rel="dns-prefetch" href="//api.emailjs.com" />
@@ -206,7 +195,6 @@ export default function RootLayout({
         />
 
         {/* Favicon and app icons */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -225,8 +213,6 @@ export default function RootLayout({
         
         {/* Performance and caching */}
         <meta httpEquiv="Cache-Control" content="public, max-age=31536000, immutable" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://api.emailjs.com" />
         
         {/* Theme and appearance */}

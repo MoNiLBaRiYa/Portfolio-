@@ -5,7 +5,7 @@ export const portfolioData: PortfolioData = {
     name: 'Monil Bariya',
     title: 'Full Stack & AI-Powered Web Developer',
     location: 'India',
-    email: 'monil.bariya2003@gmail.com',
+    email: 'monilbariya.dev@gmail.com',
     linkedin: 'https://www.linkedin.com/in/monilbariya28',
     github: 'https://github.com/MoNiLBaRiYa',
     summary:

@@ -69,7 +69,7 @@ export default function Layout({ children }: LayoutProps) {
             description:
               'Passionate Computer Science Engineering student with expertise in software development, data analysis, and emerging technologies.',
             url: 'https://monil-bariya.vercel.app',
-            email: 'monil.bariya2003@gmail.com',
+            email: 'monilbariya.dev@gmail.com',
             telephone: '+91 XXXXXXXXXX',
             address: {
               '@type': 'PostalAddress',

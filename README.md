@@ -162,7 +162,7 @@ This project is open source and available under the MIT License.
 ## Contact
 
 Monil Bariya
-- Email: monil.bariya2003@gmail.com
+- Email: monilbariya.dev@gmail.com
 - LinkedIn: [monilbariya28](https://www.linkedin.com/in/monilbariya28)
 - GitHub: [MoNiLBaRiYa](https://github.com/MoNiLBaRiYa)
 
