@@ -5,17 +5,6 @@ export const LazySkillTree = createLazyComponent(
   () => import('@/components/ui/SkillTree')
 );
 
-// Temporarily disabled due to module resolution issue
-// export const LazyProjectModal = createLazyComponent(
-//   () => import('@/components/ui/ProjectModal')
-// );
-
-export const LazyFakeNewsDemo = createLazyComponent(() =>
-  import('@/components/ui/FakeNewsDemo').then(module => ({
-    default: module.FakeNewsDemo,
-  }))
-);
-
 export const LazyParticleBackground = createLazyComponent(() =>
   import('@/components/ui/ParticleBackground').then(module => ({
     default: module.ParticleBackground,
@@ -24,10 +13,6 @@ export const LazyParticleBackground = createLazyComponent(() =>
 
 export const LazyTechBackground = createLazyComponent(
   () => import('@/components/ui/TechBackground')
-);
-
-export const LazySkillModal = createLazyComponent(
-  () => import('@/components/ui/SkillModal')
 );
 
 export const LazyCertificationModal = createLazyComponent(() =>
@@ -55,3 +40,4 @@ export const LazyDataVisualizationSection = createLazyComponent(() =>
     default: module.DataVisualizationSection,
   }))
 );
+
