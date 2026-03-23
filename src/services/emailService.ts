@@ -8,6 +8,14 @@ const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '';
 
 // Initialize EmailJS
 if (typeof window !== 'undefined') {
+  if (process.env.NODE_ENV === 'development') {
+    console.log('EmailService initialization debug:', {
+      serviceIdSet: !!EMAILJS_SERVICE_ID,
+      templateIdSet: !!EMAILJS_TEMPLATE_ID,
+      publicKeySet: !!EMAILJS_PUBLIC_KEY,
+      publicKeyPrefix: EMAILJS_PUBLIC_KEY ? EMAILJS_PUBLIC_KEY.substring(0, 4) + '...' : 'none',
+    });
+  }
   emailjs.init(EMAILJS_PUBLIC_KEY);
 }
 
@@ -73,13 +81,31 @@ export class EmailService {
         } else {
           throw new Error(`EmailJS returned status: ${response.status}`);
         }
-      } catch (error) {
+      } catch (error: any) {
         console.error(`Email send attempt ${attempt} failed:`, error);
+        
+        // Log detailed error info if it's from EmailJS
+        if (error?.text || error?.status) {
+          console.error('EmailJS error details:', {
+            status: error.status,
+            text: error.text
+          });
+        }
 
         // If this is the last attempt, return the error
         if (attempt === this.retryAttempts) {
-          const errorMessage =
-            error instanceof Error ? error.message : 'Unknown error';
+          let errorMessage = 'Unknown error';
+          
+          if (error instanceof Error) {
+            errorMessage = error.message;
+          } else if (error?.text) {
+            errorMessage = error.text;
+          } else if (typeof error === 'string') {
+            errorMessage = error;
+          } else if (error?.status) {
+            errorMessage = `EmailJS error status: ${error.status}`;
+          }
+          
           return {
             success: false,
             message: 'Failed to send email after multiple attempts',
