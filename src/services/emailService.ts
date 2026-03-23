@@ -40,9 +40,16 @@ export class EmailService {
     // Prepare template parameters
     const templateParams = {
       from_name: formData.name,
+      name: formData.name,
+      Name: formData.name,
       from_email: formData.email,
+      email: formData.email,
+      Email: formData.email,
+      email_id: formData.email,
       subject: formData.subject,
+      Subject: formData.subject,
       message: formData.message,
+      Message: formData.message,
       to_name: 'Monil Bariya',
       reply_to: formData.email,
       // Add timestamp for tracking
@@ -135,9 +142,16 @@ export class EmailService {
       // Send a test email with minimal data
       const testParams = {
         from_name: 'Portfolio Test',
+        name: 'Portfolio Test',
+        Name: 'Portfolio Test',
         from_email: 'test@example.com',
+        email: 'test@example.com',
+        Email: 'test@example.com',
+        email_id: 'test@example.com',
         subject: 'Connection Test',
+        Subject: 'Connection Test',
         message: 'This is a test message to verify EmailJS connection.',
+        Message: 'This is a test message to verify EmailJS connection.',
         to_name: 'Monil Bariya',
         reply_to: 'test@example.com',
         timestamp: new Date().toISOString(),
