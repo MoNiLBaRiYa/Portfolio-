@@ -276,8 +276,8 @@ export const portfolioData: PortfolioData = {
       ],
       category: 'AI/ML',
       images: [
-        '/images/projects/talentscout-1.svg',
-        '/images/projects/talentscout-2.svg',
+        '/images/projects/project-ts-1.svg',
+        '/images/projects/project-ts-2.svg',
       ],
       demoUrl: '#',
       githubUrl: 'https://github.com/MoNiLBaRiYa/TalentScout',
@@ -353,8 +353,8 @@ export const portfolioData: PortfolioData = {
       ],
       category: 'Web Development',
       images: [
-        '/images/projects/neolearn-1.svg',
-        '/images/projects/neolearn-2.svg',
+        '/images/projects/project-nl-1.svg',
+        '/images/projects/project-nl-2.svg',
       ],
       demoUrl: '#',
       githubUrl: 'https://github.com/MoNiLBaRiYa/NeoLearn',

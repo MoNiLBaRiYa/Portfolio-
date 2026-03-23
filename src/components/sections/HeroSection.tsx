@@ -257,7 +257,7 @@ const HeroSection = () => {
                 : 'px-8 py-4 text-lg min-w-[200px]'
             } ${isTouchDevice ? 'touch-target' : ''}`}
           >
-            Get In Touch
+            Let&apos;s Work Together
           </motion.button>
         </motion.div>
       </motion.div>
