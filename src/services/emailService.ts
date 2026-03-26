@@ -47,26 +47,17 @@ export class EmailService {
 
     // Prepare template parameters
     const templateParams = {
-      from_name: formData.name,
-      name: formData.name,
-      Name: formData.name,
+      from_name: formData.name, // Matches standard EmailJS templates
       from_email: formData.email,
-      email: formData.email,
-      Email: formData.email,
-      email_id: formData.email,
-      user_email: formData.email,
-      subject: formData.subject,
-      Subject: formData.subject,
-      title: formData.subject,
-      user_subject: formData.subject,
-      form_subject: formData.subject,
-      msg_subject: formData.subject,
-      message: formData.message,
-      Message: formData.message,
-      to_name: 'Monil Bariya',
       reply_to: formData.email,
-      // Add timestamp for tracking
+      subject: formData.subject,
+      message: formData.message,
+      to_name: 'Monil Bariya',
       timestamp: new Date().toISOString(),
+      // Backward compatibility / common aliases
+      name: formData.name,
+      email: formData.email,
+      Message: formData.message,
     };
 
     // Attempt to send email with retry mechanism

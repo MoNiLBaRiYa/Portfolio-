@@ -96,7 +96,7 @@ export const isProjectMetrics = (obj: any): obj is ProjectMetrics => {
     (obj.userEngagement === undefined ||
       typeof obj.userEngagement === 'string') &&
     (obj.codeQuality === undefined || typeof obj.codeQuality === 'string') &&
-    (obj.impact === undefined || typeof obj.impact === 'string')
+    (obj.result === undefined || typeof obj.result === 'string')
   );
 };
 

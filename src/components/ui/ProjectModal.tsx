@@ -85,7 +85,7 @@ export default function ProjectModal({
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
                   Project Overview
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+                <p className="text-gray-600 leading-relaxed text-sm sm:text-base whitespace-pre-line">
                   {project.longDescription}
                 </p>
               </div>
@@ -118,10 +118,10 @@ export default function ProjectModal({
                     <div className="bg-white rounded-lg p-3 sm:p-4 border-l-4 border-green-500">
                       <h4 className="font-medium text-green-700 mb-2 flex items-center gap-2">
                         <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                        Impact
+                        Result
                       </h4>
                       <p className="text-sm text-gray-700">
-                        {project.projectStory.impact}
+                        {project.projectStory.result}
                       </p>
                     </div>
                   </div>
@@ -226,11 +226,11 @@ export default function ProjectModal({
                         </div>
                       </div>
                     </div>
-                    {project.metrics.impact && (
+                    {project.metrics.result && (
                       <div className="mt-3 text-center">
                         <p className="text-sm text-gray-700">
-                          <span className="font-medium">Impact:</span>{' '}
-                          {project.metrics.impact}
+                          <span className="font-medium">Result:</span>{' '}
+                          {project.metrics.result}
                         </p>
                       </div>
                     )}

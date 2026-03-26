@@ -7,6 +7,7 @@ export interface PortfolioData {
   education: Education[];
   certifications: Certification[];
   hobbies: Hobby[];
+  offerings: Offering[];
 }
 
 export interface PersonalInfo {
@@ -74,14 +75,14 @@ export interface Feature {
 export interface ProjectStory {
   problem: string;
   solution: string;
-  impact: string;
+  result: string;
 }
 
 export interface ProjectMetrics {
   performanceScore?: number;
   userEngagement?: string;
   codeQuality?: string;
-  impact?: string;
+  result?: string;
 }
 
 export interface CodeSnippet {
@@ -133,6 +134,14 @@ export interface Certification {
   achievements: string[];
   credentialUrl?: string;
   image?: string;
+}
+
+export interface Offering {
+  title: string;
+  description: string;
+  icon: string; // Icon name for Lucide
+  color: string;
+  iconBg: string;
 }
 
 export interface Hobby {

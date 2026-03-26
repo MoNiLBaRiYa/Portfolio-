@@ -175,10 +175,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//api.emailjs.com" />
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
 
-        {/* DNS prefetch for external services */}
-        <link rel="dns-prefetch" href="//api.emailjs.com" />
-        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-
         {/* Google Analytics */}
         <script
           async

@@ -172,13 +172,13 @@ export const portfolioData: PortfolioData = {
       description:
         'A scalable AI-driven web application connecting local service providers with customers through an intelligent marketplace platform.',
       longDescription:
-        'Problem: Local service booking lacks intelligent decision-making tools and streamlined user interfaces, making scheduling inefficient for both providers and customers.\n\nSolution: Engineered a scalable, responsive marketplace utilizing AI-assisted development to create modular UI components, robust data flows, and intelligent matching dashboards.\n\nResult: Delivered a complete end-to-end platform enabling faster service discovery and seamless booking experience.',
+        'NeedMeet is a scalable, AI-driven marketplace designed to streamline local service discovery and booking. By integrating intelligent matching dashboards and modular UI components, it solves the inefficiencies in traditional scheduling, providing a seamless end-to-end experience for both service providers and customers.',
       projectStory: {
         problem:
           'Local service booking lacks intelligent decision-making tools and streamlined user interfaces, making scheduling inefficient for both providers and customers.',
         solution:
           'Engineered a scalable, responsive marketplace utilizing AI-assisted development to create modular UI components, robust data flows, and intelligent matching dashboards.',
-        impact:
+        result:
           'Delivered a complete end-to-end platform enabling faster service discovery and seamless booking experience.',
       },
       technologies: [
@@ -242,7 +242,7 @@ export const portfolioData: PortfolioData = {
       metrics: {
         userEngagement: 'Streamlined booking workflow with AI assistance',
         codeQuality: 'AI-assisted development with modern tools',
-        impact: 'Improved service booking efficiency and decision-making',
+        result: 'Improved service booking efficiency and decision-making',
       },
     },
     {
@@ -251,13 +251,13 @@ export const portfolioData: PortfolioData = {
       description:
         'An intelligent, real-time career advisory system leveraging structured prompt engineering to deliver personalized, data-driven growth roadmaps.',
       longDescription:
-        'Problem: Job seekers struggle to identify suitable career paths, while traditional career counseling is time-consuming, expensive, and not highly scalable.\n\nSolution: Built an intelligent advisory system leveraging structured prompt engineering and AI workflows to instantly analyze user profiles and identify optimal roles.\n\nResult: Created an automated, dynamic workflow that delivers highly targeted, actionable career recommendations to users instantly.',
+        'TalentScout is an intelligent career advisory system that leverages structured prompt engineering and AI workflows to deliver personalized growth roadmaps. It addresses the challenges job seekers face in identifying suitable career paths by providing automated, data-driven recommendations that are both scalable and highly targeted.',
       projectStory: {
         problem:
           'Job seekers struggle to identify suitable career paths, while traditional career counseling is time-consuming, expensive, and not highly scalable.',
         solution:
           'Built an intelligent advisory system leveraging structured prompt engineering and AI workflows to instantly analyze user profiles and identify optimal roles.',
-        impact:
+        result:
           'Created an automated, dynamic workflow that delivers highly targeted, actionable career recommendations to users instantly.',
       },
       technologies: [
@@ -319,7 +319,7 @@ export const portfolioData: PortfolioData = {
       metrics: {
         userEngagement: 'Effective career guidance through AI workflows',
         codeQuality: 'AI-assisted development with structured approach',
-        impact: 'Democratized access to career counseling',
+        result: 'Democratized access to career counseling',
       },
     },
     {
@@ -328,13 +328,13 @@ export const portfolioData: PortfolioData = {
       description:
         'An accessibility-first learning platform delivering inclusive educational experiences through strict WCAG-compliant design.',
       longDescription:
-        'Problem: Digital learning platforms consistently fail to provide accessible experiences for disabled users, severely limiting inclusive education.\n\nSolution: Developed an accessibility-first educational platform focusing heavily on high-contrast themes, screen reader compatibility, and simplified, intuitive navigation.\n\nResult: Delivered a fully WCAG-compliant design that successfully ensures equitable and inclusive access to educational content for all users.',
+        'NeoLearn is an accessibility-first learning platform built with a focus on inclusivity and WCAG compliance. By implementing high-contrast themes, screen reader support, and simplified navigation, it ensures that educational content is equitable and accessible to users with various disabilities.',
       projectStory: {
         problem:
           'Digital learning platforms consistently fail to provide accessible experiences for disabled users, severely limiting inclusive education.',
         solution:
           'Developed an accessibility-first educational platform focusing heavily on high-contrast themes, screen reader compatibility, and simplified, intuitive navigation.',
-        impact:
+        result:
           'Delivered a fully WCAG-compliant design that successfully ensures equitable and inclusive access to educational content for all users.',
       },
       technologies: [
@@ -397,7 +397,7 @@ export const portfolioData: PortfolioData = {
       metrics: {
         userEngagement: 'High accessibility compliance and user satisfaction',
         codeQuality: 'AI-assisted development with accessibility focus',
-        impact: 'Promoted inclusive education for disabled learners',
+        result: 'Promoted inclusive education for disabled learners',
       },
     },
     {
@@ -406,13 +406,13 @@ export const portfolioData: PortfolioData = {
       description:
         'A Python-based misinformation detection system leveraging NLP and real-time machine learning predictions for instant classification.',
       longDescription:
-        'Problem: The rapid, unchecked spread of online misinformation requires instant, automated verification to prevent viral fake news outbreaks before human fact-checkers can respond.\n\nSolution: Designed and developed a secure pipeline integrating a backend NLP machine learning classification model with a responsive, user-friendly frontend interface.\n\nResult: Deployed a highly functional system capable of delivering real-time, high-confidence news text classification to a live user base instantly.',
+        'This ML-powered misinformation analysis system uses advanced NLP techniques to provide real-time classification of news text. It features a secure backend pipeline and a user-friendly interface, designed to combat the rapid spread of online misinformation by delivering high-confidence verification results instantly.',
       projectStory: {
         problem:
           'The rapid, unchecked spread of online misinformation requires instant, automated verification to prevent viral fake news outbreaks before human fact-checkers can respond.',
         solution:
           'Designed and developed a secure pipeline integrating a backend NLP machine learning classification model with a responsive, user-friendly frontend interface.',
-        impact:
+        result:
           'Deployed a highly functional system capable of delivering real-time, high-confidence news text classification to a live user base instantly.',
       },
       technologies: [
@@ -465,7 +465,7 @@ export const portfolioData: PortfolioData = {
       metrics: {
         userEngagement: 'Good user interaction with verification interface',
         codeQuality: 'Team collaboration with proper database integration',
-        impact:
+        result:
           'Successfully demonstrates ML concepts in practical application',
       },
     },
@@ -730,6 +730,48 @@ export const portfolioData: PortfolioData = {
         'User Experience Analysis',
         'Pattern Recognition',
       ],
+    },
+  ],
+  offerings: [
+    {
+      title: 'MVP Development',
+      description:
+        'I turn your ideas into functional products quickly using modern technologies and AI-assisted workflows.',
+      icon: 'Rocket',
+      color: 'bg-indigo-50 border-indigo-100',
+      iconBg: 'bg-indigo-100',
+    },
+    {
+      title: 'AI Integration & Automation',
+      description:
+        'I integrate intelligent features like chatbots, recommendation systems, and automation into web applications.',
+      icon: 'Bot',
+      color: 'bg-purple-50 border-purple-100',
+      iconBg: 'bg-purple-100',
+    },
+    {
+      title: 'Data Visualization & Dashboards',
+      description:
+        'I create interactive dashboards using Power BI and Tableau to help businesses make data-driven decisions.',
+      icon: 'BarChart',
+      color: 'bg-emerald-50 border-emerald-100',
+      iconBg: 'bg-emerald-100',
+    },
+    {
+      title: 'Full-Stack Web Development',
+      description:
+        'I build scalable, responsive web applications tailored to your business needs using modern tech stacks.',
+      icon: 'Code',
+      color: 'bg-blue-50 border-blue-100',
+      iconBg: 'bg-blue-100',
+    },
+    {
+      title: 'SEO-Optimized Web Development',
+      description:
+        'I develop web applications with strong technical SEO foundations to improve performance and search visibility.',
+      icon: 'Search',
+      color: 'bg-orange-50 border-orange-100',
+      iconBg: 'bg-orange-100',
     },
   ],
 };

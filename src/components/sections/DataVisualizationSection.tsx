@@ -34,7 +34,7 @@ export function DataVisualizationSection({
       id: 'metrics' as ChartType,
       label: 'Project Metrics',
       icon: BarChart3,
-      description: 'Performance scores and impact',
+      description: 'Performance scores and results',
     },
     {
       id: 'skills' as ChartType,
