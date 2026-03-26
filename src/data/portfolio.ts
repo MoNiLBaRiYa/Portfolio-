@@ -206,21 +206,6 @@ export const portfolioData: PortfolioData = {
       ongoing: true,
       completionDate: '2025-01-15',
       teamSize: 1,
-      challenges: [
-        {
-          title: 'Complex Workflow Design',
-          description:
-            'Creating intuitive user flows for service booking and management',
-          solution:
-            'Used AI-assisted development to rapidly prototype and iterate on UI/UX designs',
-        },
-        {
-          title: 'AI Integration',
-          description:
-            'Implementing intelligent advisory system for repair/replace decisions',
-          solution:
-            'Integrated AI-based recommendation engine with user-friendly interface',
-        },
       ],
       features: [
         {
