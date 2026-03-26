@@ -22,6 +22,10 @@ export function generateMetadata(config: SEOConfig = {}): Metadata {
   const url = config.url || baseUrl;
 
   const keywords = [
+    'Portfolio',
+    'Fullstack Developer Portfolio',
+    'Freelancer Portfolio',
+    'Monil Bariya Portfolio',
     'Monil Bariya',
     'Computer Science Engineering',
     'Software Developer',
@@ -135,8 +139,8 @@ export function generateStructuredData() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: portfolioData.personal.name,
-    jobTitle: 'Full-Stack Developer & AI Enthusiast',
-    description: portfolioData.personal.summary,
+    jobTitle: 'Full-Stack Developer & Freelancer',
+    description: `Fullstack Developer Portfolio of Monil Bariya, a Freelancer focused on AI Web Applications, MERN Stack, MVP Development & Automation.`,
     url: baseUrl,
     image: `${baseUrl}${portfolioData.personal.profileImage}`,
     email: portfolioData.personal.email,
@@ -221,7 +225,7 @@ export function generateStructuredData() {
     dateModified: new Date().toISOString().split('T')[0],
     genre: 'Portfolio',
     keywords:
-      'portfolio, web development, software engineering, interactive design',
+      'portfolio, fullstack developer portfolio, freelancer portfolio, web development, software engineering, interactive design',
   };
 
   const organizationSchema = {

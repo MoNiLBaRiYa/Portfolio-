@@ -18,9 +18,12 @@ export const metadata: Metadata = {
     template: '%s | Monil Bariya',
   },
   description:
-    'Portfolio of Monil Bariya, an AI-Powered Full Stack Developer focused on AI Web Applications, MERN Stack, MVP Development & Automation.',
+    'Fullstack Developer Portfolio of Monil Bariya, a Freelancer focused on AI Web Applications, MERN Stack, MVP Development & Automation.',
   keywords: [
     'Monil Bariya',
+    'Portfolio',
+    'Fullstack Developer Portfolio',
+    'Freelancer Portfolio',
     'AI-Powered Web Developer',
     'Full Stack Developer',
     'AI Web Applications',
@@ -45,7 +48,7 @@ export const metadata: Metadata = {
     url: 'https://monilbariya.vercel.app',
     title: 'Monil Bariya | AI-Powered Full Stack Developer',
     description:
-      'Portfolio of Monil Bariya, an AI-Powered Full Stack Developer focused on AI Web Applications, MERN Stack, MVP Development & Automation.',
+      'Fullstack Developer Portfolio of Monil Bariya, a Freelancer focused on AI Web Applications, MERN Stack, MVP Development & Automation.',
     siteName: 'Monil Bariya Portfolio',
     images: [
       {
@@ -164,6 +167,7 @@ export default function RootLayout({
 
         {/* Tell Google to use profile photo as the representative image, not the OG banner */}
         <link rel="image_src" href="https://monilbariya.vercel.app/images/monilbariya.jpeg" />
+        <meta name="thumbnail" content="https://monilbariya.vercel.app/images/monilbariya.jpeg" />
         {/* Prevent Google from using the OG banner image as a search result thumbnail */}
         <meta name="robots" content="max-image-preview:standard" />
 
