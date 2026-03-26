@@ -270,21 +270,6 @@ export const portfolioData: PortfolioData = {
       ongoing: true,
       completionDate: '2025-01-10',
       teamSize: 1,
-      challenges: [
-        {
-          title: 'Accurate Job Matching',
-          description:
-            'Creating algorithms that accurately match user skills to job roles',
-          solution:
-            'Developed structured prompt workflows and matching logic with AI assistance',
-        },
-        {
-          title: 'User-Friendly Interface',
-          description:
-            'Designing forms that capture comprehensive user profiles',
-          solution:
-            'Created intuitive form-based inputs inspired by government career portals',
-        },
       ],
       features: [
         {
