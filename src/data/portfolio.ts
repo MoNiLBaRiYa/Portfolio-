@@ -206,7 +206,6 @@ export const portfolioData: PortfolioData = {
       ongoing: true,
       completionDate: '2025-01-15',
       teamSize: 1,
-      ],
       features: [
         {
           title: 'Service Booking System',
@@ -270,7 +269,6 @@ export const portfolioData: PortfolioData = {
       ongoing: true,
       completionDate: '2025-01-10',
       teamSize: 1,
-      ],
       features: [
         {
           title: 'AI-Powered Recommendations',

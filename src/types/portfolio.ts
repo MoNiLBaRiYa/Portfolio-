@@ -47,8 +47,8 @@ export interface Project {
   ongoing?: boolean;
   completionDate: string;
   teamSize: number;
-  challenges: Challenge[];
-  features: Feature[];
+  challenges?: Challenge[];
+  features?: Feature[];
   metrics?: ProjectMetrics;
   codeSnippets?: CodeSnippet[];
   liveDemo?: LiveDemo;
