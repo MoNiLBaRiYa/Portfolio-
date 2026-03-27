@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
+
 import { Inter } from 'next/font/google';
 import './globals.css';
 import ErrorBoundary from '@/components/ui/ErrorBoundary';
@@ -176,23 +178,26 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
 
         {/* Google Analytics */}
-        <script
-          async
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XGV4YH6JPX"
+          strategy="afterInteractive"
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-XGV4YH6JPX', {
-                page_title: document.title,
-                page_location: window.location.href,
-              });
-            `,
-          }}
-        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XGV4YH6JPX', {
+              page_title: document.title,
+              page_location: window.location.href,
+            });
+            window.trackEvent = function(eventName, eventParams) {
+              if (typeof window.gtag === 'function') {
+                window.gtag('event', eventName, eventParams);
+              }
+            };
+          `}
+        </Script>
 
         {/* Favicon and app icons */}
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -222,6 +227,7 @@ export default function RootLayout({
         <meta name="msapplication-config" content="/browserconfig.xml" />
       </head>
       <body
+
         className={`${inter.className} antialiased`}
         suppressHydrationWarning
       >

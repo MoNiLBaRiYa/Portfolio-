@@ -47,8 +47,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     announceMessage(
       `Opening project: ${project.title}. ${project.description}`
     );
+    
+    // Track project view engagement
+    if (typeof window !== 'undefined' && (window as any).trackEvent) {
+      (window as any).trackEvent('select_content', {
+        content_type: 'project',
+        item_id: project.id,
+        item_name: project.title,
+      });
+    }
+    
     onClick();
   };
+
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -59,10 +70,22 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
   const handleLinkClick = (e: React.MouseEvent, url: string) => {
     e.stopPropagation();
+    
+    // Track GitHub repository visit
+    if (typeof window !== 'undefined' && (window as any).trackEvent) {
+      (window as any).trackEvent('view_item', {
+        content_type: 'github_repository',
+        item_id: project.id,
+        item_name: project.title,
+        link_url: url,
+      });
+    }
+    
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   return (
+
     <motion.div
       whileHover={{
         y: -8,

@@ -117,11 +117,21 @@ export function ContactForm({ onSubmit, className = '' }: ContactFormProps) {
       }
 
       if (result.success) {
+        // Track successful contact form submission
+        if (typeof window !== 'undefined' && (window as any).trackEvent) {
+          (window as any).trackEvent('generate_lead', {
+            event_category: 'Contact',
+            event_label: formData.subject,
+            value: 1,
+          });
+        }
+        
         setSubmission({
           status: 'success',
           message: result.message,
           retryCount: 0,
         });
+
         // Clear form on success
         setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
