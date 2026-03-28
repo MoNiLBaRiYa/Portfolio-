@@ -66,7 +66,7 @@ export function OfferingsSection() {
                   className={`p-8 rounded-2xl border ${offering.color} shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-start w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)]`}
                 >
                   <div
-                    className={`mb-6 ${offering.iconBg} w-16 h-16 rounded-2xl flex items-center justify-center shadow-sm`}
+                    className={`mb-6 ${offering.iconBg} ${offering.iconColor || 'text-indigo-600'} w-16 h-16 rounded-2xl flex items-center justify-center shadow-sm`}
                   >
                     <IconComponent className="w-8 h-8 text-current" />
                   </div>

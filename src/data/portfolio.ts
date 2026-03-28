@@ -708,6 +708,7 @@ export const portfolioData: PortfolioData = {
       icon: 'Rocket',
       color: 'bg-indigo-50 border-indigo-100',
       iconBg: 'bg-indigo-100',
+      iconColor: 'text-indigo-600',
     },
     {
       title: 'AI Integration & Automation',
@@ -716,6 +717,7 @@ export const portfolioData: PortfolioData = {
       icon: 'Bot',
       color: 'bg-purple-50 border-purple-100',
       iconBg: 'bg-purple-100',
+      iconColor: 'text-purple-600',
     },
     {
       title: 'Data Visualization & Dashboards',
@@ -724,6 +726,7 @@ export const portfolioData: PortfolioData = {
       icon: 'BarChart',
       color: 'bg-emerald-50 border-emerald-100',
       iconBg: 'bg-emerald-100',
+      iconColor: 'text-emerald-600',
     },
     {
       title: 'Full-Stack Web Development',
@@ -732,6 +735,7 @@ export const portfolioData: PortfolioData = {
       icon: 'Code',
       color: 'bg-blue-50 border-blue-100',
       iconBg: 'bg-blue-100',
+      iconColor: 'text-blue-600',
     },
     {
       title: 'SEO-Optimized Web Development',
@@ -740,6 +744,7 @@ export const portfolioData: PortfolioData = {
       icon: 'Search',
       color: 'bg-orange-50 border-orange-100',
       iconBg: 'bg-orange-100',
+      iconColor: 'text-orange-600',
     },
   ],
 };

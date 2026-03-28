@@ -142,6 +142,7 @@ export interface Offering {
   icon: string; // Icon name for Lucide
   color: string;
   iconBg: string;
+  iconColor?: string;
 }
 
 export interface Hobby {
