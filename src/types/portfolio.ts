@@ -19,7 +19,7 @@ export interface PersonalInfo {
   linkedin: string;
   github: string;
   summary: string;
-  availability: 'Available' | 'Busy' | 'Not Available';
+  availability: 'Available' | 'Busy' | 'Not Available' | 'Available for Freelance Projects';
   profileImage: string;
 }
 

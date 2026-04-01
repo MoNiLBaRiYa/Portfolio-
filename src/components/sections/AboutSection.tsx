@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
+import NextImage from 'next/image';
 import { portfolioData } from '@/data/portfolio';
 import type { Hobby } from '@/types/portfolio';
 import { useResponsive } from '@/hooks/useResponsive';
@@ -215,10 +216,13 @@ export const AboutSection: React.FC = () => {
                     ease: 'easeInOut',
                   }}
                 >
-                  <img
+                  <NextImage
                     src={portfolioData.personal.profileImage}
                     alt={`${portfolioData.personal.name} - Professional headshot`}
+                    width={256}
+                    height={256}
                     className="w-full h-full object-cover"
+                    priority
                   />
                 </motion.div>
 
