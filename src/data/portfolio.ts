@@ -3,14 +3,14 @@ import { PortfolioData } from '@/types/portfolio';
 export const portfolioData: PortfolioData = {
   personal: {
     name: 'Monil Bariya',
-    title: 'Full Stack & AI-Powered Web Developer',
-    location: 'India',
+    title: 'Freelance AI-Powered Full Stack Web Developer & MERN Stack Specialist',
+    location: 'Vadodara, Gujarat, India',
     email: 'monilbariya.dev@gmail.com',
     linkedin: 'https://www.linkedin.com/in/monilbariya28',
     github: 'https://github.com/MoNiLBaRiYa',
     summary:
-      'I build fast, scalable, and SEO-friendly web applications that drive business growth. By combining modern tech stacks with intelligent automation, I deliver seamless digital products from concept to deployment.',
-    availability: 'Available',
+      'I am a Freelance AI-Powered Web Developer and Full Stack Specialist based in India. I specialize in building fast, scalable, and SEO-friendly web applications using Next.js, React, and the MERN stack. My expertise as a Freelance Web Developer focuses on delivering high-performance digital products from concept to deployment, integrated with intelligent AI automation.',
+    availability: 'Available for Freelance Projects',
     profileImage: '/images/monilbariya.jpeg',
   },
   skills: [
@@ -175,11 +175,11 @@ export const portfolioData: PortfolioData = {
         'NeedMeet is a scalable, AI-driven marketplace designed to streamline local service discovery and booking. By integrating intelligent matching dashboards and modular UI components, it solves the inefficiencies in traditional scheduling, providing a seamless end-to-end experience for both service providers and customers.',
       projectStory: {
         problem:
-          'Local service booking lacks intelligent decision-making tools and streamlined user interfaces, making scheduling inefficient for both providers and customers.',
+          'Local service booking ecosystems often lack intelligent decision-making tools and streamlined user interfaces, making scheduling inefficient for both service providers and customers.',
         solution:
-          'Engineered a scalable, responsive marketplace utilizing AI-assisted development to create modular UI components, robust data flows, and intelligent matching dashboards.',
+          'As a Full Stack Developer, I engineered a scalable, responsive AI-marketplace utilizing Next.js and specialized prompt engineering to create modular UI components, robust data flows, and intelligent matching dashboards.',
         result:
-          'Delivered a complete end-to-end platform enabling faster service discovery and seamless booking experience.',
+          'Delivered a complete end-to-end service marketplace platform enabling faster service discovery and a seamless booking experience for users.',
       },
       technologies: [
         { name: 'Next.js', category: 'Frontend', icon: '/icons/nextjs.svg' },
@@ -238,11 +238,11 @@ export const portfolioData: PortfolioData = {
         'TalentScout is an intelligent career advisory system that leverages structured prompt engineering and AI workflows to deliver personalized growth roadmaps. It addresses the challenges job seekers face in identifying suitable career paths by providing automated, data-driven recommendations that are both scalable and highly targeted.',
       projectStory: {
         problem:
-          'Job seekers struggle to identify suitable career paths, while traditional career counseling is time-consuming, expensive, and not highly scalable.',
+          'Job seekers struggle to identify suitable career paths in the modern job market, while traditional career counseling is time-consuming, expensive, and not highly scalable.',
         solution:
-          'Built an intelligent advisory system leveraging structured prompt engineering and AI workflows to instantly analyze user profiles and identify optimal roles.',
+          'Built an intelligent AI Career Advisory system leveraging structured prompt engineering and AI workflows (similar to AutoGPT/LangChain concepts) to instantly analyze user profiles and identify optimal roles.',
         result:
-          'Created an automated, dynamic workflow that delivers highly targeted, actionable career recommendations to users instantly.',
+          'Created an automated, dynamic AI workflow that delivers highly targeted, actionable career recommendations to users instantly via a React-based frontend.',
       },
       technologies: [
         { name: 'Next.js', category: 'Frontend', icon: '/icons/nextjs.svg' },
@@ -299,11 +299,11 @@ export const portfolioData: PortfolioData = {
         'NeoLearn is an accessibility-first learning platform built with a focus on inclusivity and WCAG compliance. By implementing high-contrast themes, screen reader support, and simplified navigation, it ensures that educational content is equitable and accessible to users with various disabilities.',
       projectStory: {
         problem:
-          'Digital learning platforms consistently fail to provide accessible experiences for disabled users, severely limiting inclusive education.',
+          'Digital learning platforms consistently fail to provide accessible experiences for disabled users, severely limiting inclusive education according to WCAG standards.',
         solution:
-          'Developed an accessibility-first educational platform focusing heavily on high-contrast themes, screen reader compatibility, and simplified, intuitive navigation.',
+          'Developed an accessibility-first educational platform focusing heavily on high-contrast themes, screen reader compatibility, and simplified, intuitive navigation using Next.js and Tailwind CSS.',
         result:
-          'Delivered a fully WCAG-compliant design that successfully ensures equitable and inclusive access to educational content for all users.',
+          'Delivered a fully WCAG-compliant design that successfully ensures equitable and inclusive access to educational content for all users, including those with visual and cognitive impairments.',
       },
       technologies: [
         { name: 'Next.js', category: 'Frontend', icon: '/icons/nextjs.svg' },
@@ -379,9 +379,9 @@ export const portfolioData: PortfolioData = {
         problem:
           'The rapid, unchecked spread of online misinformation requires instant, automated verification to prevent viral fake news outbreaks before human fact-checkers can respond.',
         solution:
-          'Designed and developed a secure pipeline integrating a backend NLP machine learning classification model with a responsive, user-friendly frontend interface.',
+          'Designed and developed a secure Python Flask backend integrating an NLP machine learning classification model with a responsive React-style frontend interface for real-time detection.',
         result:
-          'Deployed a highly functional system capable of delivering real-time, high-confidence news text classification to a live user base instantly.',
+          'Deployed a highly functional machine learning system capable of delivering real-time, high-confidence news text classification to a live user base instantly.',
       },
       technologies: [
         { name: 'HTML', category: 'Frontend', icon: '/icons/html.svg' },
@@ -702,9 +702,9 @@ export const portfolioData: PortfolioData = {
   ],
   offerings: [
     {
-      title: 'MVP Development',
+      title: 'MVP Development for Startups',
       description:
-        'I turn your ideas into functional products quickly using modern technologies and AI-assisted workflows.',
+        'I am a Freelance Web Developer specializing in turning startup ideas into functional MVPs (Minimum Viable Products) using Next.js and AI-assisted development for rapid execution.',
       icon: 'Rocket',
       color: 'bg-indigo-50 border-indigo-100',
       iconBg: 'bg-indigo-100',
@@ -713,34 +713,34 @@ export const portfolioData: PortfolioData = {
     {
       title: 'AI Integration & Automation',
       description:
-        'I integrate intelligent features like chatbots, recommendation systems, and automation into web applications.',
+        'Custom AI integration services including LLM agents, chatbots, and task automation into existing web applications as an AI-powered Full Stack Developer.',
       icon: 'Bot',
       color: 'bg-purple-50 border-purple-100',
       iconBg: 'bg-purple-100',
       iconColor: 'text-purple-600',
     },
     {
-      title: 'Data Visualization & Dashboards',
+      title: 'Data Visualization Dashboards',
       description:
-        'I create interactive dashboards using Power BI and Tableau to help businesses make data-driven decisions.',
+        'Building interactive business intelligence dashboards with Power BI and Tableau, focusing on data-driven decision making for enterprise clients.',
       icon: 'BarChart',
       color: 'bg-emerald-50 border-emerald-100',
       iconBg: 'bg-emerald-100',
       iconColor: 'text-emerald-600',
     },
     {
-      title: 'Full-Stack Web Development',
+      title: 'Full-Stack MERN Web Development',
       description:
-        'I build scalable, responsive web applications tailored to your business needs using modern tech stacks.',
+        'Scalable, responsive web application development using the MERN stack (MongoDB, Express, React, Node.js) tailored to specific business workflows.',
       icon: 'Code',
       color: 'bg-blue-50 border-blue-100',
       iconBg: 'bg-blue-100',
       iconColor: 'text-blue-600',
     },
     {
-      title: 'SEO-Optimized Web Development',
+      title: 'Technical SEO Optimization',
       description:
-        'I develop web applications with strong technical SEO foundations to improve performance and search visibility.',
+        'Deep technical SEO services for web applications to improve search performance, visibility, and page speed using best practices in Next.js.',
       icon: 'Search',
       color: 'bg-orange-50 border-orange-100',
       iconBg: 'bg-orange-100',

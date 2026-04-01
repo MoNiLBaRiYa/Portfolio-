@@ -134,7 +134,7 @@ const HeroSection = () => {
                   : 'text-4xl md:text-6xl lg:text-7xl'
             }`}
           >
-            <span className="sr-only">Monil Bariya - AI-Powered Full Stack Developer</span>
+            <span className="sr-only">Monil Bariya - Freelance AI Full Stack Web Developer & MERN Stack Specialist in India</span>
             <span className="inline-block" aria-hidden="true">
               {displayedText}
               <motion.span
