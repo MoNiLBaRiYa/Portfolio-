@@ -34,6 +34,7 @@ export function ContactSection() {
   const getAvailabilityColor = (availability: string) => {
     switch (availability) {
       case 'Available':
+      case 'Currently Open to Collaborations':
         return 'text-green-600 bg-green-100';
       case 'Busy':
         return 'text-yellow-600 bg-yellow-100';
@@ -224,7 +225,7 @@ export function ContactSection() {
                       isMobile ? 'text-xs' : 'text-sm'
                     }`}
                   >
-                    {personal.availability === 'Open to Collaborations' &&
+                    {personal.availability === 'Currently Open to Collaborations' &&
                       "Currently available for select projects and collaborations. Let\u2019s discuss how I can help build your product."}
                     {personal.availability === 'Available' &&
                       "Currently available for new projects and opportunities. Let's discuss how we can work together!"}
