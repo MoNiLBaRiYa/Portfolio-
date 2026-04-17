@@ -52,7 +52,7 @@ const socialLinks = [
 
 const quickLinks = [
   { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
+  { label: 'Expertise', href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'Experience', href: '#experience' },
 ];
@@ -165,15 +165,17 @@ export default function Footer() {
                 </a>
               </div>
               <div className="flex items-center space-x-2">
-                <div
-                  className={`w-2 h-2 rounded-full ${
-                    portfolioData.personal.availability === 'Available'
-                      ? 'bg-green-400'
-                      : portfolioData.personal.availability === 'Busy'
-                        ? 'bg-yellow-400'
-                        : 'bg-red-400'
-                  }`}
-                ></div>
+                  <div
+                    className={`w-2 h-2 rounded-full ${
+                      portfolioData.personal.availability === 'Open to select collaborations' ||
+                      portfolioData.personal.availability === 'Open to Collaborations' || 
+                      portfolioData.personal.availability === 'Available'
+                        ? 'bg-green-400'
+                        : portfolioData.personal.availability === 'Busy'
+                          ? 'bg-yellow-400'
+                          : 'bg-red-400'
+                    }`}
+                  ></div>
                 <span className="text-gray-300 text-sm">
                   {portfolioData.personal.availability}
                 </span>

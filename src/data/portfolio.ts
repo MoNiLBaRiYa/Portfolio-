@@ -3,14 +3,14 @@ import { PortfolioData } from '@/types/portfolio';
 export const portfolioData: PortfolioData = {
   personal: {
     name: 'Monil Bariya',
-    title: 'Freelance AI-Powered Full Stack Web Developer & MERN Stack Specialist',
+    title: 'AI-Powered Full Stack Developer',
     location: 'Vadodara, Gujarat, India',
     email: 'monilbariya.dev@gmail.com',
     linkedin: 'https://www.linkedin.com/in/monilbariya28',
     github: 'https://github.com/MoNiLBaRiYa',
     summary:
-      'I am a Freelance AI-Powered Web Developer and Full Stack Specialist based in India. I specialize in building fast, scalable, and SEO-friendly web applications using Next.js, React, and the MERN stack. My expertise as a Freelance Web Developer focuses on delivering high-performance digital products from concept to deployment, integrated with intelligent AI automation.',
-    availability: 'Available for Freelance Projects',
+      'I build scalable web products and AI-driven systems designed for real-world impact. From idea to production — fast, clean, and built for real users. Focused on startups, founders, and real-world product development.',
+    availability: 'Currently Open to Collaborations',
     profileImage: '/images/monilbariya.jpeg',
   },
   skills: [
@@ -702,45 +702,45 @@ export const portfolioData: PortfolioData = {
   ],
   offerings: [
     {
-      title: 'MVP Development for Startups',
+      title: 'Product MVP Development',
       description:
-        'I am a Freelance Web Developer specializing in turning startup ideas into functional MVPs (Minimum Viable Products) using Next.js and AI-assisted development for rapid execution.',
+        'Got a product idea? I turn it into a fully functional, production-ready MVP — fast. Using Next.js and AI-assisted workflows, I help founders validate ideas without burning months of runway.',
       icon: 'Rocket',
       color: 'bg-indigo-50 border-indigo-100',
       iconBg: 'bg-indigo-100',
       iconColor: 'text-indigo-600',
     },
     {
-      title: 'AI Integration & Automation',
+      title: 'AI Integration & Intelligent Automation',
       description:
-        'Custom AI integration services including LLM agents, chatbots, and task automation into existing web applications as an AI-powered Full Stack Developer.',
+        'I embed AI into your product — LLM agents, smart chatbots, and workflow automation — so your application does more, with less manual effort.',
       icon: 'Bot',
       color: 'bg-purple-50 border-purple-100',
       iconBg: 'bg-purple-100',
       iconColor: 'text-purple-600',
     },
     {
-      title: 'Data Visualization Dashboards',
+      title: 'Data Visualization & Insights',
       description:
-        'Building interactive business intelligence dashboards with Power BI and Tableau, focusing on data-driven decision making for enterprise clients.',
+        'Complex data, made clear. I build interactive dashboards with Power BI and Tableau that give leaders the visibility they need to make fast, confident decisions.',
       icon: 'BarChart',
       color: 'bg-emerald-50 border-emerald-100',
       iconBg: 'bg-emerald-100',
       iconColor: 'text-emerald-600',
     },
     {
-      title: 'Full-Stack MERN Web Development',
+      title: 'Full Stack Web Engineering',
       description:
-        'Scalable, responsive web application development using the MERN stack (MongoDB, Express, React, Node.js) tailored to specific business workflows.',
+        'End-to-end web application development — performant frontends, robust backends, scalable architectures — built to handle real traffic and real users.',
       icon: 'Code',
       color: 'bg-blue-50 border-blue-100',
       iconBg: 'bg-blue-100',
       iconColor: 'text-blue-600',
     },
     {
-      title: 'Technical SEO Optimization',
+      title: 'Performance & SEO Engineering',
       description:
-        'Deep technical SEO services for web applications to improve search performance, visibility, and page speed using best practices in Next.js.',
+        'Speed and discoverability are competitive advantages. I optimize Next.js applications for Core Web Vitals, technical SEO, and search visibility that compounds over time.',
       icon: 'Search',
       color: 'bg-orange-50 border-orange-100',
       iconBg: 'bg-orange-100',

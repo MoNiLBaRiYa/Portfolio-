@@ -148,15 +148,15 @@ export function ContactSection() {
                     : 'text-3xl md:text-4xl'
               }`}
             >
-              Let&apos;s Work Together
+              Have an Idea? Let&apos;s Build It.
             </h2>
             <p
               className={`text-gray-600 max-w-2xl mx-auto ${
                 isMobile ? 'text-base px-2' : isTablet ? 'text-base' : 'text-lg'
               }`}
             >
-              Ready to discuss your next project or explore opportunities?
-              I&apos;d love to hear from you.
+              Whether you&apos;re launching a product, scaling a platform, or
+              exploring how AI can improve your workflow &mdash; I&apos;d love to hear about it.
             </p>
           </motion.div>
 
@@ -181,19 +181,19 @@ export function ContactSection() {
                       isMobile ? 'text-xl' : 'text-2xl'
                     }`}
                   >
-                    Get in Touch
+                    Start a Conversation
                   </h3>
                   <p className="text-blue-600 font-medium mb-4">
-                    Open to freelance opportunities and real-world projects.
+                    Open to select collaborations &amp; impactful projects.
                   </p>
                   <p
                     className={`text-gray-600 mb-8 ${
                       isMobile ? 'text-sm' : 'text-base'
                     }`}
                   >
-                    I&apos;m always interested in new opportunities,
-                    collaborations, and interesting projects. Whether you have a
-                    question or just want to say hi, feel free to reach out!
+                    I take on a small number of projects at a time, which means
+                    you get focused attention and quality over quantity. If
+                    you&apos;re building something meaningful, reach out.
                   </p>
                 </div>
 
@@ -224,12 +224,14 @@ export function ContactSection() {
                       isMobile ? 'text-xs' : 'text-sm'
                     }`}
                   >
+                    {personal.availability === 'Open to Collaborations' &&
+                      "Currently available for select projects and collaborations. Let\u2019s discuss how I can help build your product."}
                     {personal.availability === 'Available' &&
-                      "I'm currently available for new projects and opportunities. Let's discuss how we can work together!"}
+                      "Currently available for new projects and opportunities. Let's discuss how we can work together!"}
                     {personal.availability === 'Busy' &&
-                      "I'm currently working on some exciting projects but still open to discussing future opportunities."}
+                      "Currently focused on existing projects but open to discussing future opportunities."}
                     {personal.availability === 'Not Available' &&
-                      "I'm currently focused on existing commitments but feel free to reach out for future opportunities."}
+                      "Currently focused on existing commitments. Feel free to reach out for future engagements."}
                   </p>
                 </div>
 

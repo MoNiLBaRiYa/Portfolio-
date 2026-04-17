@@ -11,26 +11,26 @@ export function ServicesSection() {
 
   const services = [
     {
-      title: 'Fast delivery via AI-assisted workflows',
-      description: 'Utilizing rapid prototyping and intelligent code generation to drastically shorten development cycles without compromising quality.',
+      title: 'AI-accelerated delivery',
+      description: 'I ship faster than traditional development cycles by combining systematic engineering with intelligent, AI-assisted workflows — without sacrificing code quality.',
       icon: <Zap className="w-6 h-6 text-yellow-500" />,
       color: 'bg-yellow-50 border-yellow-100',
     },
     {
-      title: 'Clean, scalable code',
-      description: 'Building robust, modern architectures that grow with your business and are easy to maintain long-term.',
+      title: 'Production-grade code',
+      description: 'Clean architecture, typed codebases, and maintainable patterns. Code your team can build on top of — not wrestle with — six months later.',
       icon: <Code className="w-6 h-6 text-blue-500" />,
       color: 'bg-blue-50 border-blue-100',
     },
     {
-      title: 'Business-focused solutions',
-      description: 'Translating complex technical requirements into practical products that directly solve real-world problems.',
+      title: 'Product thinking, not just coding',
+      description: 'I build for outcomes. Every technical decision is aligned with real business goals — not just making things technically correct, but strategically valuable.',
       icon: <TrendingUp className="w-6 h-6 text-green-500" />,
       color: 'bg-green-50 border-green-100',
     },
     {
-      title: 'Rapid MVP development',
-      description: 'Launch ideas faster with a lean, feature-rich MVP designed to test the market and gather user feedback instantly.',
+      title: 'From 0 to live — fast',
+      description: "Idea to deployed product in weeks. I've shipped end-to-end applications solo, including architecture, UI, APIs, and cloud deployment.",
       icon: <Rocket className="w-6 h-6 text-purple-500" />,
       color: 'bg-purple-50 border-purple-100',
     }
@@ -60,14 +60,14 @@ export function ServicesSection() {
                     : 'text-3xl md:text-4xl'
               }`}
             >
-              Why Choose Me
+              How I Deliver
             </h2>
             <p
               className={`text-gray-600 max-w-2xl mx-auto ${
                 isMobile ? 'text-base px-2' : isTablet ? 'text-base' : 'text-lg'
               }`}
             >
-              I bring a unique blend of engineering rigor and modern AI-assisted speed to deliver products that matter.
+              Engineering rigor meets product intuition. Here&apos;s what working with me looks like in practice.
             </p>
           </motion.div>
 

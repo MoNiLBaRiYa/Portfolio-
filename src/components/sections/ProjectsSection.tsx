@@ -105,15 +105,15 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                     : 'text-3xl md:text-4xl'
               }`}
             >
-              Featured Projects
+              Solutions I&apos;ve Built
             </h2>
             <p
               className={`text-gray-600 max-w-2xl mx-auto ${
                 isMobile ? 'text-base px-2' : isTablet ? 'text-base' : 'text-lg'
               }`}
             >
-              A showcase of my recent work and technical achievements, featuring
-              interactive demos and detailed case studies.
+              Real problems. Real solutions. Each project here represents a
+              distinct challenge tackled with purpose-built engineering and AI-assisted execution.
             </p>
           </motion.div>
 

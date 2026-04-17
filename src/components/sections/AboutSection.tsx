@@ -172,8 +172,8 @@ export const AboutSection: React.FC = () => {
             }`}
             variants={itemVariants}
           >
-            Discover the person behind the code - my journey, passions, and the
-            unique perspective I bring to every project.
+            A builder by nature — I turn complex problems into clean, scalable
+            products. Here&apos;s what drives the work I do and how I approach every challenge.
           </motion.p>
         </motion.div>
 
@@ -426,19 +426,18 @@ export const AboutSection: React.FC = () => {
                   isMobile ? 'text-lg' : 'text-xl'
                 }`}
               >
-                How My Interests Enhance My Professional Skills
+                Diverse Thinking Fuels Better Products
               </h4>
               <p
                 className={`text-gray-700 leading-relaxed max-w-3xl mx-auto ${
                   isMobile ? 'text-sm' : 'text-base'
                 }`}
               >
-                Each of my hobbies contributes unique perspectives to my
-                professional work. Drawing and sketching enhance my visual
-                design sensibilities and attention to detail, gaming develops
-                strategic thinking and problem-solving abilities, and reading
-                spiritual and philosophical literature strengthens my critical
-                thinking and continuous learning mindset.
+                The best engineers are more than their stack. Sketching sharpens
+                my eye for design and product aesthetics. Gaming pushes my
+                systems thinking and UX intuition. And exploring philosophical
+                literature has given me a long-term mindset — building things
+                that endure, not just ship.
               </p>
             </div>
           </motion.div>

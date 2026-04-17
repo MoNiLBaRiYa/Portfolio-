@@ -43,15 +43,15 @@ export function OfferingsSection() {
                     : 'text-3xl md:text-4xl'
               }`}
             >
-              Services I Offer
+              What I Work On
             </h2>
             <p
               className={`text-gray-600 max-w-2xl mx-auto ${
                 isMobile ? 'text-base px-2' : isTablet ? 'text-base' : 'text-lg'
               }`}
             >
-              Comprehensive technical solutions designed to accelerate your
-              growth and bring your ideas to life.
+              End-to-end capabilities across the full product lifecycle — from
+              idea to deployment to ongoing growth.
             </p>
           </motion.div>
 

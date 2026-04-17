@@ -18,13 +18,13 @@ const HeroSection = () => {
   const subtitle = portfolioData.personal.title;
   const summary = portfolioData.personal.summary;
 
-  // Key skills to highlight
+  // Key expertise areas to highlight
   const keySkills = [
-    'React & Next.js',
-    'Machine Learning',
-    'Data Visualization',
+    'Next.js & React',
+    'AI Integration',
+    'Full Stack Engineering',
     'TypeScript',
-    'Python',
+    'Product Development',
   ];
 
   // Typewriter effect
@@ -134,7 +134,7 @@ const HeroSection = () => {
                   : 'text-4xl md:text-6xl lg:text-7xl'
             }`}
           >
-            <span className="sr-only">Monil Bariya - Freelance AI Full Stack Web Developer & MERN Stack Specialist in India</span>
+            <span className="sr-only">Monil Bariya - AI Full Stack Web Developer in India</span>
             <span className="inline-block" aria-hidden="true">
               {displayedText}
               <motion.span
@@ -172,12 +172,12 @@ const HeroSection = () => {
           </p>
         </motion.div>
 
-        {/* Summary with staggered animation */}
+        {/* Summary with 2-line structure for impact */}
         <motion.div
           variants={itemVariants}
           className={isMobile ? 'mb-4' : 'mb-6'}
         >
-          <p
+          <div
             className={`text-gray-600 max-w-3xl mx-auto leading-relaxed ${
               isMobile
                 ? 'text-base px-2'
@@ -186,8 +186,13 @@ const HeroSection = () => {
                   : 'text-lg md:text-xl'
             }`}
           >
-            {summary}
-          </p>
+            <p className="mb-2">
+              I build scalable web products and AI-driven systems designed for real-world impact.
+            </p>
+            <p className="font-medium text-gray-800">
+              From idea to production — fast, clean, and built for real users.
+            </p>
+          </div>
         </motion.div>
 
         {/* Key skills highlight */}
@@ -200,7 +205,7 @@ const HeroSection = () => {
               isMobile ? 'text-xs' : 'text-sm md:text-base'
             }`}
           >
-            SPECIALIZED IN
+            CORE EXPERTISE
           </p>
           <div
             className={`flex flex-wrap justify-center ${
@@ -229,36 +234,51 @@ const HeroSection = () => {
         {/* Call-to-action buttons */}
         <motion.div
           variants={itemVariants}
-          className={`flex gap-4 justify-center items-center ${
-            isMobile ? 'flex-col w-full px-4' : 'flex-col sm:flex-row'
-          }`}
+          className="flex flex-col items-center justify-center"
         >
-          <motion.button
-            variants={buttonVariants}
-            whileHover="hover"
-            whileTap="tap"
-            onClick={() => scrollToSection('projects')}
-            className={`bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 ${
-              isMobile
-                ? 'w-full py-3 px-6 text-base'
-                : 'px-8 py-4 text-lg min-w-[200px]'
-            } ${isTouchDevice ? 'touch-target' : ''}`}
+          <div
+            className={`flex items-center justify-center gap-4 ${
+              isMobile ? 'flex-col w-full' : ''
+            }`}
           >
-            View My Work
-          </motion.button>
-          <motion.button
-            variants={buttonVariants}
-            whileHover="hover"
-            whileTap="tap"
-            onClick={() => scrollToSection('contact')}
-            className={`border-2 border-gray-300 hover:border-gray-400 text-gray-700 hover:text-gray-900 rounded-lg font-semibold bg-white/80 backdrop-blur-sm hover:bg-white transition-all duration-300 ${
-              isMobile
-                ? 'w-full py-3 px-6 text-base'
-                : 'px-8 py-4 text-lg min-w-[200px]'
-            } ${isTouchDevice ? 'touch-target' : ''}`}
+            <motion.button
+              variants={buttonVariants}
+              whileHover="hover"
+              whileTap="tap"
+              onClick={() => scrollToSection('projects')}
+              className={`bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 ${
+                isMobile
+                  ? 'w-full py-3 px-6 text-base'
+                  : 'px-8 py-4 text-lg min-w-[200px]'
+              } ${isTouchDevice ? 'touch-target' : ''}`}
+            >
+              View My Work
+            </motion.button>
+            <motion.button
+              variants={buttonVariants}
+              whileHover="hover"
+              whileTap="tap"
+              onClick={() => scrollToSection('contact')}
+              className={`flex items-center gap-2 justify-center px-4 py-2 text-sm font-medium border rounded-lg text-blue-700 border-blue-300 bg-blue-50/50 backdrop-blur-sm shadow-sm hover:bg-blue-200 transition-all duration-300 ${
+                isMobile ? 'w-full py-3 h-auto' : 'h-[50px] md:h-[60px] min-w-[240px]'
+              }`}
+            >
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+              Currently Open to Collaborate
+            </motion.button>
+          </div>
+
+          {/* Micro Trust Line - Positioned clearly below CTAs */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+            className={`text-gray-500 font-medium text-center ${
+              isMobile ? 'text-xs mt-4' : 'text-sm mt-3'
+            }`}
           >
-            Let&apos;s Work Together
-          </motion.button>
+            Building production-ready, scalable solutions for real users.
+          </motion.p>
         </motion.div>
       </motion.div>
     </section>
