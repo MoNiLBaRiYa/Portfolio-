@@ -167,8 +167,7 @@ export default function Footer() {
               <div className="flex items-center space-x-2">
                   <div
                     className={`w-2 h-2 rounded-full ${
-                      portfolioData.personal.availability === 'Open to select collaborations' ||
-                      portfolioData.personal.availability === 'Open to Collaborations' || 
+                      portfolioData.personal.availability === 'Currently Open to Collaborations' || 
                       portfolioData.personal.availability === 'Available'
                         ? 'bg-green-400'
                         : portfolioData.personal.availability === 'Busy'
