@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import ErrorBoundary from '@/components/ui/ErrorBoundary';
 import { ThemeProvider } from '@/components/theme-provider';
-import { generateStructuredData, generateBreadcrumbStructuredData, generateSkillsStructuredData, generateEducationStructuredData, generateExperienceStructuredData } from '@/utils/seo';
+import { generateMetadata, generateStructuredData, generateBreadcrumbStructuredData, generateSkillsStructuredData, generateEducationStructuredData, generateExperienceStructuredData } from '@/utils/seo';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -15,81 +15,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://monilbariya.vercel.app'),
-  title: {
-    default: 'Monil Bariya | AI-Powered Full Stack Developer',
-    template: '%s | Monil Bariya',
-  },
-  description:
-    'Monil Bariya is an AI-Powered Full Stack Developer who builds scalable web products and intelligent systems designed for real-world impact. Focused on startups, founders, and production-ready solutions.',
-  keywords: [
-    'Monil Bariya',
-    'Full Stack Developer India',
-    'AI Solutions Engineer',
-    'Next.js Developer India',
-    'React Developer',
-    'Product Developer India',
-    'AI Web Applications',
-    'MVP Development',
-    'Scalable Web Products',
-    'AI Integration Expert',
-    'Next.js TypeScript Developer',
-    'Web Product Engineer',
-  ],
-  authors: [{ name: 'Monil Bariya', url: 'https://github.com/MoNiLBaRiYa' }],
-  creator: 'Monil Bariya',
-  publisher: 'Monil Bariya',
-  alternates: {
-    canonical: '/',
-    languages: {
-      'en-US': '/',
-      'x-default': '/',
-    },
-  },
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://monilbariya.vercel.app',
-    title: 'Monil Bariya | Full Stack Developer & AI Solutions Engineer',
-    description:
-      'Monil Bariya builds scalable web products and AI-driven solutions that solve real-world problems. Based in India, specializing in Next.js, React, and intelligent AI automation.',
-    siteName: 'Monil Bariya',
-    images: [
-      {
-        url: 'https://monilbariya.vercel.app/opengraph-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Monil Bariya - Full Stack Developer & AI Solutions Engineer',
-        type: 'image/png',
-      },
-    ],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'standard',
-      'max-snippet': -1,
-    },
-  },
-  verification: {
-    google: 'fb54a6b0d2601101',
-  },
-  manifest: '/site.webmanifest',
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: 'default',
-    title: 'Monil Bariya Portfolio',
-  },
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  category: 'Technology',
-  classification: 'Portfolio Website',
+  ...generateMetadata(),
 };
 
 export default function RootLayout({

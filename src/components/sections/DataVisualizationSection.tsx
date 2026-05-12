@@ -13,6 +13,7 @@ interface DataVisualizationSectionProps {
     projects: any[];
     skills: any[];
     certifications: any[];
+    experience?: any[];
   };
 }
 
@@ -54,7 +55,7 @@ export function DataVisualizationSection({
         (sum, category) => sum + (category.skills?.length || 0),
         0
       ) || 0,
-    certifications: data.certifications?.length || 0,
+    certifications: (data.certifications?.length || 0) + (data.experience?.length || 0),
     totalTechnologies: new Set(
       data.projects?.flatMap(p => p.technologies?.map((t: any) => t.name) || [])
     ).size,
@@ -161,7 +162,7 @@ export function DataVisualizationSection({
                         {stats.certifications}
                       </div>
                       <div className="text-sm text-gray-600">
-                        Certifications
+                        Exp & Certs
                       </div>
                     </div>
                   </div>

@@ -51,8 +51,12 @@ export const portfolioData: PortfolioData = {
       category: 'Modern Web & Backend',
       skills: [
         {
-          name: 'Next.js',
-          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+          name: 'Vue.js',
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
+        },
+        {
+          name: 'Nuxt',
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg',
         },
         {
           name: 'Tailwind CSS',
@@ -173,16 +177,18 @@ export const portfolioData: PortfolioData = {
         'A scalable AI-driven web application connecting local service providers with customers through an intelligent marketplace platform.',
       longDescription:
         'NeedMeet is a scalable, AI-driven marketplace designed to streamline local service discovery and booking. By integrating intelligent matching dashboards and modular UI components, it solves the inefficiencies in traditional scheduling, providing a seamless end-to-end experience for both service providers and customers.',
+      techStackDetailed:
+        'Core Framework & Libraries:\n• Nuxt.js (v4.4.2): The core Vue framework used for building the application (handles SSR, routing, and project structure).\n• Vue.js (v3.5.32): The underlying JavaScript framework for building user interfaces.\n• Vue Router (v5.0.4): For handling routing within the application.\nState Management:\n• Pinia (v3.0.4): The modern, official state management library for Vue.\nStyling & UI:\n• Tailwind CSS (v3.4.19): A utility-first CSS framework for rapid UI development.\n• PostCSS & Autoprefixer: Used alongside Tailwind for processing CSS.\n• Nuxt Icon: An icon module for Nuxt (@nuxt/icon).\nBackend as a Service (BaaS):\n• Firebase (v12.12.0): Used for your backend services, likely handling authentication, database (Firestore), and potentially hosting.\nTesting Tools:\n• Vitest (v4.1.4): A blazing fast unit testing framework powered by Vite.\n• Vue Test Utils: For testing Vue components.\n• jsdom: A simulated DOM environment for running tests.',
       projectStory: {
         problem:
           'Local service booking ecosystems often lack intelligent decision-making tools and streamlined user interfaces, making scheduling inefficient for both service providers and customers.',
         solution:
-          'As a Full Stack Developer, I engineered a scalable, responsive AI-marketplace utilizing Next.js and specialized prompt engineering to create modular UI components, robust data flows, and intelligent matching dashboards.',
+          'As a Full Stack Developer, I engineered a scalable, responsive AI-marketplace utilizing Nuxt and specialized prompt engineering to create modular UI components, robust data flows, and intelligent matching dashboards.',
         result:
           'Delivered a complete end-to-end service marketplace platform enabling faster service discovery and a seamless booking experience for users.',
       },
       technologies: [
-        { name: 'Next.js', category: 'Frontend', icon: '/icons/nextjs.svg' },
+        { name: 'Nuxt', category: 'Frontend', icon: '/icons/nuxt.svg' },
         {
           name: 'TypeScript',
           category: 'Frontend',
@@ -236,16 +242,18 @@ export const portfolioData: PortfolioData = {
         'An intelligent, real-time career advisory system leveraging structured prompt engineering to deliver personalized, data-driven growth roadmaps.',
       longDescription:
         'TalentScout is an intelligent career advisory system that leverages structured prompt engineering and AI workflows to deliver personalized growth roadmaps. It addresses the challenges job seekers face in identifying suitable career paths by providing automated, data-driven recommendations that are both scalable and highly targeted.',
+      techStackDetailed:
+        '1. Frontend (Presentation Layer)\n• Framework: React\n• State Management: Redux (Global) and local component state.\n• Real-time Communication: Socket.io-client for the conversational interview interface.\n• Key Components: Job Browser, Application Tracker, Chat Interface, and Recruiter Dashboard.\n2. Backend (Application Services)\nThe backend is built as a set of specialized Node.js services:\n• Runtime: Node.js\n• Web Framework: Express (used for the API Gateway and individual services like Job, Application, and Auth).\n• Real-time Engine: Socket.io (within the Conversation Service) to handle bi-directional streaming during interviews.\n• Authentication: JWT (JSON Web Tokens) with Role-Based Access Control (RBAC).\n3. AI Services (Intelligence Layer)\nThe AI processing is handled by Python-based REST APIs:\n• Language: Python 3.10+\n• Frameworks: Flask or FastAPI.\n• LLM Integration: OpenAI GPT-4 (used for generating interview questions and evaluating transcripts).\n• NLP & Parsing:\n  • spaCy: For Named Entity Recognition (NER) in resumes.\n  • PyPDF2 / pdfplumber / python-docx: For extracting text from candidate resumes.\n4. Data Layer (Polyglot Persistence)\nThe system uses a "right tool for the job" strategy for data:\n• PostgreSQL: Handles structured, relational data such as Users, Companies, Jobs, and Recruiters.\n• MongoDB: Stores flexible, document-based data like conversation transcripts, parsed resumes, and AI evaluations.\n• Redis: Used for session management, caching (e.g., job postings), and managing WebSocket connections.\n5. Infrastructure & Security\n• Communication: Direct REST API calls between Node.js and Python services (optimized for MVP simplicity).\n• Security: TLS 1.3 for encryption in transit; AES-256 for sensitive data at rest.\n• Caching: Redis-based caching with TTL for performance optimization.',
       projectStory: {
         problem:
           'Job seekers struggle to identify suitable career paths in the modern job market, while traditional career counseling is time-consuming, expensive, and not highly scalable.',
         solution:
           'Built an intelligent AI Career Advisory system leveraging structured prompt engineering and AI workflows (similar to AutoGPT/LangChain concepts) to instantly analyze user profiles and identify optimal roles.',
         result:
-          'Created an automated, dynamic AI workflow that delivers highly targeted, actionable career recommendations to users instantly via a React-based frontend.',
+          'Created an automated, dynamic AI workflow that delivers highly targeted, actionable career recommendations to users instantly via a Vue-based frontend.',
       },
       technologies: [
-        { name: 'Next.js', category: 'Frontend', icon: '/icons/nextjs.svg' },
+        { name: 'Nuxt', category: 'Frontend', icon: '/icons/nuxt.svg' },
         {
           name: 'TypeScript',
           category: 'Frontend',
@@ -297,16 +305,18 @@ export const portfolioData: PortfolioData = {
         'An accessibility-first learning platform delivering inclusive educational experiences through strict WCAG-compliant design.',
       longDescription:
         'NeoLearn is an accessibility-first learning platform built with a focus on inclusivity and WCAG compliance. By implementing high-contrast themes, screen reader support, and simplified navigation, it ensures that educational content is equitable and accessible to users with various disabilities.',
+      techStackDetailed:
+        'Frontend (Client)\n• Core Framework: React (v18.2) with TypeScript\n• Build Tool & Dev Server: Vite\n• Routing: React Router DOM\n• State Management: Zustand\n• Styling & UI:\n  • Tailwind CSS (Utility-first CSS framework)\n  • Framer Motion (For complex animations and transitions)\n  • Lucide React (Icon library)\n• Forms & Validation: React Hook Form\n• Other Utilities: React Dropzone (file uploads), React Hot Toast (notifications)\n• AI Integration: Google Generative AI Client SDK (@google/generative-ai)\nBackend (Server)\n• Runtime & Language: Node.js with TypeScript\n• Web Framework: Express.js (v5.2)\n• AI Integration (Core):\n  • Google Genkit (@genkit-ai/ai, @genkit-ai/core, @genkit-ai/googleai)\n• Validation: Zod (for strongly typed schema validation)\n• Security & Middleware: Helmet (security headers), CORS, Express Rate Limit\n• Utilities: youtube-transcript (for extracting YouTube video transcripts)\nInfrastructure & Database\n• Platform: Firebase\n• Database: Cloud Firestore (NoSQL database, accessed via Client SDK and Firebase Admin SDK on the server)\n• Authentication & Storage: Firebase Authentication and Firebase Cloud Storage\n• Hosting: Firebase Hosting (for the frontend client)\n• Server Admin: Firebase Admin SDK (used by the Express backend for secure access to Firebase services)\nOverall, it\'s a React + Node.js (Express) + Firebase stack, heavily augmented with Google AI capabilities (using Genkit on the backend) and designed with strict typing (TypeScript + Zod).',
       projectStory: {
         problem:
           'Digital learning platforms consistently fail to provide accessible experiences for disabled users, severely limiting inclusive education according to WCAG standards.',
         solution:
-          'Developed an accessibility-first educational platform focusing heavily on high-contrast themes, screen reader compatibility, and simplified, intuitive navigation using Next.js and Tailwind CSS.',
+          'Developed an accessibility-first educational platform focusing heavily on high-contrast themes, screen reader compatibility, and simplified, intuitive navigation using Nuxt and Tailwind CSS.',
         result:
           'Delivered a fully WCAG-compliant design that successfully ensures equitable and inclusive access to educational content for all users, including those with visual and cognitive impairments.',
       },
       technologies: [
-        { name: 'Next.js', category: 'Frontend', icon: '/icons/nextjs.svg' },
+        { name: 'Nuxt', category: 'Frontend', icon: '/icons/nuxt.svg' },
         {
           name: 'TypeScript',
           category: 'Frontend',
@@ -375,11 +385,13 @@ export const portfolioData: PortfolioData = {
         'A Python-based misinformation detection system leveraging NLP and real-time machine learning predictions for instant classification.',
       longDescription:
         'This ML-powered misinformation analysis system uses advanced NLP techniques to provide real-time classification of news text. It features a secure backend pipeline and a user-friendly interface, designed to combat the rapid spread of online misinformation by delivering high-confidence verification results instantly.',
+      techStackDetailed:
+        'Backend Framework\n• Flask (Python): The core web framework running the backend server.\n• PyMongo: Used to connect and interact with a MongoDB database for data storage.\n• Flask Extensions: Flask-Limiter for rate limiting, Flask-Caching for cache management, and Authlib for authentication.\n• Gunicorn & Gevent: Production WSGI servers.\nFrontend Framework\n• HTML/Jinja2: Flask\'s templating engine is used for server-side rendered HTML files (inside the Frontend/templates directory).\n• Tailwind CSS: Used as a utility-first CSS framework for modern styling (configured via npm and tailwindcss).\n• Vanilla JavaScript: For interactive frontend logic.\nMachine Learning & AI Inference\n• Scikit-Learn: Core library used for traditional ML tasks and data processing.\n• Hugging Face Hub (huggingface_hub): Likely used to load pre-trained NLP models for AI inference.\n• Data Processing Libraries: pandas, numpy, and joblib.\n• Language Handling: deep-translator and langdetect for multilingual support.\nWeb Scraping & Extraction\n• Requests, BeautifulSoup4 (bs4), lxml: Used for fetching and parsing news article contents from the web.\nBrowser Extension\n• Vanilla JS, HTML, CSS: Built using standard web technologies with manifest.json for extension configuration.\nInfrastructure & Deployment\n• Docker & Docker Compose: Containerization tools to run the application uniformly.\n• Development Tools: pytest for testing, black and flake8 for linting. concurrently (Node.js) is used to run the Python server and Tailwind CSS watcher simultaneously.',
       projectStory: {
         problem:
           'The rapid, unchecked spread of online misinformation requires instant, automated verification to prevent viral fake news outbreaks before human fact-checkers can respond.',
         solution:
-          'Designed and developed a secure Python Flask backend integrating an NLP machine learning classification model with a responsive React-style frontend interface for real-time detection.',
+          'Designed and developed a secure Python Flask backend integrating an NLP machine learning classification model with a responsive Vue-style frontend interface for real-time detection.',
         result:
           'Deployed a highly functional machine learning system capable of delivering real-time, high-confidence news text classification to a live user base instantly.',
       },
@@ -438,7 +450,23 @@ export const portfolioData: PortfolioData = {
       },
     },
   ],
-  experience: [],
+  experience: [
+    {
+      id: 'unity-infoway-internship',
+      title: 'Software Trainee',
+      company: 'Unity Infoway',
+      type: 'Internship',
+      startDate: '2026-01-12',
+      endDate: '2026-04-18',
+      description: 'Successfully completed software trainee internship, gaining knowledge of software development concepts, including programming fundamentals, software design principles, and working on real-time projects.',
+      achievements: [
+        'Learned and applied programming fundamentals and software design principles',
+        'Worked on real-time projects to deliver practical software solutions',
+        'Demonstrated dedication and consistent performance throughout the training period',
+      ],
+      technologies: ['Software Development', 'Programming Fundamentals', 'Software Design'],
+    },
+  ],
   education: [
     {
       id: 'btech-cse',

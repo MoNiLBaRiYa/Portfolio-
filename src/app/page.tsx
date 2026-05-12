@@ -68,13 +68,14 @@ export default function Home() {
                   projects: portfolioData.projects,
                   skills: portfolioData.skills,
                   certifications: portfolioData.certifications,
+                  experience: portfolioData.experience,
                 }}
               />
             </Suspense>
 
             <Suspense fallback={<SkeletonLoader />}>
               <ExperienceSection
-                experiences={[]}
+                experiences={portfolioData.experience}
                 certifications={portfolioData.certifications}
               />
             </Suspense>

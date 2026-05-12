@@ -20,11 +20,9 @@ const HeroSection = () => {
 
   // Key expertise areas to highlight
   const keySkills = [
-    'Next.js & React',
-    'AI Integration',
     'Full Stack Engineering',
-    'TypeScript',
     'Product Development',
+    'Data Analytics',
   ];
 
   // Typewriter effect

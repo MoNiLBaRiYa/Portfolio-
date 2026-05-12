@@ -58,7 +58,7 @@ export function ExperienceSection({
 
   return (
     <section
-      id="experience"
+      id="certifications"
       className="py-20 bg-white relative overflow-hidden"
     >
       {/* Subtle background decoration */}

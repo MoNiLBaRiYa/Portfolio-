@@ -13,7 +13,7 @@ const navigationItems = [
   { id: 'projects', label: 'Projects', href: '#projects' },
   { id: 'offerings', label: 'Capabilities', href: '#offerings' },
   { id: 'data-visualization', label: 'Analytics', href: '#data-visualization' },
-  { id: 'experience', label: 'Experience', href: '#experience' },
+  { id: 'certifications', label: 'Experience & Certifications', href: '#certifications' },
   { id: 'education', label: 'Education', href: '#education' },
   { id: 'contact', label: 'Contact', href: '#contact' },
 ];
@@ -117,7 +117,24 @@ export default function Header() {
           }`}
         >
           {/* Logo/Brand */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex items-center gap-3">
+            {/* Avatar Flip Card */}
+            <div 
+              className="group w-8 h-8 sm:w-10 sm:h-10 [perspective:1000px] cursor-pointer" 
+              onClick={() => scrollToSection('#home')}
+            >
+              <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                {/* Front (Profile Photo) */}
+                <div className="absolute inset-0 [backface-visibility:hidden] rounded-full border-2 border-blue-400 shadow-[0_0_10px_rgba(96,165,250,0.6)] overflow-hidden">
+                  <img src="/images/monilbariya.jpeg" alt="Profile" className="w-full h-full object-cover" />
+                </div>
+                {/* Back (Logo) */}
+                <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-full border-2 border-green-400 shadow-[0_0_10px_rgba(74,222,128,0.6)] overflow-hidden">
+                  <img src="/android-chrome-512x512.png" alt="Logo" className="w-full h-full object-cover" />
+                </div>
+              </div>
+            </div>
+
             <button
               onClick={() => scrollToSection('#home')}
               className={`font-bold text-gray-900 hover:text-blue-600 transition-colors duration-200 ${

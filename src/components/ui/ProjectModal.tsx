@@ -144,6 +144,19 @@ export default function ProjectModal({
                 </div>
               </div>
 
+              {project.techStackDetailed && (
+                <div>
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
+                    Detailed Tech Stack
+                  </h3>
+                  <div className="bg-gray-50 rounded-lg p-3 sm:p-4 border border-gray-200">
+                    <p className="text-sm text-gray-700 whitespace-pre-line leading-relaxed">
+                      {project.techStackDetailed}
+                    </p>
+                  </div>
+                </div>
+              )}
+
               {/* Project Challenges & Solutions */}
               {project.challenges && project.challenges.length > 0 && (
                 <div>

@@ -353,7 +353,7 @@ export const AboutSection: React.FC = () => {
                         isMobile ? 'text-xs' : 'text-sm'
                       }`}
                     >
-                      Certifications
+                      Exp & Certifications
                     </div>
                   </div>
                 </div>
