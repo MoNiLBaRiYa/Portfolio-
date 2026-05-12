@@ -53,6 +53,7 @@ export interface Project {
   codeSnippets?: CodeSnippet[];
   liveDemo?: LiveDemo;
   projectStory?: ProjectStory;
+  techStackDetailed?: string;
 }
 
 export interface Technology {
