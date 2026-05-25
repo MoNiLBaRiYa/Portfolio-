@@ -17,7 +17,10 @@ export function generateMetadata(config: SEOConfig = {}): Metadata {
   const title =
     config.title ||
     `${portfolioData.personal.name} - ${portfolioData.personal.title}`;
-  const description = config.description || portfolioData.personal.summary;
+  const description =
+    config.description ||
+    portfolioData.personal.seoDescription ||
+    portfolioData.personal.summary.substring(0, 155);
   const image = config.image || defaultImage;
   const url = config.url || baseUrl;
 

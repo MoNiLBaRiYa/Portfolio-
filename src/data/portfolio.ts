@@ -10,6 +10,8 @@ export const portfolioData: PortfolioData = {
     github: 'https://github.com/MoNiLBaRiYa',
     summary:
       'I build scalable web products and AI-driven systems designed for real-world impact. From idea to production — fast, clean, and built for real users. Focused on startups, founders, and real-world product development.',
+    seoDescription:
+      'I build scalable web products and AI-driven systems designed for real-world impact. From idea to production — fast, clean, and built for real users.',
     availability: 'Currently Open to Collaborations',
     profileImage: '/images/monilbariya.jpeg',
   },

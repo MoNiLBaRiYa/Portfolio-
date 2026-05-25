@@ -19,6 +19,7 @@ export interface PersonalInfo {
   linkedin: string;
   github: string;
   summary: string;
+  seoDescription?: string;
   availability: 'Available' | 'Busy' | 'Not Available' | 'Currently Open to Collaborations';
   profileImage: string;
 }
