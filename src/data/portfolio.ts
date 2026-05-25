@@ -541,6 +541,30 @@ export const portfolioData: PortfolioData = {
   ],
   certifications: [
     {
+      id: 'tata-genai-data-analytics-simulation',
+      title: 'GenAI Powered Data Analytics Job Simulation',
+      issuer: 'Tata Forage',
+      date: '2026-05-23',
+      description:
+        'Completed a practical job simulation involving exploratory data analysis, predicting delinquency with AI, and implementing AI-driven collections strategies.',
+      skills: [
+        'Exploratory Data Analysis',
+        'Risk Profiling',
+        'Predictive Analytics',
+        'Data Storytelling',
+        'AI Strategy',
+        'Data Analytics',
+      ],
+      achievements: [
+        'Conducted exploratory data analysis and risk profiling',
+        'Predicted delinquency with AI',
+        'Created business reports and data storytelling for collections strategy',
+        'Implemented an AI-driven collections strategy',
+      ],
+      credentialUrl: '',
+      image: '/images/certifications/tata-genai-data-analytics.png',
+    },
+    {
       id: 'generative-ai-mastermind',
       title: 'Generative AI Mastermind – Certificate of Completion',
       issuer: 'Outskill',
