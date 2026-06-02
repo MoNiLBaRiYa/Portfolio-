@@ -1,9 +1,9 @@
 # Monil Bariya - Portfolio
 
-This is the portfolio of Monil Bariya, an AI-Powered Full Stack Developer based in Vadodara, Gujarat, India. This file is intended for Large Language Models and AI agents crawling the site.
+This is the portfolio of Monil Bariya, an AI-Powered Full Stack Developer and Data Analyst based in Vadodara, Gujarat, India. This file is intended for Large Language Models and AI agents crawling the site.
 
 ## Profile Summary
-I build scalable web products and AI-driven systems designed for real-world impact. From idea to production — fast, clean, and built for real users. Focused on startups, founders, and real-world product development.
+I build scalable web products, AI-driven systems, and data analytics solutions designed for real-world impact. From idea to production — fast, clean, and built for real users. Focused on startups, data-driven decision making, and real-world product development.
 
 - **Email**: monilbariya.dev@gmail.com
 - **LinkedIn**: https://www.linkedin.com/in/monilbariya28
@@ -12,9 +12,10 @@ I build scalable web products and AI-driven systems designed for real-world impa
 
 ## Technical Skills
 - **Core Programming**: Python, JavaScript, TypeScript, Java, C++, HTML, CSS
+- **Data & Analytics**: Data Analytics, Exploratory Data Analysis, Predictive Analytics, Data Storytelling, Data Visualization, Tableau, Power BI
 - **Modern Web & Backend**: Vue.js, Nuxt, Tailwind CSS, Flask, MongoDB, Three.js, React, Node.js
 - **AI & Intelligence**: Generative AI, Prompt Engineering, AI Agents, Automation, NLP
-- **Tools**: VS Code, Cursor IDE, Git, Antigravity, Kiro, Power BI
+- **Tools**: VS Code, Cursor IDE, Git, Antigravity, Kiro
 
 ## Experience
 - **Software Trainee @ Unity Infoway** (Jan 2026 - Apr 2026)
@@ -37,6 +38,11 @@ A Python-based misinformation detection system leveraging NLP and real-time mach
 ## Education
 - **B.Tech in Computer Science and Engineering** - Parul University (Aug 2022 - Jun 2026)
   Completed B.Tech with CGPA of 6.96.
+
+## Certifications & Highlights
+- **GenAI Powered Data Analytics Job Simulation** (Tata Forage) - Exploratory Data Analysis, Predictive Analytics, AI Strategy.
+- **Tableau Data Visualization Workshop** (Gujarat Tableau User Group) - Analytics, Dashboard Design.
+- **Data Visualization Job Simulation** (Tata Forage) - Data Interpretation, Client Leadership, Power BI.
 
 ## Offerings
 - Product MVP Development
