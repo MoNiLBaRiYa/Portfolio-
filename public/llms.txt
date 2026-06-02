@@ -1,0 +1,48 @@
+# Monil Bariya - Portfolio
+
+This is the portfolio of Monil Bariya, an AI-Powered Full Stack Developer based in Vadodara, Gujarat, India. This file is intended for Large Language Models and AI agents crawling the site.
+
+## Profile Summary
+I build scalable web products and AI-driven systems designed for real-world impact. From idea to production — fast, clean, and built for real users. Focused on startups, founders, and real-world product development.
+
+- **Email**: monilbariya.dev@gmail.com
+- **LinkedIn**: https://www.linkedin.com/in/monilbariya28
+- **GitHub**: https://github.com/MoNiLBaRiYa
+- **Availability**: Currently Open to Collaborations
+
+## Technical Skills
+- **Core Programming**: Python, JavaScript, TypeScript, Java, C++, HTML, CSS
+- **Modern Web & Backend**: Vue.js, Nuxt, Tailwind CSS, Flask, MongoDB, Three.js, React, Node.js
+- **AI & Intelligence**: Generative AI, Prompt Engineering, AI Agents, Automation, NLP
+- **Tools**: VS Code, Cursor IDE, Git, Antigravity, Kiro, Power BI
+
+## Experience
+- **Software Trainee @ Unity Infoway** (Jan 2026 - Apr 2026)
+  Successfully completed software trainee internship, gaining knowledge of software development concepts, including programming fundamentals, software design principles, and working on real-time projects.
+
+## Key Projects
+
+### NeedMeet: AI-Assisted Service Discovery & Marketplace
+A scalable AI-driven web application connecting local service providers with customers through an intelligent marketplace platform. Built with Nuxt.js, Vue.js, Tailwind CSS, and Firebase.
+
+### TalentScout: AI-Powered Career Recommendation System
+An intelligent, real-time career advisory system leveraging structured prompt engineering to deliver personalized, data-driven growth roadmaps. Built with React, Node.js, Python, Flask, MongoDB, PostgreSQL, and OpenAI GPT-4.
+
+### NeoLearn: Accessibility-Focused Learning Platform
+An accessibility-first learning platform delivering inclusive educational experiences through strict WCAG-compliant design. Built with React, Node.js, Express, Firebase, and Google Genkit.
+
+### Fake News AI Detection: ML-Powered Misinformation Analysis
+A Python-based misinformation detection system leveraging NLP and real-time machine learning predictions for instant classification. Built with Python, Flask, MongoDB, Scikit-Learn, and Tailwind CSS.
+
+## Education
+- **B.Tech in Computer Science and Engineering** - Parul University (Aug 2022 - Jun 2026)
+  Completed B.Tech with CGPA of 6.96.
+
+## Offerings
+- Product MVP Development
+- AI Integration & Intelligent Automation
+- Data Visualization & Insights
+- Full Stack Web Engineering
+- Performance & SEO Engineering
+
+For more detailed information, please navigate through the main website.
